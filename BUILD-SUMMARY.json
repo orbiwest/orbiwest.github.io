@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-06-24T19:52:26.583821Z",
+  "html_pages": 34,
+  "total_files": 50,
+  "total_lines": 11422,
+  "largest_files": [
+    [
+      "assets/css/style.css",
+      1488
+    ],
+    [
+      "assets/js/main.js",
+      843
+    ],
+    [
+      "index.html",
+      425
+    ],
+    [
+      "industries.html",
+      313
+    ],
+    [
+      "services.html",
+      282
+    ],
+    [
+      "education-it.html",
+      267
+    ],
+    [
+      "healthcare-it.html",
+      267
+    ],
+    [
+      "retail-it.html",
+      267
+    ],
+    [
+      "manufacturing-it.html",
+      267
+    ],
+    [
+      "logistics-it.html",
+      267
+    ]
+  ]
+}

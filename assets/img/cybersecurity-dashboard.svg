@@ -1,0 +1,27 @@
+<svg width="900" height="460" viewBox="0 0 900 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="460" rx="28" fill="#071A2E"/>
+  <rect x="24" y="24" width="852" height="412" rx="22" fill="#0A2038" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="50" y="56" width="240" height="80" rx="18" fill="#102B47" stroke="rgba(245,166,35,0.22)"/>
+  <rect x="316" y="56" width="240" height="80" rx="18" fill="#102B47" stroke="rgba(93,183,255,0.18)"/>
+  <rect x="582" y="56" width="240" height="80" rx="18" fill="#102B47" stroke="rgba(72,213,151,0.18)"/>
+  <text x="75" y="90" fill="#B7C5D8" font-family="Arial" font-size="16">Threat exposure</text>
+  <text x="75" y="120" fill="#F5A623" font-family="Arial" font-size="30" font-weight="700">Low</text>
+  <text x="341" y="90" fill="#B7C5D8" font-family="Arial" font-size="16">Endpoint posture</text>
+  <text x="341" y="120" fill="#5DB7FF" font-family="Arial" font-size="30" font-weight="700">97%</text>
+  <text x="607" y="90" fill="#B7C5D8" font-family="Arial" font-size="16">Backup readiness</text>
+  <text x="607" y="120" fill="#48D597" font-family="Arial" font-size="30" font-weight="700">92%</text>
+  <rect x="50" y="170" width="365" height="224" rx="20" fill="#061B2F" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="443" y="170" width="379" height="224" rx="20" fill="#061B2F" stroke="rgba(255,255,255,0.08)"/>
+  <text x="75" y="204" fill="#FFFFFF" font-family="Arial" font-size="20" font-weight="700">Security events</text>
+  <path d="M75 348C120 306 151 326 188 278C221 235 256 278 292 238C324 203 354 221 388 190" stroke="#F5A623" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M75 360C130 350 170 368 226 334C280 301 320 314 388 278" stroke="#5DB7FF" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <text x="468" y="204" fill="#FFFFFF" font-family="Arial" font-size="20" font-weight="700">Control coverage</text>
+  <circle cx="555" cy="286" r="74" stroke="#143658" stroke-width="22"/>
+  <circle cx="555" cy="286" r="74" stroke="#F5A623" stroke-width="22" stroke-dasharray="360 120" stroke-linecap="round"/>
+  <circle cx="710" cy="286" r="74" stroke="#143658" stroke-width="22"/>
+  <circle cx="710" cy="286" r="74" stroke="#5DB7FF" stroke-width="22" stroke-dasharray="320 160" stroke-linecap="round"/>
+  <text x="526" y="294" fill="#FFFFFF" font-family="Arial" font-size="26" font-weight="700">86%</text>
+  <text x="681" y="294" fill="#FFFFFF" font-family="Arial" font-size="26" font-weight="700">78%</text>
+  <text x="514" y="378" fill="#B7C5D8" font-family="Arial" font-size="13">Policy</text>
+  <text x="667" y="378" fill="#B7C5D8" font-family="Arial" font-size="13">Identity</text>
+</svg>

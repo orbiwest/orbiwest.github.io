@@ -1,0 +1,9 @@
+{
+  "name": "orbiwest-production-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static production website for Orbiwest Technologies.",
+  "scripts": {
+    "serve": "python -m http.server 8080"
+  }
+}
