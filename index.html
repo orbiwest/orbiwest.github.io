@@ -1,68 +1,148 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-<title>Orbiwest Technologies</title>
-<style>
-body{
-font-family:Arial,sans-serif;
-background:#071A2E;
-color:white;
-margin:0;
-padding:0;
-}
-
-header{
-text-align:center;
-padding:80px 20px;
-background:#0A66C2;
-}
-
-section{
-padding:40px;
-}
-
-.card{
-background:#102B47;
-padding:20px;
-margin:10px 0;
-border-radius:10px;
-}
-
-h1,h2{
-color:white;
-}
-
-.gold{
-color:#F5A623;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orbiwest Technologies | IT Solutions & Global Trade</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Arial,Helvetica,sans-serif;background:#071A2E;color:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .nav{position:fixed;top:0;width:100%;z-index:99;background:rgba(7,26,46,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,166,35,.25)}
+    .nav-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
+    .logo{font-size:24px;font-weight:800;color:#fff}
+    .logo span{color:#F5A623}
+    .nav a{margin-left:22px;color:#dbe8ff;font-size:14px}
+    .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 24px 80px;background:
+      radial-gradient(circle at 20% 20%,rgba(10,102,194,.45),transparent 30%),
+      radial-gradient(circle at 80% 30%,rgba(245,166,35,.2),transparent 25%),
+      linear-gradient(135deg,#071A2E,#04111f)}
+    .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:60px 60px;opacity:.5}
+    .hero-content{max-width:1200px;margin:auto;position:relative;z-index:2}
+    .badge{display:inline-block;border:1px solid rgba(245,166,35,.5);color:#F5A623;padding:8px 14px;border-radius:30px;font-size:13px;margin-bottom:22px}
+    h1{font-size:clamp(42px,7vw,82px);line-height:1.05;max-width:900px;margin-bottom:24px}
+    h1 span{color:#F5A623}
+    .hero p{max-width:760px;color:#dbe8ff;font-size:19px;margin-bottom:32px}
+    .buttons{display:flex;gap:16px;flex-wrap:wrap}
+    .btn{padding:14px 24px;border-radius:8px;font-weight:700}
+    .btn-primary{background:#F5A623;color:#071A2E}
+    .btn-secondary{border:1px solid rgba(255,255,255,.3);color:#fff}
+    section{padding:90px 24px}
+    .container{max-width:1200px;margin:auto}
+    .section-title{font-size:36px;margin-bottom:16px}
+    .section-title span{color:#F5A623}
+    .section-sub{color:#b9c7d9;max-width:760px;margin-bottom:40px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+    .card{background:linear-gradient(180deg,#102B47,#0b2038);border:1px solid rgba(255,255,255,.08);padding:28px;border-radius:18px;transition:.3s}
+    .card:hover{transform:translateY(-8px);border-color:rgba(245,166,35,.55)}
+    .icon{font-size:34px;margin-bottom:16px}
+    .card h3{color:#fff;margin-bottom:10px}
+    .card p{color:#b9c7d9;font-size:15px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .panel{background:#102B47;border:1px solid rgba(245,166,35,.25);border-radius:22px;padding:34px}
+    .list{display:grid;gap:14px;margin-top:20px}
+    .list div{background:rgba(255,255,255,.05);padding:14px;border-radius:10px;color:#dbe8ff}
+    .contact{background:linear-gradient(135deg,#0A66C2,#071A2E)}
+    .email-box{display:inline-block;background:#F5A623;color:#071A2E;padding:16px 26px;border-radius:10px;font-weight:800;margin-top:20px}
+    footer{background:#04111f;text-align:center;padding:28px;color:#9fb1c8}
+    @media(max-width:800px){.nav-inner{flex-direction:column;gap:12px}.nav a{margin:0 8px}.split{grid-template-columns:1fr}section{padding:70px 20px}}
+  </style>
 </head>
-
 <body>
 
-<header>
-<h1>Orbiwest Technologies</h1>
-<h2>Connecting Technology. Enabling Global Trade.</h2>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo">Orbiwest <span>Technologies</span></div>
+    <div>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#industries">Industries</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="grid-bg"></div>
+  <div class="hero-content">
+    <div class="badge">IT Solutions • Cybersecurity • Global Trade</div>
+    <h1>Connecting Technology. <span>Enabling Global Trade.</span></h1>
+    <p>Orbiwest Technologies delivers managed IT services, network engineering, cybersecurity, cloud solutions, server administration, IT consulting, import/export support, and global sourcing solutions.</p>
+    <div class="buttons">
+      <a class="btn btn-primary" href="mailto:orbiwest@gmail.com">Request Consultation</a>
+      <a class="btn btn-secondary" href="#services">Explore Services</a>
+    </div>
+  </div>
 </header>
 
-<section>
-<h2 class="gold">Our Services</h2>
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">Enterprise Services for a <span>Connected World</span></h2>
+    <p class="section-sub">Technology infrastructure and global business support designed for growing organizations.</p>
 
-<div class="card">Managed IT Services</div>
-<div class="card">Network Engineering</div>
-<div class="card">Cybersecurity</div>
-<div class="card">Cloud Solutions</div>
-<div class="card">Server Administration</div>
-<div class="card">IT Consulting</div>
-<div class="card">Import & Export</div>
-<div class="card">Global Sourcing</div>
+```
+<div class="cards">
+  <div class="card"><div class="icon">🖥️</div><h3>Managed IT Services</h3><p>Reliable IT support, endpoint management, monitoring, backups, and operational support.</p></div>
+  <div class="card"><div class="icon">🌐</div><h3>Network Engineering</h3><p>LAN/WAN, wireless, firewall, VPN, routing, switching, and secure infrastructure design.</p></div>
+  <div class="card"><div class="icon">🛡️</div><h3>Cybersecurity</h3><p>Security-focused solutions for protection, risk reduction, firewall management, and compliance readiness.</p></div>
+  <div class="card"><div class="icon">☁️</div><h3>Cloud Solutions</h3><p>Cloud migration, Microsoft 365, backup, disaster recovery, and scalable cloud infrastructure.</p></div>
+  <div class="card"><div class="icon">🗄️</div><h3>Server Administration</h3><p>Windows and Linux server deployment, patching, monitoring, and performance optimization.</p></div>
+  <div class="card"><div class="icon">📊</div><h3>IT Consulting</h3><p>Technology planning, modernization, business continuity, and digital transformation guidance.</p></div>
+  <div class="card"><div class="icon">🚢</div><h3>Import & Export</h3><p>Global trade support, supplier coordination, sourcing, and international business enablement.</p></div>
+  <div class="card"><div class="icon">🌍</div><h3>Global Sourcing</h3><p>Connecting businesses with global suppliers, trade partners, and procurement opportunities.</p></div>
+</div>
+```
+
+  </div>
 </section>
 
-<section>
-<h2 class="gold">Contact</h2>
-<p>Email: orbiwest@gmail.com</p>
-<p>Chicago, Illinois, USA</p>
+<section id="about">
+  <div class="container split">
+    <div>
+      <h2 class="section-title">Built for <span>Technology and Trade</span></h2>
+      <p class="section-sub">Orbiwest Technologies bridges modern IT infrastructure with global business opportunities. We help organizations secure, manage, and scale their technology while enabling international sourcing and trade growth.</p>
+    </div>
+    <div class="panel">
+      <h3>Why Orbiwest?</h3>
+      <div class="list">
+        <div>✔ Security-focused technology approach</div>
+        <div>✔ Business-first IT solutions</div>
+        <div>✔ Global trade and sourcing mindset</div>
+        <div>✔ Scalable services for growing companies</div>
+        <div>✔ Professional support from Chicago, USA</div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section id="industries">
+  <div class="container">
+    <h2 class="section-title">Industries <span>Served</span></h2>
+    <p class="section-sub">Flexible solutions for organizations that depend on secure systems, reliable networks, and global operations.</p>
+    <div class="cards">
+      <div class="card"><h3>Education</h3><p>School IT support, devices, networks, and security.</p></div>
+      <div class="card"><h3>Healthcare</h3><p>Secure infrastructure and operational reliability.</p></div>
+      <div class="card"><h3>Retail</h3><p>Connectivity, systems support, and business continuity.</p></div>
+      <div class="card"><h3>Manufacturing</h3><p>Infrastructure, sourcing, and operational technology support.</p></div>
+      <div class="card"><h3>Logistics</h3><p>Trade, sourcing, and technology-enabled operations.</p></div>
+      <div class="card"><h3>Small Business</h3><p>Affordable and scalable IT services.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container" style="text-align:center">
+    <h2 class="section-title">Let’s Build Your Next <span>Technology Advantage</span></h2>
+    <p class="section-sub" style="margin:auto">For IT services, cybersecurity, cloud, network engineering, or global sourcing inquiries, contact Orbiwest Technologies.</p>
+    <a class="email-box" href="mailto:orbiwest@gmail.com">orbiwest@gmail.com</a>
+    <p style="margin-top:20px;color:#dbe8ff">Chicago, Illinois, USA</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Orbiwest Technologies. All Rights Reserved.
+</footer>
 
 </body>
 </html>
