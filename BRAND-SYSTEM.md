@@ -21,6 +21,15 @@ Website: `https://orbiwest.com`
 | Metallic Silver | `#C0C6CF` | Metallic/neutral brand accent |
 | Chrome White | `#F6F8FB` | Light text/background |
 
+## Approved website logo assets
+
+Use these web-optimized files for visible public branding. They are derived from the approved high-resolution metallic masters in the Orbiwest brand pack rather than from the simplified flat SVG reconstruction.
+
+- Horizontal header/wordmark: `assets/img/orbiwest-logo-horizontal-metallic-web.webp`
+- Standalone metallic orbital symbol: `assets/img/orbiwest-symbol-metallic-web.webp`
+
+The older `logo-mark.svg` and `logo-lockup.svg` files are not the primary visual identity for prominent public branding and should not be substituted for these approved metallic exports.
+
 ## Visual rules
 
 - The approved identity is metallic silver + blue on deep navy or clean light backgrounds.
