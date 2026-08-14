@@ -1,0 +1,12 @@
+/* Orbiwest Technologies — site-wide V4 polish
+   Keeps the approved metallic identity consistent on interior pages.
+*/
+.brand-horizontal img{display:block!important;width:180px!important;height:auto!important;max-width:38vw!important;object-fit:contain!important;filter:none!important}
+.footer-brand img{width:46px!important;height:auto!important;object-fit:contain!important;border-radius:0!important;filter:none!important}
+.hq-logo-lockup,.hq-clean-lockup{width:min(100%,500px)!important;height:auto!important;object-fit:contain!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;filter:drop-shadow(0 16px 26px rgba(0,0,0,.22))!important}
+.hero{background:#0B1A2D!important}
+.hero-page .hero-inner{min-height:420px!important}
+.hero h1{font-size:clamp(2.6rem,4.5vw,4.3rem)!important;line-height:1.04!important;letter-spacing:-.04em!important}
+.site-header{box-shadow:none!important}
+.service-card,.industry-card,.insight-card,.case-card,.value-card,.process-card,.metric-card,.related-card,.about-panel,.contact-card-large{box-shadow:none!important}
+@media(max-width:700px){.brand-horizontal img{width:155px!important;max-width:55vw!important}.hero-page .hero-inner{min-height:0!important}.hero h1{font-size:clamp(2.35rem,10.5vw,3.25rem)!important}}
