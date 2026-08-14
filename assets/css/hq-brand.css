@@ -1,0 +1,110 @@
+/* Orbiwest Technologies HQ Brand Layer — 2026 */
+:root{
+  --navy-950:#020a15;
+  --navy-900:#061426;
+  --navy-850:#081a30;
+  --navy-800:#0b213b;
+  --navy-700:#10395f;
+  --navy-600:#0a6ed1;
+  --gold-500:#19b5ff;
+  --gold-400:#55d7ff;
+  --gold-300:#bfeeff;
+  --white:#f8fbff;
+  --slate-100:#edf4fb;
+  --slate-200:#d9e4ef;
+  --slate-300:#b7c6d6;
+  --slate-400:#8fa2b8;
+  --slate-500:#667b93;
+  --success:#49d99a;
+  --border:rgba(174,205,236,.13);
+  --border-strong:rgba(25,181,255,.32);
+  --panel:rgba(8,26,48,.88);
+  --panel-dark:rgba(2,10,21,.96);
+}
+
+html,body{background:#020a15}
+body{
+  background:
+    radial-gradient(circle at 12% 4%,rgba(0,123,255,.18),transparent 34%),
+    radial-gradient(circle at 88% 8%,rgba(0,208,255,.10),transparent 30%),
+    linear-gradient(180deg,#020a15 0%,#061426 40%,#020812 100%);
+}
+body::before{
+  background-image:
+    linear-gradient(rgba(92,179,255,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(92,179,255,.028) 1px,transparent 1px);
+}
+.site-header{background:rgba(2,10,21,.82);border-bottom-color:rgba(145,199,255,.10)}
+.site-header.is-scrolled{background:rgba(2,10,21,.96)}
+.brand img{width:58px;height:58px;filter:drop-shadow(0 0 18px rgba(25,181,255,.28))}
+.brand-text strong{
+  font-family:"Segoe UI",Inter,ui-sans-serif,system-ui,sans-serif;
+  font-size:1.2rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  background:linear-gradient(180deg,#fff 4%,#dbe4ee 40%,#8d9baa 67%,#f5f8fb 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 2px 5px rgba(0,0,0,.3);
+}
+.brand-text em{color:#47c8ff;text-transform:uppercase;letter-spacing:.28em;font-size:.68rem;font-weight:700}
+.site-nav .nav-cta,.button-primary{
+  color:#fff;
+  background:linear-gradient(180deg,#19b5ff,#087be6);
+  box-shadow:0 14px 38px rgba(0,123,255,.22);
+}
+.site-nav .nav-cta:hover,.button-primary:hover{background:linear-gradient(180deg,#45ccff,#0b86ef)}
+:focus-visible{outline-color:#55d7ff}
+.eyebrow,.eyebrow-small{color:#26bfff}
+.hero h1 span,.section-heading h2 span{color:#24bfff}
+.hero-grid{background-image:linear-gradient(rgba(74,171,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(74,171,255,.035) 1px,transparent 1px)}
+.map-card{
+  border-color:rgba(110,194,255,.15);
+  background:linear-gradient(180deg,rgba(10,33,61,.90),rgba(2,11,23,.97)),radial-gradient(circle at 70% 20%,rgba(16,160,255,.16),transparent 35%);
+}
+.map-card::before{border-color:rgba(25,181,255,.18)}
+.pulse{background:radial-gradient(circle at 35% 35%,#dff9ff,#19b5ff);box-shadow:0 0 0 0 rgba(25,181,255,.5)}
+.trust-items span:not(:last-child)::after{background:#19b5ff}
+.service-card,.industry-card,.insight-card,.case-card,.value-card,.process-card,.metric-card,.related-card,.dashboard-panel,.architecture-panel,.cta-panel{
+  border-color:rgba(125,190,248,.13);
+}
+.service-card:hover,.industry-card:hover,.insight-card:hover,.case-card:hover,.related-card:hover{
+  border-color:rgba(25,181,255,.35);
+  box-shadow:0 24px 70px rgba(0,115,230,.12);
+}
+.service-icon,.industry-number,.read-more,.footer-brand em{color:#33c6ff}
+.status-pill{color:#bfeeff;border-color:rgba(25,181,255,.28);background:rgba(25,181,255,.08)}
+
+/* Natural, crisp logo treatment — never upscale a bitmap. */
+.hq-logo-lockup{display:block;width:min(100%,760px);height:auto;filter:drop-shadow(0 20px 45px rgba(0,0,0,.30))}
+.hq-logo-mark{display:block;width:100%;height:auto}
+
+/* Homepage HQ hero */
+.hero-hq .hero-inner{grid-template-columns:minmax(0,.95fr) minmax(380px,1.05fr);min-height:640px}
+.hero-hq .hero-copy{z-index:2}
+.hero-hq .hero-copy h1{max-width:14ch;font-size:clamp(3rem,5.9vw,5.8rem)}
+.hero-hq .hero-visual{min-height:520px}
+.hq-visual-shell{position:relative;width:min(100%,680px);aspect-ratio:1.18;display:grid;place-items:center}
+.hq-visual-shell::before{content:"";position:absolute;inset:10%;border-radius:50%;background:radial-gradient(circle,rgba(24,181,255,.22),rgba(0,104,218,.06) 45%,transparent 70%);filter:blur(25px)}
+.hq-orbit{position:absolute;border:1px solid rgba(64,186,255,.22);border-radius:50%;transform:rotate(-14deg)}
+.hq-orbit.one{width:82%;height:42%}.hq-orbit.two{width:66%;height:34%;transform:rotate(18deg)}
+.hq-dot{position:absolute;width:8px;height:8px;border-radius:50%;background:#65dcff;box-shadow:0 0 16px #2fc7ff}
+.hq-dot.a{top:24%;left:22%}.hq-dot.b{right:17%;top:41%}.hq-dot.c{bottom:24%;left:42%}
+.hq-visual-shell img{position:relative;z-index:2;width:min(78%,470px);filter:drop-shadow(0 30px 50px rgba(0,0,0,.42)) drop-shadow(0 0 22px rgba(0,145,255,.16))}
+
+/* Cleaner section surfaces */
+.section-alt{background:linear-gradient(180deg,rgba(15,43,77,.22),rgba(3,13,27,.26))}
+.dashboard-panel,.architecture-panel{background:linear-gradient(180deg,rgba(10,31,56,.84),rgba(3,13,26,.94))}
+.footer{background:#020914}
+
+@media (max-width:900px){
+  .hero-hq .hero-inner{grid-template-columns:1fr;min-height:auto}
+  .hero-hq .hero-visual{min-height:390px;order:-1}
+  .hq-visual-shell{max-width:520px}
+  .brand-text strong{font-size:1rem;letter-spacing:.08em}
+  .brand-text em{letter-spacing:.18em}
+}
+@media (max-width:560px){
+  .brand img{width:46px;height:46px}
+  .hero-hq .hero-visual{min-height:310px}
+}

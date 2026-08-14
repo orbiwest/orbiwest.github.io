@@ -1,42 +1,16 @@
-<svg width="720" height="450" viewBox="0 0 720 450" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="ocean" x1="360" y1="20" x2="360" y2="430" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#5DB7FF" stop-opacity="0.22"/>
-      <stop offset="1" stop-color="#071A2E" stop-opacity="0.20"/>
-    </linearGradient>
-    <linearGradient id="route" x1="108" y1="94" x2="630" y2="354" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F5A623"/>
-      <stop offset=".55" stop-color="#5DB7FF"/>
-      <stop offset="1" stop-color="#F5A623"/>
-    </linearGradient>
-    <filter id="soft" x="-12%" y="-12%" width="124%" height="124%">
-      <feGaussianBlur stdDeviation="5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-  <rect x="24" y="22" width="672" height="406" rx="32" fill="url(#ocean)" stroke="rgba(255,255,255,0.10)"/>
-  <path d="M128 143L150 127L194 118L220 135L239 151L242 171L225 183L182 183L151 175L129 159L128 143Z" fill="#CFE7FF" fill-opacity=".78"/>
-  <path d="M208 205L226 194L252 197L260 222L243 237L217 230L208 205Z" fill="#CFE7FF" fill-opacity=".70"/>
-  <path d="M334 116L375 103L441 108L488 123L533 147L559 180L575 208L560 230L519 226L488 208L470 184L431 164L390 154L352 151L328 139L334 116Z" fill="#DCEEFF" fill-opacity=".82"/>
-  <path d="M428 181L448 195L463 225L454 251L438 287L418 325L398 342L376 334L383 300L398 273L406 240L412 207L428 181Z" fill="#DCEEFF" fill-opacity=".76"/>
-  <path d="M526 276L551 285L570 301L587 323L572 339L545 337L529 313L526 276Z" fill="#DCEEFF" fill-opacity=".76"/>
-  <path d="M545 159L569 149L605 154L628 165L626 181L603 187L585 183L570 175L545 159Z" fill="#D9EDFF" fill-opacity=".82"/>
-  <g stroke="url(#route)" stroke-width="2.6" stroke-linecap="round" fill="none" filter="url(#soft)">
-    <path d="M184 148C260 102 343 96 432 118C496 135 554 166 590 173"/>
-    <path d="M200 213C258 191 323 181 387 197C444 212 506 244 544 287"/>
-    <path d="M454 327C430 298 420 260 430 223C442 185 465 152 503 128"/>
-    <path d="M160 152C132 188 125 223 140 262C158 308 208 334 282 344"/>
-    <path d="M225 183C280 245 358 281 470 284C520 286 558 307 587 323"/>
-  </g>
-  <g filter="url(#soft)">
-    <circle cx="182" cy="148" r="5" fill="#F5A623"/>
-    <circle cx="430" cy="118" r="5" fill="#F5A623"/>
-    <circle cx="590" cy="173" r="5" fill="#F5A623"/>
-    <circle cx="544" cy="287" r="5" fill="#F5A623"/>
-    <circle cx="454" cy="327" r="5" fill="#F5A623"/>
-    <circle cx="200" cy="213" r="5" fill="#F5A623"/>
-    <circle cx="282" cy="344" r="4" fill="#5DB7FF"/>
-    <circle cx="503" cy="128" r="4" fill="#5DB7FF"/>
-    <circle cx="387" cy="197" r="4" fill="#5DB7FF"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="t d">
+<title id="t">Orbiwest global network</title><desc id="d">A crisp blue vector world network with connection arcs.</desc>
+<defs>
+ <radialGradient id="g" cx="0" cy="0" r="1" gradientTransform="translate(480 260) scale(430 230)"><stop stop-color="#0b315a"/><stop offset="1" stop-color="#04101d"/></radialGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="960" height="520" rx="34" fill="url(#g)"/>
+<g fill="#0c73d5" opacity=".7">
+ <path d="M118 175l42-39 58-19 52 10 19 31-28 19-3 33-49 8-35 28-39-15-17-56Zm195 46 37-25 43 4 27 30-14 34-34 17-32-17-27-43Zm151-75 44-22 61 8 35 24 50-2 35 21-12 29-46 7-22 33-48-4-24-34-39-6-14-54Zm155 129 31-28 48 4 22 31-16 31-45 12-37-18-3-32Zm94 49 48-5 24 19-8 29-42 18-36-14-10-24 24-23Zm-235-20 31-18 33 16 8 35-22 28-36 5-25-22-9-44Zm-83 92 35-21 27 15-4 40-29 20-30-19 1-35Z"/>
+</g>
+<g fill="none" stroke="#29bfff" stroke-width="2" opacity=".6">
+ <path d="M170 197Q348 65 530 189"/><path d="M170 197Q455 88 741 338"/><path d="M373 238Q560 124 675 295"/><path d="M508 330Q613 234 741 338"/><path d="M395 416Q564 263 675 295"/>
+</g>
+<g fill="#77e6ff" filter="url(#glow)"><circle cx="170" cy="197" r="5"/><circle cx="373" cy="238" r="5"/><circle cx="530" cy="189" r="5"/><circle cx="675" cy="295" r="5"/><circle cx="741" cy="338" r="5"/><circle cx="508" cy="330" r="5"/><circle cx="395" cy="416" r="5"/></g>
+<g fill="#c8f5ff" opacity=".55"><circle cx="228" cy="145" r="2"/><circle cx="298" cy="181" r="2"/><circle cx="451" cy="154" r="2"/><circle cx="603" cy="210" r="2"/><circle cx="704" cy="232" r="2"/><circle cx="624" cy="363" r="2"/><circle cx="455" cy="377" r="2"/></g>
 </svg>

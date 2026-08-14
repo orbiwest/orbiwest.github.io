@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="t d">
+<title id="t">Orbiwest secure connected infrastructure</title><desc id="d">A clean vector network diagram representing cloud, endpoints, servers and security.</desc>
+<defs>
+ <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0B213B"/><stop offset="1" stop-color="#04101D"/></linearGradient>
+ <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#55D7FF"/><stop offset=".5" stop-color="#087BE6"/><stop offset="1" stop-color="#043B8C"/></linearGradient>
+ <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".45" stop-color="#b5c2cf"/><stop offset="1" stop-color="#718092"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="960" height="540" rx="36" fill="url(#panel)"/>
+<g opacity=".55" stroke="#2bbfff" stroke-width="2">
+ <path d="M480 270L202 142M480 270L758 142M480 270L176 396M480 270L784 396M480 270V438"/>
+</g>
+<g fill="#33c9ff" filter="url(#glow)"><circle cx="480" cy="270" r="8"/><circle cx="202" cy="142" r="5"/><circle cx="758" cy="142" r="5"/><circle cx="176" cy="396" r="5"/><circle cx="784" cy="396" r="5"/><circle cx="480" cy="438" r="5"/></g>
+<g transform="translate(350 150)">
+ <path d="M88 80c-22 0-39-15-39-35 0-18 14-32 32-35 8-22 30-38 56-38 31 0 56 23 59 51 21 2 37 17 37 36 0 21-19 38-43 38H88Z" fill="url(#silver)" stroke="#e8f5ff" stroke-width="3"/>
+ <path d="M134 9C104 9 82 32 82 62c0 24 15 45 37 51-12-12-20-28-20-46 0-25 14-45 38-55l-3-3Z" fill="url(#blue)"/>
+ <path d="M84 97c17 15 41 21 67 14 30-8 51-30 55-55-9 16-30 28-55 35-27 7-52 5-67 6Z" fill="url(#silver)"/>
+</g>
+<g transform="translate(120 78)"><rect width="164" height="128" rx="20" fill="#07192d" stroke="#2a6594"/><rect x="32" y="28" width="100" height="58" rx="8" fill="#0d3157" stroke="#2ec8ff"/><path d="M50 104h64" stroke="#a8c1d7" stroke-width="8" stroke-linecap="round"/></g>
+<g transform="translate(676 78)"><rect width="164" height="128" rx="20" fill="#07192d" stroke="#2a6594"/><path d="M50 92V42h64v50M62 42V28h40v14" fill="none" stroke="#2ec8ff" stroke-width="8"/><path d="M46 101h72" stroke="#a8c1d7" stroke-width="8" stroke-linecap="round"/></g>
+<g transform="translate(92 326)"><rect width="170" height="134" rx="20" fill="#07192d" stroke="#2a6594"/><path d="M85 28l38 14v29c0 25-17 42-38 51-21-9-38-26-38-51V42l38-14Z" fill="#0a4c94" stroke="#45d3ff" stroke-width="4"/><path d="m67 72 12 12 25-29" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(698 326)"><rect width="170" height="134" rx="20" fill="#07192d" stroke="#2a6594"/><ellipse cx="85" cy="45" rx="40" ry="16" fill="#0a4c94" stroke="#45d3ff" stroke-width="4"/><path d="M45 45v44c0 9 18 16 40 16s40-7 40-16V45M45 67c0 9 18 16 40 16s40-7 40-16" fill="none" stroke="#45d3ff" stroke-width="4"/></g>
+<g transform="translate(405 392)"><rect width="150" height="94" rx="20" fill="#07192d" stroke="#2a6594"/><circle cx="50" cy="47" r="16" fill="none" stroke="#45d3ff" stroke-width="5"/><path d="M82 36h42M82 48h34M82 60h28" stroke="#b7c6d6" stroke-width="6" stroke-linecap="round"/></g>
+</svg>

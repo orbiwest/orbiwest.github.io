@@ -1,15 +1,28 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#071A2E"/>
-  <circle cx="950" cy="80" r="250" fill="#143658" fill-opacity=".52"/>
-  <circle cx="120" cy="560" r="220" fill="#0E2743" fill-opacity=".65"/>
-  <rect x="80" y="80" width="1040" height="470" rx="38" fill="#0A2038" stroke="rgba(255,255,255,.12)"/>
-  <text x="130" y="225" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="700">Orbiwest Technologies</text>
-  <text x="130" y="305" fill="#F5A623" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700">Connecting Technology. Enabling Global Trade.</text>
-  <text x="130" y="375" fill="#D4E0EF" font-family="Arial, Helvetica, sans-serif" font-size="28">Managed IT · Cybersecurity · Cloud · Network Engineering · Global Trade</text>
-  <path d="M790 410C850 318 965 307 1050 372" stroke="#F5A623" stroke-width="6" stroke-linecap="round"/>
-  <path d="M760 455C842 490 964 488 1080 424" stroke="#5DB7FF" stroke-width="6" stroke-linecap="round"/>
-  <circle cx="790" cy="410" r="10" fill="#F5A623"/>
-  <circle cx="1050" cy="372" r="10" fill="#F5A623"/>
-  <circle cx="760" cy="455" r="10" fill="#5DB7FF"/>
-  <circle cx="1080" cy="424" r="10" fill="#5DB7FF"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="t d">
+<title id="t">Orbiwest Technologies</title><desc id="d">Orbiwest Technologies brand card with blue and silver orbital logo and technology services.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630"><stop stop-color="#020914"/><stop offset=".5" stop-color="#061426"/><stop offset="1" stop-color="#03101e"/></linearGradient>
+  <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(228 290) rotate(10) scale(370 300)"><stop stop-color="#087BE6" stop-opacity=".34"/><stop offset="1" stop-color="#087BE6" stop-opacity="0"/></radialGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".28" stop-color="#dce5ee"/><stop offset=".56" stop-color="#7d8998"/><stop offset=".78" stop-color="#f4f8fb"/><stop offset="1" stop-color="#a3b1bf"/></linearGradient>
+  <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#60ddff"/><stop offset=".35" stop-color="#0da7ff"/><stop offset=".72" stop-color="#087BE6"/><stop offset="1" stop-color="#043b8c"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="10" flood-color="#000" flood-opacity=".42"/></filter>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0V44" fill="none" stroke="#56bfff" stroke-opacity=".045"/></pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/><rect width="1200" height="630" fill="url(#grid)"/><rect width="1200" height="630" fill="url(#glow)"/>
+<g transform="translate(72 93) scale(1.35)" filter="url(#shadow)">
+  <path d="M162 38C105 38 63 81 63 137c0 46 29 84 70 96-23-22-37-53-37-87 0-48 27-86 72-105-2-.2-4-.5-6-.5Z" fill="url(#blue)" stroke="#bfefff" stroke-width="2"/>
+  <path d="M165 72c49 0 88 40 88 89 0 39-25 73-60 85 17-18 27-42 27-68 0-47-33-87-77-98 7-4 14-6 22-8Z" fill="url(#metal)" stroke="#f6fafe" stroke-width="2"/>
+  <path d="M52 212c32 28 79 40 128 27 56-15 97-56 105-104-18 30-57 54-103 66-51 14-99 10-130 11Z" fill="url(#metal)" stroke="#eaf3fb" stroke-width="2"/>
+  <path d="M116 274c40 9 88-3 123-33 17-14 30-31 39-49-8 32-28 62-57 81-33 21-72 25-105 1Z" fill="url(#blue)"/>
+  <path d="M258 56l7 19 19 7-19 7-7 19-7-19-19-7 19-7 7-19Z" fill="#2ec8ff"/><path d="M285 104l4 11 11 4-11 4-4 11-4-11-11-4 11-4 4-11Z" fill="#2ec8ff"/>
+</g>
+<g transform="translate(490 170)">
+  <text x="0" y="0" dominant-baseline="hanging" font-family="Arial,Helvetica,sans-serif" font-size="92" font-weight="700" letter-spacing="8" fill="url(#metal)" stroke="#5e6d7c" stroke-width="1.2">ORBIWΞST</text>
+  <text x="7" y="116" dominant-baseline="hanging" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="600" letter-spacing="16" fill="#dbe7f1">TECHNOLOGIES</text>
+  <rect x="7" y="176" width="650" height="2" fill="url(#blue)"/>
+  <text x="7" y="214" dominant-baseline="hanging" font-family="Arial,Helvetica,sans-serif" font-size="34" fill="#f4f8fb">Connecting Technology.</text>
+  <text x="365" y="214" dominant-baseline="hanging" font-family="Arial,Helvetica,sans-serif" font-size="34" fill="#22bfff">Enabling Global Trade.</text>
+  <text x="7" y="278" dominant-baseline="hanging" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#9fb2c5">Managed IT • Network Engineering • Cybersecurity • Cloud • Consulting</text>
+</g>
+<circle cx="1070" cy="95" r="4" fill="#38ccff"/><circle cx="1110" cy="130" r="3" fill="#38ccff"/><circle cx="1030" cy="145" r="2.5" fill="#38ccff"/>
 </svg>

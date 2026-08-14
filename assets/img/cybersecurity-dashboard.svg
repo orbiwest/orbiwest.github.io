@@ -1,27 +1,13 @@
-<svg width="900" height="460" viewBox="0 0 900 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="900" height="460" rx="28" fill="#071A2E"/>
-  <rect x="24" y="24" width="852" height="412" rx="22" fill="#0A2038" stroke="rgba(255,255,255,0.10)"/>
-  <rect x="50" y="56" width="240" height="80" rx="18" fill="#102B47" stroke="rgba(245,166,35,0.22)"/>
-  <rect x="316" y="56" width="240" height="80" rx="18" fill="#102B47" stroke="rgba(93,183,255,0.18)"/>
-  <rect x="582" y="56" width="240" height="80" rx="18" fill="#102B47" stroke="rgba(72,213,151,0.18)"/>
-  <text x="75" y="90" fill="#B7C5D8" font-family="Arial" font-size="16">Threat exposure</text>
-  <text x="75" y="120" fill="#F5A623" font-family="Arial" font-size="30" font-weight="700">Low</text>
-  <text x="341" y="90" fill="#B7C5D8" font-family="Arial" font-size="16">Endpoint posture</text>
-  <text x="341" y="120" fill="#5DB7FF" font-family="Arial" font-size="30" font-weight="700">97%</text>
-  <text x="607" y="90" fill="#B7C5D8" font-family="Arial" font-size="16">Backup readiness</text>
-  <text x="607" y="120" fill="#48D597" font-family="Arial" font-size="30" font-weight="700">92%</text>
-  <rect x="50" y="170" width="365" height="224" rx="20" fill="#061B2F" stroke="rgba(255,255,255,0.08)"/>
-  <rect x="443" y="170" width="379" height="224" rx="20" fill="#061B2F" stroke="rgba(255,255,255,0.08)"/>
-  <text x="75" y="204" fill="#FFFFFF" font-family="Arial" font-size="20" font-weight="700">Security events</text>
-  <path d="M75 348C120 306 151 326 188 278C221 235 256 278 292 238C324 203 354 221 388 190" stroke="#F5A623" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M75 360C130 350 170 368 226 334C280 301 320 314 388 278" stroke="#5DB7FF" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <text x="468" y="204" fill="#FFFFFF" font-family="Arial" font-size="20" font-weight="700">Control coverage</text>
-  <circle cx="555" cy="286" r="74" stroke="#143658" stroke-width="22"/>
-  <circle cx="555" cy="286" r="74" stroke="#F5A623" stroke-width="22" stroke-dasharray="360 120" stroke-linecap="round"/>
-  <circle cx="710" cy="286" r="74" stroke="#143658" stroke-width="22"/>
-  <circle cx="710" cy="286" r="74" stroke="#5DB7FF" stroke-width="22" stroke-dasharray="320 160" stroke-linecap="round"/>
-  <text x="526" y="294" fill="#FFFFFF" font-family="Arial" font-size="26" font-weight="700">86%</text>
-  <text x="681" y="294" fill="#FFFFFF" font-family="Arial" font-size="26" font-weight="700">78%</text>
-  <text x="514" y="378" fill="#B7C5D8" font-family="Arial" font-size="13">Policy</text>
-  <text x="667" y="378" fill="#B7C5D8" font-family="Arial" font-size="13">Identity</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="t d">
+<title id="t">Orbiwest cybersecurity dashboard</title><desc id="d">A crisp vector security dashboard with shield, network and operational panels.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#081b31"/><stop offset="1" stop-color="#03101e"/></linearGradient><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#55d7ff"/><stop offset=".55" stop-color="#087be6"/><stop offset="1" stop-color="#043b8c"/></linearGradient><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".5" stop-color="#b9c6d3"/><stop offset="1" stop-color="#718093"/></linearGradient></defs>
+<rect width="960" height="520" rx="34" fill="url(#bg)"/>
+<g stroke="#1f527d" fill="#061629"><rect x="38" y="40" width="250" height="125" rx="18"/><rect x="38" y="185" width="250" height="135" rx="18"/><rect x="38" y="340" width="250" height="140" rx="18"/><rect x="672" y="40" width="250" height="170" rx="18"/><rect x="672" y="230" width="250" height="250" rx="18"/></g>
+<g transform="translate(365 95)"><path d="M115 0l105 38v77c0 69-48 114-105 138C58 229 10 184 10 115V38L115 0Z" fill="#073f7e" stroke="url(#s)" stroke-width="9"/><path d="M115 28l80 29v58c0 51-35 86-80 105-45-19-80-54-80-105V57l80-29Z" fill="url(#b)" opacity=".82"/><path d="M87 117l21 21 42-49" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g fill="#45d5ff"><circle cx="480" cy="394" r="8"/><circle cx="399" cy="365" r="5"/><circle cx="562" cy="365" r="5"/><circle cx="420" cy="433" r="5"/><circle cx="542" cy="433" r="5"/></g><g stroke="#45d5ff" stroke-width="3" opacity=".55"><path d="M480 394L399 365M480 394L562 365M480 394L420 433M480 394L542 433"/></g>
+<g font-family="Arial" fill="#c4d3e1"><text x="60" y="70" font-size="13" letter-spacing="2">ENDPOINT STATUS</text><text x="60" y="218" font-size="13" letter-spacing="2">SECURITY CONTROLS</text><text x="60" y="373" font-size="13" letter-spacing="2">OPERATIONS</text><text x="695" y="70" font-size="13" letter-spacing="2">NETWORK VISIBILITY</text><text x="695" y="260" font-size="13" letter-spacing="2">SERVICE AREAS</text></g>
+<g fill="#2dc9ff"><rect x="60" y="92" width="150" height="10" rx="5"/><rect x="60" y="115" width="110" height="8" rx="4" opacity=".65"/><rect x="60" y="138" width="82" height="8" rx="4" opacity=".45"/><rect x="60" y="245" width="175" height="9" rx="4"/><rect x="60" y="270" width="142" height="9" rx="4" opacity=".65"/><rect x="60" y="295" width="121" height="9" rx="4" opacity=".45"/></g>
+<g fill="none" stroke="#2dc9ff" stroke-width="4"><path d="M62 444l38-31 37 16 38-55 38 24 40-52"/><circle cx="100" cy="413" r="4" fill="#2dc9ff"/><circle cx="137" cy="429" r="4" fill="#2dc9ff"/><circle cx="175" cy="374" r="4" fill="#2dc9ff"/><circle cx="213" cy="398" r="4" fill="#2dc9ff"/></g>
+<g transform="translate(690 92)" fill="none" stroke="#32cdff" stroke-width="3"><circle cx="64" cy="47" r="13"/><circle cx="151" cy="24" r="11"/><circle cx="183" cy="91" r="12"/><circle cx="96" cy="120" r="11"/><path d="M64 47l87-23M64 47l32 73M151 24l32 67M96 120l87-29"/></g>
+<g transform="translate(696 292)" font-family="Arial"><g fill="#0b3157" stroke="#2c6ea6"><rect width="204" height="42" rx="12"/><rect y="56" width="204" height="42" rx="12"/><rect y="112" width="204" height="42" rx="12"/></g><g fill="#d5e3ef" font-size="15"><text x="16" y="26">Managed IT</text><text x="16" y="82">Network Security</text><text x="16" y="138">Cloud &amp; Identity</text></g><g fill="#2dc9ff"><circle cx="178" cy="21" r="6"/><circle cx="178" cy="77" r="6"/><circle cx="178" cy="133" r="6"/></g></g>
 </svg>
