@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360" role="img" aria-labelledby="t d">
+<title id="t">ORBIWΞST TECHNOLOGIES</title><desc id="d">Orbiwest Technologies metallic blue and silver corporate wordmark.</desc>
+<defs>
+  <linearGradient id="blue" x1="55" y1="35" x2="284" y2="311" gradientUnits="userSpaceOnUse"><stop stop-color="#66E0FF"/><stop offset=".2" stop-color="#16B7FF"/><stop offset=".5" stop-color="#087BE6"/><stop offset=".8" stop-color="#06499D"/><stop offset="1" stop-color="#032957"/></linearGradient>
+  <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".22" stop-color="#e7edf3"/><stop offset=".48" stop-color="#8793a1"/><stop offset=".7" stop-color="#cbd4dd"/><stop offset=".88" stop-color="#f8fbff"/><stop offset="1" stop-color="#788696"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-30%" width="150%" height="180%"><feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000815" flood-opacity=".5"/></filter>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g transform="translate(24 12) scale(.98)" filter="url(#shadow)">
+  <path d="M162 38C105 38 63 81 63 137c0 46 29 84 70 96-23-22-37-53-37-87 0-48 27-86 72-105-2-.2-4-.5-6-.5Z" fill="url(#blue)" stroke="#BFEFFF" stroke-width="2.4"/>
+  <path d="M165 72c49 0 88 40 88 89 0 39-25 73-60 85 17-18 27-42 27-68 0-47-33-87-77-98 7-4 14-6 22-8Z" fill="url(#silver)" stroke="#F6FAFE" stroke-width="2"/>
+  <path d="M52 212c32 28 79 40 128 27 56-15 97-56 105-104-18 30-57 54-103 66-51 14-99 10-130 11Z" fill="url(#silver)" stroke="#EAF3FB" stroke-width="2"/>
+  <path d="M116 274c40 9 88-3 123-33 17-14 30-31 39-49-8 32-28 62-57 81-33 21-72 25-105 1Z" fill="url(#blue)"/>
+  <g fill="#2EC8FF" stroke="#D9F7FF" stroke-width="1.5" filter="url(#glow)"><path d="M258 56l7 19 19 7-19 7-7 19-7-19-19-7 19-7 7-19Z"/><path d="M286 105l4 11 11 4-11 4-4 11-4-11-11-4 11-4 4-11Z"/></g>
+</g>
+<g transform="translate(355 65)" filter="url(#shadow)">
+  <text x="0" y="0" dominant-baseline="hanging" font-family="Arial,Helvetica,sans-serif" font-size="142" font-weight="700" letter-spacing="13" fill="url(#silver)" stroke="#5c6876" stroke-width="1.2">ORBIWΞST</text>
+  <rect x="5" y="190" width="950" height="2" fill="url(#blue)" opacity=".9"/>
+  <text x="18" y="210" dominant-baseline="hanging" font-family="Arial,Helvetica,sans-serif" font-size="39" font-weight="600" letter-spacing="22" fill="#dce7f1">TECHNOLOGIES</text>
+</g>
+</svg>

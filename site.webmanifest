@@ -1,15 +1,16 @@
 {
-  "name": "Orbiwest Technologies",
+  "name": "Orbiwest Technologies LLC",
   "short_name": "Orbiwest",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#071A2E",
-  "theme_color": "#071A2E",
+  "background_color": "#020A15",
+  "theme_color": "#061426",
   "icons": [
     {
       "src": "/assets/img/favicon.svg",
-      "sizes": "64x64",
-      "type": "image/svg+xml"
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ]
 }
