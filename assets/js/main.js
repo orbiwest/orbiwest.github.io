@@ -1,12 +1,14 @@
 /* Orbiwest Technologies HQ site bootstrap.
-   Normalizes the legacy multi-page site to the current HQ brand without
-   duplicating markup across every static page, then loads the preserved
-   interaction layer from base.js. */
+   Keeps legacy static pages consistent with the current HQ identity while
+   preserving the original interaction layer in base.js. */
 (() => {
   'use strict';
 
   const INFO_EMAIL = 'info@orbiwest.com';
   const SUPPORT_EMAIL = 'support@orbiwest.com';
+  const HQ_MARK = '/assets/img/orbiwest-logo-mark-hq.webp';
+  const HQ_LOCKUP = '/assets/img/orbiwest-logo-lockup-hq.webp';
+  const HQ_BRAND = '/assets/img/orbiwest-hq-brand-hero.webp';
 
   function replaceEmailText(root = document) {
     const walker = document.createTreeWalker(root.body || root, NodeFilter.SHOW_TEXT);
@@ -17,9 +19,12 @@
         node.nodeValue = node.nodeValue.replaceAll('orbiwest@gmail.com', INFO_EMAIL);
       }
     });
+
     root.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
       const href = link.getAttribute('href') || '';
-      if (href.includes('orbiwest@gmail.com')) link.setAttribute('href', href.replaceAll('orbiwest@gmail.com', INFO_EMAIL));
+      if (href.includes('orbiwest@gmail.com')) {
+        link.setAttribute('href', href.replaceAll('orbiwest@gmail.com', INFO_EMAIL));
+      }
     });
   }
 
@@ -31,26 +36,67 @@
           if (!value || typeof value !== 'object') return;
           if (value.email === 'orbiwest@gmail.com') value.email = INFO_EMAIL;
           if (value.name === 'Orbiwest Technologies') value.name = 'Orbiwest Technologies LLC';
+          if (typeof value.logo === 'string' && value.logo.includes('/assets/img/logo-mark.svg')) {
+            value.logo = `https://orbiwest.com${HQ_MARK}`;
+          }
           Object.values(value).forEach(update);
         };
         update(data);
         script.textContent = JSON.stringify(data);
-      } catch (_) {}
+      } catch (_) {
+        /* Leave custom JSON-LD untouched if it cannot be parsed. */
+      }
     });
   }
 
   function normalizeBrand() {
     document.querySelectorAll('.brand img, .footer-brand img').forEach((img) => {
-      img.setAttribute('src', '/assets/img/logo-mark.svg');
+      img.setAttribute('src', HQ_MARK);
+      img.removeAttribute('srcset');
+      img.style.imageRendering = 'auto';
       if (!img.getAttribute('alt')) img.setAttribute('alt', '');
     });
+
     document.querySelectorAll('.brand-text strong').forEach((node) => {
       node.textContent = 'ORBIWΞST';
       node.setAttribute('aria-label', 'Orbiwest');
     });
-    document.querySelectorAll('.brand-text em').forEach((node) => { node.textContent = 'TECHNOLOGIES'; });
+    document.querySelectorAll('.brand-text em').forEach((node) => {
+      node.textContent = 'TECHNOLOGIES';
+    });
     document.querySelectorAll('.footer-brand strong').forEach((node) => {
       if (!node.closest('.brand-text')) node.textContent = 'Orbiwest Technologies LLC';
+    });
+  }
+
+  function replaceLegacyGraphics() {
+    const mappings = [
+      { match: 'logo-lockup.svg', src: HQ_LOCKUP, alt: 'Orbiwest Technologies metallic corporate logo' },
+      { match: 'logo-mark.svg', src: HQ_MARK, alt: 'Orbiwest Technologies orbital logo' },
+      { match: 'hq-infrastructure.svg', src: HQ_BRAND, alt: 'Orbiwest Technologies HQ technology brand graphic' },
+      { match: 'world-map.svg', src: HQ_BRAND, alt: 'Orbiwest Technologies global technology brand graphic' },
+      { match: 'cloud-architecture.svg', src: HQ_BRAND, alt: 'Orbiwest Technologies cloud and infrastructure brand graphic' },
+      { match: 'cybersecurity-dashboard.svg', src: HQ_BRAND, alt: 'Orbiwest Technologies cybersecurity brand graphic' }
+    ];
+
+    document.querySelectorAll('img').forEach((img) => {
+      const current = img.getAttribute('src') || '';
+      const mapping = mappings.find((item) => current.includes(item.match));
+      if (!mapping) return;
+
+      img.setAttribute('src', mapping.src);
+      img.removeAttribute('srcset');
+      img.setAttribute('alt', mapping.alt);
+      img.classList.add('hq-photo-asset');
+      img.style.imageRendering = 'auto';
+
+      if (mapping.src === HQ_LOCKUP) {
+        img.classList.add('hq-lockup-real');
+        img.classList.remove('hq-photo-asset');
+      }
+      if (mapping.src === HQ_MARK) {
+        img.classList.remove('hq-photo-asset');
+      }
     });
   }
 
@@ -58,6 +104,9 @@
     document.querySelectorAll('.site-nav a, .footer-nav a').forEach((link) => {
       const href = link.getAttribute('href') || '';
       if (href.endsWith('/case-studies.html') || href === '/case-studies.html') link.remove();
+      if ((link.textContent || '').trim() === 'Insights' && link.closest('.site-nav')) {
+        link.textContent = 'Resources';
+      }
     });
   }
 
@@ -99,7 +148,7 @@
 
   function labelIllustrativeScenarios() {
     const path = location.pathname.toLowerCase();
-    const scenarioPages = ['/secure-school-network.html','/cloud-readiness-case-study.html','/trade-operations-case-study.html'];
+    const scenarioPages = ['/secure-school-network.html', '/cloud-readiness-case-study.html', '/trade-operations-case-study.html'];
     if (!scenarioPages.some((suffix) => path.endsWith(suffix))) return;
 
     document.title = document.title.replace(/Case Study/gi, 'Illustrative Scenario');
@@ -121,6 +170,7 @@
   replaceEmailText();
   normalizeStructuredData();
   normalizeBrand();
+  replaceLegacyGraphics();
   normalizeNavigation();
   normalizeFooter();
   addSupportLinkWhereAppropriate();
