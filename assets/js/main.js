@@ -3,8 +3,8 @@
   'use strict';
 
   const ENGINEERING_EMAIL = 'engineering@orbiwest.com';
-  const HQ_MARK = '/assets/img/logo-mark.svg';
-  const HQ_LOCKUP = '/assets/img/logo-lockup.svg';
+  const HQ_MARK = '/assets/img/orbiwest-symbol-metallic-web.webp';
+  const HQ_LOCKUP = '/assets/img/orbiwest-logo-horizontal-metallic-web.webp';
 
   function normalizeEmail() {
     const legacy = ['orbiwest@gmail.com', 'info@orbiwest.com', 'support@orbiwest.com'];
@@ -13,18 +13,13 @@
     while (walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach((node) => {
       if (!node.nodeValue) return;
-      legacy.forEach((email) => {
-        node.nodeValue = node.nodeValue.replaceAll(email, ENGINEERING_EMAIL);
-      });
+      legacy.forEach((email) => { node.nodeValue = node.nodeValue.replaceAll(email, ENGINEERING_EMAIL); });
     });
-
     document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
       let href = link.getAttribute('href') || '';
       legacy.forEach((email) => { href = href.replaceAll(email, ENGINEERING_EMAIL); });
       link.setAttribute('href', href);
-      if (legacy.some((email) => (link.textContent || '').includes(email))) {
-        link.textContent = ENGINEERING_EMAIL;
-      }
+      if (legacy.some((email) => (link.textContent || '').includes(email))) link.textContent = ENGINEERING_EMAIL;
     });
   }
 
@@ -41,39 +36,38 @@
         };
         visit(data);
         script.textContent = JSON.stringify(data);
-      } catch (_) {
-        /* Preserve custom structured data if it cannot be parsed. */
-      }
+      } catch (_) { /* Leave custom JSON-LD unchanged if it cannot be parsed. */ }
     });
   }
 
   function normalizeBrand() {
+    document.querySelectorAll('.brand-horizontal img').forEach((img) => {
+      img.src = HQ_LOCKUP;
+      img.alt = 'Orbiwest Technologies';
+      img.removeAttribute('srcset');
+      img.style.imageRendering = 'auto';
+      img.style.objectFit = 'contain';
+    });
     document.querySelectorAll('.brand:not(.brand-horizontal) img, .footer-brand img').forEach((img) => {
-      img.setAttribute('src', HQ_MARK);
+      img.src = HQ_MARK;
       img.removeAttribute('srcset');
       img.style.imageRendering = 'auto';
       img.style.objectFit = 'contain';
       if (!img.getAttribute('alt')) img.setAttribute('alt', '');
     });
-
-    document.querySelectorAll('.brand-text strong').forEach((node) => {
-      node.textContent = 'ORBIWΞST';
-      node.setAttribute('aria-label', 'Orbiwest');
-    });
-    document.querySelectorAll('.brand-text em').forEach((node) => {
-      node.textContent = 'TECHNOLOGIES';
-    });
-    document.querySelectorAll('.footer-brand strong').forEach((node) => {
-      if (!node.closest('.brand-text')) node.textContent = 'Orbiwest Technologies LLC';
-    });
-  }
-
-  function upgradeLogoLockups() {
-    document.querySelectorAll('img[src*="logo-lockup"], img.hq-clean-lockup').forEach((img) => {
+    document.querySelectorAll('img.hq-clean-lockup, img.hq-logo-lockup, img[src*="logo-lockup.svg"]').forEach((img) => {
       img.src = HQ_LOCKUP;
       img.alt = 'Orbiwest Technologies metallic corporate logo';
       img.classList.add('hq-logo-lockup');
       img.removeAttribute('srcset');
+    });
+    document.querySelectorAll('.brand-text strong').forEach((node) => {
+      node.textContent = 'ORBIWΞST';
+      node.setAttribute('aria-label', 'Orbiwest');
+    });
+    document.querySelectorAll('.brand-text em').forEach((node) => { node.textContent = 'TECHNOLOGIES'; });
+    document.querySelectorAll('.footer-brand strong').forEach((node) => {
+      if (!node.closest('.brand-text')) node.textContent = 'Orbiwest Technologies LLC';
     });
   }
 
@@ -103,13 +97,7 @@
   }
 
   function removeTemplateLanguage() {
-    const unwanted = new Set([
-      'Enterprise-grade visual identity',
-      'Framework-free static deployment',
-      'Free hosting compatibility',
-      'Email-only contact path',
-      'Designed for future expansion'
-    ]);
+    const unwanted = new Set(['Enterprise-grade visual identity','Framework-free static deployment','Free hosting compatibility','Email-only contact path','Designed for future expansion']);
     document.querySelectorAll('p, li').forEach((node) => {
       if (unwanted.has((node.textContent || '').trim())) node.remove();
     });
@@ -117,14 +105,12 @@
 
   function labelIllustrativeScenarios() {
     const path = location.pathname.toLowerCase();
-    const scenarioPages = ['/secure-school-network.html', '/cloud-readiness-case-study.html', '/trade-operations-case-study.html'];
+    const scenarioPages = ['/secure-school-network.html','/cloud-readiness-case-study.html','/trade-operations-case-study.html'];
     if (!scenarioPages.some((suffix) => path.endsWith(suffix))) return;
-
     document.title = document.title.replace(/Case Study/gi, 'Illustrative Scenario');
     document.querySelectorAll('.eyebrow').forEach((node) => {
       if (/case study/i.test(node.textContent || '')) node.textContent = 'Illustrative Scenario';
     });
-
     const main = document.getElementById('main-content');
     if (!main || main.querySelector('[data-scenario-notice]')) return;
     const notice = document.createElement('aside');
@@ -139,7 +125,6 @@
   normalizeEmail();
   normalizeStructuredData();
   normalizeBrand();
-  upgradeLogoLockups();
   normalizeNavigation();
   ensureEngineeringContact();
   removeTemplateLanguage();
