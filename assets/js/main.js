@@ -3,8 +3,8 @@
   'use strict';
 
   const ENGINEERING_EMAIL = 'engineering@orbiwest.com';
-  const HQ_MARK = '/assets/img/orbiwest-logo-mark-hq.webp';
-  const HQ_LOCKUP = '/assets/img/orbiwest-logo-lockup-hq.webp';
+  const HQ_MARK = '/assets/img/logo-mark.svg';
+  const HQ_LOCKUP = '/assets/img/logo-lockup.svg';
 
   function normalizeEmail() {
     const legacy = ['orbiwest@gmail.com', 'info@orbiwest.com', 'support@orbiwest.com'];
@@ -48,7 +48,7 @@
   }
 
   function normalizeBrand() {
-    document.querySelectorAll('.brand img, .footer-brand img').forEach((img) => {
+    document.querySelectorAll('.brand:not(.brand-horizontal) img, .footer-brand img').forEach((img) => {
       img.setAttribute('src', HQ_MARK);
       img.removeAttribute('srcset');
       img.style.imageRendering = 'auto';
@@ -69,7 +69,7 @@
   }
 
   function upgradeLogoLockups() {
-    document.querySelectorAll('img[src*="logo-lockup.svg"]').forEach((img) => {
+    document.querySelectorAll('img[src*="logo-lockup"], img.hq-clean-lockup').forEach((img) => {
       img.src = HQ_LOCKUP;
       img.alt = 'Orbiwest Technologies metallic corporate logo';
       img.classList.add('hq-logo-lockup');
