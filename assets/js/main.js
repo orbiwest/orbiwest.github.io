@@ -41,26 +41,35 @@
   }
 
   function normalizeBrand() {
-    document.querySelectorAll('.brand-horizontal img').forEach((img) => {
-      img.src = HQ_LOCKUP;
-      img.alt = 'Orbiwest Technologies';
-      img.removeAttribute('srcset');
-      img.style.imageRendering = 'auto';
-      img.style.objectFit = 'contain';
+    document.querySelectorAll('.site-header .brand').forEach((brand) => {
+      brand.classList.add('brand-official', 'brand-horizontal');
+      const img = brand.querySelector('img');
+      if (img) {
+        img.src = HQ_LOCKUP;
+        img.alt = 'Orbiwest Technologies';
+        img.removeAttribute('srcset');
+        img.style.imageRendering = 'auto';
+        img.style.objectFit = 'contain';
+      }
+      const text = brand.querySelector('.brand-text');
+      if (text) text.setAttribute('aria-hidden', 'true');
     });
-    document.querySelectorAll('.brand:not(.brand-horizontal) img, .footer-brand img').forEach((img) => {
+
+    document.querySelectorAll('.footer-brand img').forEach((img) => {
       img.src = HQ_MARK;
       img.removeAttribute('srcset');
       img.style.imageRendering = 'auto';
       img.style.objectFit = 'contain';
       if (!img.getAttribute('alt')) img.setAttribute('alt', '');
     });
+
     document.querySelectorAll('img.hq-clean-lockup, img.hq-logo-lockup, img[src*="logo-lockup.svg"]').forEach((img) => {
       img.src = HQ_LOCKUP;
       img.alt = 'Orbiwest Technologies metallic corporate logo';
       img.classList.add('hq-logo-lockup');
       img.removeAttribute('srcset');
     });
+
     document.querySelectorAll('.brand-text strong').forEach((node) => {
       node.textContent = 'ORBIWΞST';
       node.setAttribute('aria-label', 'Orbiwest');

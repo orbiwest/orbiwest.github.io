@@ -1,0 +1,137 @@
+/* Orbiwest Technologies — Dark Metallic Homepage Theme
+   Visual-only overrides. Preserves existing content and layout.
+*/
+
+body.home-v3 {
+  background: #050d18 !important;
+  color: #eaf2f8 !important;
+}
+
+/* Capability strip */
+.home-v3 .confidence-strip {
+  background:
+    linear-gradient(180deg, #0a1726 0%, #081421 100%) !important;
+  border-top: 1px solid rgba(255,255,255,.04) !important;
+  border-bottom: 1px solid rgba(126,196,230,.12) !important;
+}
+
+.home-v3 .confidence-item strong {
+  color: #f4f8fb !important;
+}
+
+.home-v3 .confidence-item span {
+  color: #9fb0c1 !important;
+}
+
+/* Main dark content surfaces */
+.home-v3 .home-light-section {
+  background:
+    radial-gradient(circle at 85% 8%, rgba(0,163,255,.055), transparent 24%),
+    linear-gradient(180deg, #071321 0%, #091827 100%) !important;
+  color: #edf4f9 !important;
+}
+
+.home-v3 .global-business-section {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(36,148,214,.055), transparent 28%),
+    linear-gradient(180deg, #081624 0%, #06111d 100%) !important;
+}
+
+.home-v3 .home-light-heading h2 {
+  color: #f5f8fb !important;
+}
+
+.home-v3 .home-light-heading p {
+  color: #a8b7c6 !important;
+}
+
+.home-v3 .home-light-heading .home-kicker {
+  color: #56c9ff !important;
+}
+
+/* Service cards */
+.home-v3 .home-service-card {
+  background:
+    linear-gradient(145deg, rgba(18,35,53,.98), rgba(8,21,34,.98)) !important;
+  border: 1px solid rgba(151,188,211,.16) !important;
+  box-shadow:
+    0 18px 38px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.055) !important;
+}
+
+.home-v3 .home-service-card:hover {
+  background:
+    linear-gradient(145deg, rgba(21,43,64,.99), rgba(9,25,40,.99)) !important;
+  border-color: rgba(74,190,245,.34) !important;
+  box-shadow:
+    0 26px 48px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 0 0 1px rgba(48,174,234,.035) !important;
+}
+
+.home-v3 .home-service-card h3 {
+  color: #f3f7fa !important;
+}
+
+.home-v3 .home-service-card p {
+  color: #a6b5c4 !important;
+}
+
+.home-v3 .home-line-icon,
+.home-v3 .home-service-card > span:last-child {
+  color: #59caff !important;
+}
+
+/* Global-business cards */
+.home-v3 .home-industry-card {
+  background:
+    linear-gradient(145deg, rgba(17,34,51,.98), rgba(8,20,32,.98)) !important;
+  border: 1px solid rgba(151,188,211,.16) !important;
+  box-shadow:
+    0 18px 38px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.055) !important;
+}
+
+.home-v3 .home-industry-card:hover {
+  border-color: rgba(74,190,245,.32) !important;
+  box-shadow:
+    0 26px 48px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.08) !important;
+}
+
+.home-v3 .home-industry-card strong {
+  color: #f3f7fa !important;
+}
+
+.home-v3 .home-industry-card p {
+  color: #a6b5c4 !important;
+}
+
+/* Mouse-light reflections should remain subtle on dark surfaces */
+.home-v3 .home-service-card::before,
+.home-v3 .home-industry-card::before {
+  background:
+    radial-gradient(circle at var(--ow-mx, 50%) var(--ow-my, 50%), rgba(70,196,255,.14), transparent 35%),
+    linear-gradient(115deg, rgba(255,255,255,.05), transparent 32% 68%, rgba(45,163,224,.045)) !important;
+}
+
+/* Keep dark operating band visually distinct */
+.home-v3 .home-dark-band {
+  border-top: 1px solid rgba(110,190,230,.08) !important;
+  border-bottom: 1px solid rgba(110,190,230,.08) !important;
+}
+
+/* CTA remains the deepest branded surface */
+.home-v3 .home-cta {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(0,163,255,.07), transparent 28%),
+    linear-gradient(135deg, #050e19, #071524 55%, #050d17) !important;
+  border-top: 1px solid rgba(111,198,240,.10) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-v3 .home-service-card,
+  .home-v3 .home-industry-card {
+    transition: none !important;
+  }
+}
