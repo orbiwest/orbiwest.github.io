@@ -1,8 +1,8 @@
-# Orbiwest Technologies — Master Brand Reference
+# Orbiwest Technologies — Eagle Orbit Master Brand Reference
 
 ## Source of truth
 
-The **Orbiwest Technologies Official Master Brand Guide, Version 1.0.0 (2026-08-14)** and its approved master artwork are the source of truth for website branding.
+The **Orbiwest Technologies Master Brand Guide v2.0 — Eagle Orbit Edition** and the supplied transparent metallic Eagle Orbit artwork are the current source of truth for website branding.
 
 ## Official identity
 
@@ -28,35 +28,46 @@ Brand character: Innovative • Trustworthy • Global • Premium • Problem-s
 | Graphite | `#4C5562` |
 | Black | `#05090F` |
 
-## Approved website logo assets
+## Eagle Orbit logo system
 
-These files now contain the **approved metallic master artwork from the official brand guide** in a web-safe hybrid SVG wrapper. Do not replace them with a hand-built approximation.
+Use only the supplied Eagle Orbit master artwork. The public website loads the supplied master through the repository brand assets under `assets/brand/eagle-v2/`.
 
-- Horizontal header/wordmark: `assets/img/logo-lockup.svg`
-- Standalone metallic orbital symbol: `assets/img/logo-mark.svg`
+- **Full lockup:** hero areas, covers, proposals and large brand areas.
+- **Compact/no-tagline presentation:** navigation bars and compact horizontal areas. The website achieves this by clipping only the tagline area from the supplied full master; it does not redraw, stretch or recolor the artwork.
+- **Eagle icon/avatar:** homepage brand stage, footer, favicon/avatar and small UI where appropriate.
 
-The SVG wrapper preserves the approved raster metallic artwork while providing reliable browser sizing and deployment through GitHub Pages.
+The original transparent metallic masters remain the visual authority. Web derivatives may be resized/compressed for delivery but must preserve the supplied artwork, proportions and colors.
+
+## Clear space and size
+
+- Preserve clear space around the mark.
+- Full horizontal logo should be approximately **240 px or wider** on the web; below that, prefer the icon.
+- Never stretch, skew, rotate, distort or casually recolor the logo.
 
 ## Non-negotiable logo rules
 
 - Use the official name: **ORBIWEST TECHNOLOGIES**.
 - Use the exact tagline: **Connecting Technology. Enabling Global Trade.**
-- Keep the metallic silver + blue identity intact.
-- Do not stretch, skew, rotate, recolor, or casually rebuild the logo.
-- Do not substitute flat clip-art, cartoonish, or hand-drawn versions.
-- Use the dark logo system on deep navy/black backgrounds.
+- Use `engineering@orbiwest.com` for engineering/public technical contact.
+- Keep the metallic silver + blue Eagle Orbit identity intact.
+- Do not substitute unrelated eagle art, flat clip-art, cartoonish, or hand-drawn versions.
+- Use the metallic transparent mark on dark surfaces; use a supplied light-safe version on light surfaces when available.
 - Preserve clear space and aspect ratio.
-- Avoid busy backgrounds directly behind the logo.
+- Avoid visually busy backgrounds directly behind the logo.
 
 ## Typography and voice
 
-- Recommended display/headline family: **Exo 2**.
+- Display/headline family: **Exo 2**.
 - Body copy, UI labels and supporting content: **Inter**.
 - Voice: clear and direct; energetic problem-solving; trustworthy and professional; confident without exaggeration; global without sounding generic.
 
 ## Website direction
 
-Use dark navy surfaces, the approved metallic logo, electric-blue accents, clean spacing and precise UI. Interactive depth and restrained 3D effects may support the presentation, but must not distort or recolor the master logo or reduce readability.
+- Primary surface: **Deep Navy `#081324`**.
+- Deeper premium sections: **Black `#05090F`**.
+- Main interactive/accent color: **Electric Blue `#00A3FF`**.
+- Use restrained metallic depth, glow, glass and 3D effects; avoid excessive neon.
+- Keep spacing clean and UI precise.
 
 ## Primary service families
 
