@@ -3,8 +3,8 @@
   'use strict';
 
   const ENGINEERING_EMAIL = 'engineering@orbiwest.com';
-  const HQ_MARK = '/assets/img/orbiwest-symbol-metallic-web.webp';
-  const HQ_LOCKUP = '/assets/img/orbiwest-logo-horizontal-metallic-web.webp';
+  const HQ_MARK = '/assets/img/logo-mark.svg';
+  const HQ_LOCKUP = '/assets/img/logo-lockup.svg';
 
   function normalizeEmail() {
     const legacy = ['orbiwest@gmail.com', 'info@orbiwest.com', 'support@orbiwest.com'];
@@ -55,7 +55,7 @@
       if (text) text.setAttribute('aria-hidden', 'true');
     });
 
-    document.querySelectorAll('.footer-brand img').forEach((img) => {
+    document.querySelectorAll('.footer-brand img, .professional-brand-stage img').forEach((img) => {
       img.src = HQ_MARK;
       img.removeAttribute('srcset');
       img.style.imageRendering = 'auto';
