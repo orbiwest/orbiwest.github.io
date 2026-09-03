@@ -1,10 +1,13 @@
-/* Orbiwest Technologies site bootstrap — Master Brand 2026 */
+/* Orbiwest Technologies site bootstrap — Official Master Brand 2026 */
 (() => {
   'use strict';
 
   const ENGINEERING_EMAIL = 'engineering@orbiwest.com';
-  const HQ_MARK = '/assets/img/logo-mark.svg';
-  const HQ_LOCKUP = '/assets/img/logo-lockup.svg';
+  const BRAND_REV = 'brand-v1-20260814';
+  const HQ_MARK_PATH = '/assets/img/logo-mark.svg';
+  const HQ_LOCKUP_PATH = '/assets/img/logo-lockup.svg';
+  const HQ_MARK = `${HQ_MARK_PATH}?v=${BRAND_REV}`;
+  const HQ_LOCKUP = `${HQ_LOCKUP_PATH}?v=${BRAND_REV}`;
 
   function normalizeEmail() {
     const legacy = ['orbiwest@gmail.com', 'info@orbiwest.com', 'support@orbiwest.com'];
@@ -31,7 +34,7 @@
           if (!value || typeof value !== 'object') return;
           if ('email' in value) value.email = ENGINEERING_EMAIL;
           if (value.name === 'Orbiwest Technologies') value.name = 'Orbiwest Technologies LLC';
-          if (typeof value.logo === 'string') value.logo = `https://orbiwest.com${HQ_MARK}`;
+          if (typeof value.logo === 'string') value.logo = `https://orbiwest.com${HQ_MARK_PATH}`;
           Object.values(value).forEach(visit);
         };
         visit(data);
@@ -71,7 +74,7 @@
     });
 
     document.querySelectorAll('.brand-text strong').forEach((node) => {
-      node.textContent = 'ORBIWΞST';
+      node.textContent = 'ORBIWEST';
       node.setAttribute('aria-label', 'Orbiwest');
     });
     document.querySelectorAll('.brand-text em').forEach((node) => { node.textContent = 'TECHNOLOGIES'; });
