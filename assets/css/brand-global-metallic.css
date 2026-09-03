@@ -170,6 +170,15 @@ img.hq-clean-lockup.eagle-v2-full-lockup {
   filter: drop-shadow(0 24px 48px rgba(0, 0, 0, .42)) drop-shadow(0 0 26px rgba(0, 163, 255, .14));
 }
 
+/* The approved Eagle artwork itself must remain static and undistorted.
+   3D/lighting may exist around it, never on the logo geometry. */
+.home-v3 .professional-brand-stage img.eagle-v2-icon,
+.home-v3 .professional-brand-stage img.eagle-v2-full-lockup {
+  transform: none !important;
+  transition: filter .25s ease !important;
+  will-change: auto !important;
+}
+
 /* Fallback only: if the standalone icon chunks cannot decode, crop the icon from the exact full lockup. */
 .professional-brand-stage:has(img.eagle-v2-icon-crop) {
   overflow: hidden;
