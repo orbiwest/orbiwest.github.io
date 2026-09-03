@@ -1,5 +1,6 @@
-/* Orbiwest Technologies — Official Metallic Brand Layer
-   Branding-only overrides. Does not change page structure or content.
+/* Orbiwest Technologies — Eagle Orbit v2 Brand Layer
+   Source of truth: ORBIWEST TECHNOLOGIES Master Brand Guide v2.0.
+   Branding-only overrides; page content and information architecture remain unchanged.
 */
 
 :root {
@@ -18,7 +19,6 @@
   --ow-brand-shadow: 0 12px 32px rgba(0, 0, 0, .24);
 }
 
-/* Official header identity */
 .site-header {
   background: rgba(8, 19, 36, .975);
   border-bottom: 1px solid rgba(192, 198, 207, .13);
@@ -41,6 +41,15 @@
   min-width: 0;
 }
 
+/* v2 guide: navigation uses the compact/no-tagline presentation.
+   The exact supplied full lockup is clipped only at the bottom; artwork is never stretched or recolored. */
+.site-header .brand.brand-official.eagle-v2-nav {
+  height: 56px;
+  overflow: hidden;
+  align-items: flex-start;
+  padding: 0;
+}
+
 .site-header .brand.brand-official img {
   display: block;
   width: 250px;
@@ -50,11 +59,19 @@
   filter: drop-shadow(0 5px 12px rgba(0, 0, 0, .24));
 }
 
+.site-header .brand.brand-official img.eagle-v2-nav-lockup {
+  width: 270px;
+  max-width: min(50vw, 270px);
+  height: auto;
+  object-fit: contain;
+  transform: translateY(-1px);
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .28));
+}
+
 .site-header .brand.brand-official .brand-text {
   display: none !important;
 }
 
-/* Navigation stays structurally identical, with brand-consistent states */
 .site-nav a {
   transition: color .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
 }
@@ -78,7 +95,6 @@
   transform: translateY(-1px);
 }
 
-/* Common brand accents */
 .eyebrow,
 .service-category,
 .home-kicker {
@@ -113,7 +129,6 @@
   outline-offset: 3px;
 }
 
-/* Give existing cards a restrained metallic edge without altering layout */
 .service-card,
 .related-card,
 .process-card,
@@ -133,7 +148,42 @@
   border-color: rgba(35, 166, 231, .34);
 }
 
-/* Official footer identity */
+/* Full v2 lockup for hero / large brand areas. */
+.hero-visual img.eagle-v2-full-lockup,
+img.hq-logo-lockup.eagle-v2-full-lockup,
+img.hq-clean-lockup.eagle-v2-full-lockup {
+  display: block;
+  width: min(100%, 760px);
+  height: auto;
+  margin-inline: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 34px rgba(0, 0, 0, .34));
+}
+
+/* Exact supplied Eagle icon on the homepage and footer. */
+.professional-brand-stage img.eagle-v2-icon {
+  display: block;
+  width: min(100%, 500px);
+  height: auto;
+  margin: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, .42)) drop-shadow(0 0 26px rgba(0, 163, 255, .14));
+}
+
+/* Fallback only: if the standalone icon chunks cannot decode, crop the icon from the exact full lockup. */
+.professional-brand-stage:has(img.eagle-v2-icon-crop) {
+  overflow: hidden;
+  aspect-ratio: 1.15 / 1;
+}
+
+.professional-brand-stage img.eagle-v2-icon-crop {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: left center;
+}
+
 .site-footer {
   position: relative;
   background: #06101D;
@@ -151,9 +201,14 @@
 
 .footer-brand img {
   width: 58px;
-  height: auto;
+  height: 58px;
   object-fit: contain;
   filter: drop-shadow(0 7px 14px rgba(0, 0, 0, .28));
+}
+
+.footer-brand img.eagle-v2-icon-crop {
+  object-fit: cover;
+  object-position: left center;
 }
 
 .footer-brand strong {
@@ -174,16 +229,24 @@
   color: var(--ow-sky);
 }
 
-/* Keep approved master artwork crisp and proportional wherever it is used. */
-img[src*="logo-mark.svg"],
-img[src*="logo-lockup.svg"] {
+.eagle-v2-full-lockup,
+.eagle-v2-icon {
   image-rendering: auto;
 }
 
 @media (max-width: 760px) {
-  .site-header .brand.brand-official img {
-    width: 205px;
-    max-width: 60vw;
+  .site-header .brand.brand-official.eagle-v2-nav {
+    height: 47px;
+  }
+
+  .site-header .brand.brand-official img,
+  .site-header .brand.brand-official img.eagle-v2-nav-lockup {
+    width: 225px;
+    max-width: 62vw;
+  }
+
+  .professional-brand-stage img.eagle-v2-icon {
+    width: min(86vw, 420px);
   }
 }
 
