@@ -1,0 +1,298 @@
+/* Orbiwest Technologies — Metallic 3D enhancement
+   Lightweight CSS-only depth layer. No framework or WebGL dependency.
+*/
+
+body.home-v3 {
+  --ow-navy-950: #030914;
+  --ow-navy-900: #071321;
+  --ow-navy-800: #0a1d31;
+  --ow-blue: #1289dc;
+  --ow-cyan: #65d7ff;
+  --ow-silver-1: #f8fbff;
+  --ow-silver-2: #b9c6d2;
+  --ow-silver-3: #69798a;
+  --ow-card-rx: 0deg;
+  --ow-card-ry: 0deg;
+  --ow-card-lift: 0px;
+}
+
+/* ---------- Hero atmosphere ---------- */
+.home-v3 .professional-hero {
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 76% 45%, rgba(49, 181, 255, .15), transparent 23%),
+    radial-gradient(circle at 15% 8%, rgba(44, 111, 189, .16), transparent 30%),
+    linear-gradient(135deg, #050c16 0%, #081524 45%, #07101d 100%) !important;
+}
+
+.home-v3 .professional-hero::before {
+  opacity: .72;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px) !important;
+  background-size: 54px 54px !important;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.82), transparent 92%);
+}
+
+.home-v3 .professional-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 46vw;
+  height: 46vw;
+  min-width: 420px;
+  min-height: 420px;
+  right: -16vw;
+  top: -20vw;
+  border-radius: 50%;
+  border: 1px solid rgba(129, 216, 255, .10);
+  box-shadow:
+    inset 0 0 70px rgba(40, 160, 236, .05),
+    0 0 90px rgba(40, 160, 236, .04);
+  pointer-events: none;
+}
+
+/* Metallic accent rather than flat cyan text */
+.home-v3 .professional-hero-copy h1 span {
+  color: transparent !important;
+  background: linear-gradient(115deg, #ffffff 0%, #9ce7ff 24%, #3eb9f4 48%, #eefaff 70%, #55c8fb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 8px 28px rgba(44, 183, 246, .13);
+}
+
+/* ---------- Orbital brand stage ---------- */
+.home-v3 .professional-brand-stage {
+  --ow-rx: 0deg;
+  --ow-ry: 0deg;
+  perspective: 1100px;
+  transform-style: preserve-3d;
+}
+
+.home-v3 .professional-brand-stage::before {
+  width: min(36vw, 390px) !important;
+  height: min(36vw, 390px) !important;
+  background:
+    radial-gradient(circle, rgba(69, 185, 248, .16) 0 18%, rgba(20, 109, 174, .09) 35%, transparent 67%) !important;
+  filter: blur(9px) !important;
+  animation: ow-stage-breathe 6s ease-in-out infinite;
+}
+
+.home-v3 .professional-brand-stage::after {
+  content: "";
+  position: absolute;
+  width: min(30vw, 335px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 210deg,
+    transparent 0 12%,
+    rgba(166, 226, 255, .08) 18%,
+    rgba(255,255,255,.42) 25%,
+    rgba(46,174,239,.14) 31%,
+    transparent 40% 74%,
+    rgba(158,221,255,.13) 84%,
+    transparent 92%
+  );
+  -webkit-mask: radial-gradient(circle, transparent 65%, #000 66% 68%, transparent 69%);
+  mask: radial-gradient(circle, transparent 65%, #000 66% 68%, transparent 69%);
+  transform: translateZ(-20px) rotate(-10deg);
+  opacity: .9;
+  pointer-events: none;
+  animation: ow-orbit-spin 20s linear infinite;
+}
+
+.home-v3 .professional-brand-stage img {
+  width: min(100%, 330px) !important;
+  transform:
+    perspective(1100px)
+    rotateX(var(--ow-rx))
+    rotateY(var(--ow-ry))
+    translateZ(42px) !important;
+  transform-style: preserve-3d;
+  filter:
+    drop-shadow(0 28px 28px rgba(0,0,0,.42))
+    drop-shadow(0 0 18px rgba(48, 178, 242, .13))
+    contrast(1.04) !important;
+  transition: transform .18s ease-out, filter .25s ease !important;
+  will-change: transform;
+}
+
+.home-v3 .professional-brand-stage:hover img {
+  filter:
+    drop-shadow(0 34px 34px rgba(0,0,0,.46))
+    drop-shadow(0 0 26px rgba(75, 199, 255, .20))
+    contrast(1.06) !important;
+}
+
+/* ---------- Metallic controls ---------- */
+.home-v3 .professional-hero .button-primary,
+.home-v3 .home-cta .button-primary,
+.home-v3 .site-nav .nav-cta {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b5cad 0%, #168ed8 48%, #0a5ca7 100%) !important;
+  border: 1px solid rgba(153, 224, 255, .28) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.22),
+    0 10px 24px rgba(0, 91, 164, .18) !important;
+}
+
+.home-v3 .professional-hero .button-primary::after,
+.home-v3 .home-cta .button-primary::after,
+.home-v3 .site-nav .nav-cta::after {
+  content: "";
+  position: absolute;
+  top: -45%;
+  bottom: -45%;
+  width: 38%;
+  left: -52%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+  transform: skewX(-20deg);
+  transition: left .55s ease;
+  pointer-events: none;
+}
+
+.home-v3 .professional-hero .button-primary:hover::after,
+.home-v3 .home-cta .button-primary:hover::after,
+.home-v3 .site-nav .nav-cta:hover::after {
+  left: 120%;
+}
+
+/* ---------- 3D service/industry cards ---------- */
+.home-v3 .home-service-card,
+.home-v3 .home-industry-card {
+  --ow-rx: 0deg;
+  --ow-ry: 0deg;
+  --ow-lift: 0px;
+  position: relative;
+  overflow: hidden;
+  transform:
+    perspective(900px)
+    rotateX(var(--ow-rx))
+    rotateY(var(--ow-ry))
+    translateY(var(--ow-lift)) !important;
+  transform-style: preserve-3d;
+  transition:
+    transform .18s ease-out,
+    box-shadow .22s ease,
+    border-color .22s ease,
+    background .22s ease !important;
+  will-change: transform;
+}
+
+.home-v3 .home-service-card {
+  background: linear-gradient(145deg, #fbfdff 0%, #f1f5f9 100%) !important;
+  border: 1px solid #e6ecf2 !important;
+  box-shadow:
+    0 14px 28px rgba(9, 24, 43, .055),
+    inset 0 1px 0 rgba(255,255,255,.96) !important;
+}
+
+.home-v3 .home-industry-card {
+  background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(243,247,251,.96)) !important;
+  border: 1px solid #e5ebf1 !important;
+  box-shadow:
+    0 16px 30px rgba(9, 24, 43, .06),
+    inset 0 1px 0 rgba(255,255,255,.98) !important;
+}
+
+.home-v3 .home-service-card::before,
+.home-v3 .home-industry-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at var(--ow-mx, 50%) var(--ow-my, 50%), rgba(92, 195, 244, .13), transparent 34%),
+    linear-gradient(115deg, rgba(255,255,255,.38), transparent 30% 70%, rgba(44,149,210,.045));
+  opacity: 0;
+  transition: opacity .2s ease;
+  pointer-events: none;
+}
+
+.home-v3 .home-service-card:hover,
+.home-v3 .home-industry-card:hover {
+  --ow-lift: -7px;
+  border-color: rgba(95, 180, 226, .34) !important;
+  box-shadow:
+    0 24px 44px rgba(8, 28, 48, .12),
+    inset 0 1px 0 rgba(255,255,255,1) !important;
+}
+
+.home-v3 .home-service-card:hover::before,
+.home-v3 .home-industry-card:hover::before {
+  opacity: 1;
+}
+
+.home-v3 .home-service-card > *,
+.home-v3 .home-industry-card > * {
+  position: relative;
+  z-index: 1;
+  transform: translateZ(18px);
+}
+
+/* ---------- Dark operating band: brushed-metal depth ---------- */
+.home-v3 .home-dark-band {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(42, 150, 212, .09), transparent 28%),
+    linear-gradient(135deg, #081421, #0d1d2e 52%, #08131f) !important;
+}
+
+.home-v3 .home-dark-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .16;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    100deg,
+    rgba(255,255,255,.035) 0,
+    rgba(255,255,255,.035) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+}
+
+.home-v3 .home-band-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Motion ---------- */
+@keyframes ow-stage-breathe {
+  0%, 100% { transform: scale(.96); opacity: .72; }
+  50% { transform: scale(1.04); opacity: 1; }
+}
+
+@keyframes ow-orbit-spin {
+  to { transform: translateZ(-20px) rotate(350deg); }
+}
+
+@media (max-width: 1000px) {
+  .home-v3 .professional-brand-stage::before { width: 290px !important; height: 290px !important; }
+  .home-v3 .professional-brand-stage::after { width: 255px; }
+  .home-v3 .professional-brand-stage img { width: min(100%, 245px) !important; }
+}
+
+@media (max-width: 700px) {
+  .home-v3 .professional-brand-stage::before { width: 230px !important; height: 230px !important; }
+  .home-v3 .professional-brand-stage::after { width: 205px; }
+  .home-v3 .professional-brand-stage img { width: min(100%, 205px) !important; }
+  .home-v3 .professional-hero::after { min-width: 300px; min-height: 300px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-v3 .professional-brand-stage::before,
+  .home-v3 .professional-brand-stage::after {
+    animation: none !important;
+  }
+
+  .home-v3 .professional-brand-stage img,
+  .home-v3 .home-service-card,
+  .home-v3 .home-industry-card {
+    transform: none !important;
+    transition: none !important;
+  }
+}
