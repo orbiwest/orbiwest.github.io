@@ -10,7 +10,8 @@
   --ow-sky: #41C6FF;
   --ow-silver: #C0C6CF;
   --ow-chrome: #F6F8FB;
-  --ow-steel: #758393;
+  --ow-graphite: #4C5562;
+  --ow-black: #05090F;
   --ow-border: rgba(160, 184, 205, .22);
   --ow-metal: linear-gradient(135deg, #ffffff 0%, #dce4ec 18%, #8c99a7 43%, #f8fbfd 62%, #aab5c0 82%, #eef3f7 100%);
   --ow-blue-metal: linear-gradient(135deg, #55d5ff 0%, #00a3ff 24%, #0b5fc6 64%, #073b80 100%);
@@ -42,8 +43,8 @@
 
 .site-header .brand.brand-official img {
   display: block;
-  width: 190px;
-  max-width: min(42vw, 190px);
+  width: 250px;
+  max-width: min(48vw, 250px);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 5px 12px rgba(0, 0, 0, .24));
@@ -149,7 +150,7 @@
 }
 
 .footer-brand img {
-  width: 52px;
+  width: 58px;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 7px 14px rgba(0, 0, 0, .28));
@@ -173,16 +174,16 @@
   color: var(--ow-sky);
 }
 
-/* Keep the approved mark crisp and proportional wherever it is used */
-img[src*="orbiwest-symbol-metallic-web.webp"],
-img[src*="orbiwest-logo-horizontal-metallic-web.webp"] {
+/* Keep approved master artwork crisp and proportional wherever it is used. */
+img[src*="logo-mark.svg"],
+img[src*="logo-lockup.svg"] {
   image-rendering: auto;
 }
 
 @media (max-width: 760px) {
   .site-header .brand.brand-official img {
-    width: 160px;
-    max-width: 56vw;
+    width: 205px;
+    max-width: 60vw;
   }
 }
 
