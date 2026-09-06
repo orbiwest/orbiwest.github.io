@@ -1,27 +1,24 @@
-# Orbiwest Technologies HQ Brand System
+# Orbiwest Technologies Website
 
-This repository uses the Orbiwest HQ identity: deep navy, electric blue, silver and white.
+Official public website for **Orbiwest Technologies LLC**.
 
-## Brand assets
+## Brand source
 
-- `assets/img/logo-mark.svg` — master vector orbital mark
-- `assets/img/favicon.svg` — simplified vector favicon
-- `assets/img/og-card.svg` — social sharing card
-- `assets/css/base.css` — preserved pre-HQ stylesheet
-- `assets/css/hq-brand.css` — HQ visual overrides
-- `assets/css/style.css` — stylesheet loader
+This build follows **Orbiwest Complete Branding Pack v1.0**.
 
-## Brand principles
+- Primary descriptor: `MANAGED IT • CYBERSECURITY • CLOUD • NETWORKS`
+- Official tagline: `Technology Under Control. Innovation In Motion.`
+- Innovation descriptor: `AI • AUTOMATION • ROBOTICS • ELECTRONICS • ENGINEERING PROJECTS`
+- Corporate positioning: `One Technology Partner. From Operations to Innovation.`
+- Public contact: `engineering@orbiwest.com`
 
-- Use vector graphics wherever possible to prevent blur and pixelation.
-- Do not stretch raster images beyond their native resolution.
-- Keep the public site truthful: no invented client counts, certifications, awards or performance statistics.
-- Primary colors: deep navy, electric blue, silver and white.
-- Public contact email: `info@orbiwest.com`.
-- Support email: `support@orbiwest.com`.
+## Canonical colors
 
-## Deployment
+- Metallic Navy `#0B2E5F`
+- Royal Blue Highlight `#165EAD`
+- Brushed Silver `#C7CDD3`
+- Champagne Gold `#C9A24B`
+- Graphite Gray `#4D545C`
+- Deep Navy `#061A33`
 
-The site is static and deploys from the `main` branch. Existing service and industry pages remain compatible with the shared stylesheet.
-
-© 2026 Orbiwest Technologies LLC.
+The public website intentionally uses a restrained interface. Metallic effects belong primarily to the approved logo artwork, not to every UI component.
