@@ -3,16 +3,7 @@
 
   const EMAIL = 'engineering@orbiwest.com';
   const CURRENT_YEAR = new Date().getFullYear();
-  const groups = {
-    core: new Set(['/','/index.html','/services.html','/innovation.html','/industries.html','/insights.html','/about.html','/contact.html']),
-    services: new Set(['/managed-it-services.html','/cybersecurity.html','/cloud-solutions.html','/network-engineering.html','/server-administration.html','/it-consulting.html','/ai-automation.html','/engineering-projects.html']),
-    industries: new Set(['/education-it.html','/professional-services-it.html','/healthcare-it.html','/finance-it.html','/manufacturing-it.html','/logistics-it.html','/retail-it.html','/small-business-it.html']),
-    resources: new Set(['/cybersecurity-playbook.html','/cloud-readiness-guide.html','/firewall-policy-hygiene.html','/managed-it-maturity.html','/network-resilience-guide.html','/case-studies.html','/secure-school-network.html','/cloud-readiness-case-study.html']),
-    other: new Set(['/global-sourcing-checklist.html','/global-sourcing.html','/import-export.html','/trade-operations-case-study.html','/privacy.html','/terms.html'])
-  };
-
   const route = location.pathname === '' ? '/' : location.pathname;
-  const group = Object.entries(groups).find(([, routes]) => routes.has(route))?.[0] || 'core';
 
   function ensureMeta(name, content) {
     let el = document.querySelector(`meta[name="${name}"]`);
@@ -36,10 +27,10 @@
   }
 
   function navCurrent(path, href) {
-    if (href === '/services.html') return path === '/services.html' || groups.services.has(path);
-    if (href === '/innovation.html') return path === '/innovation.html' || path === '/ai-automation.html' || path === '/engineering-projects.html';
-    if (href === '/industries.html') return path === '/industries.html' || groups.industries.has(path);
-    if (href === '/insights.html') return path === '/insights.html' || groups.resources.has(path);
+    if (href === '/services.html') return path === '/services.html' || ['/managed-it-services.html','/cybersecurity.html','/cloud-solutions.html','/network-engineering.html','/server-administration.html','/it-consulting.html'].includes(path);
+    if (href === '/innovation.html') return path === '/innovation.html' || ['/ai-automation.html','/engineering-projects.html'].includes(path);
+    if (href === '/industries.html') return path === '/industries.html' || ['education','professional-services','healthcare','finance','manufacturing','logistics','retail','small-business'].some(x => path === `/${x}-it.html`);
+    if (href === '/insights.html') return path === '/insights.html' || ['/cybersecurity-playbook.html','/cloud-readiness-guide.html','/firewall-policy-hygiene.html','/managed-it-maturity.html','/network-resilience-guide.html','/case-studies.html','/secure-school-network.html','/cloud-readiness-case-study.html'].includes(path);
     if (href === '/about.html') return path === '/about.html';
     return false;
   }
@@ -75,7 +66,7 @@
     const toggle = document.querySelector('[data-nav-toggle]');
     const nav = document.querySelector('[data-nav]');
     if (toggle && nav) toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
+      const open = nav.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', String(open));
     });
   }
@@ -88,11 +79,10 @@
     try {
       resetStyles();
       cleanOldScripts();
-      const res = await fetch(`/assets/content/${group}.json?v=20260906`, {cache:'no-store'});
+      const pageName = route === '/' || route === '/index.html' ? 'index' : route.split('/').pop().replace(/\.html$/, '');
+      const res = await fetch(`/assets/content/pages/${pageName}.json?v=20260906`, {cache:'no-store'});
       if (!res.ok) throw new Error(`Content load failed: ${res.status}`);
-      const data = await res.json();
-      const page = data[route] || data[route === '/' ? '/index.html' : route] || data['/index.html'];
-      if (!page) throw new Error('Page content not found');
+      const page = await res.json();
 
       document.title = page.title;
       ensureMeta('description', page.description);
