@@ -1,0 +1,238 @@
+/* Orbiwest Technologies — clean logo presentation pass
+   Purpose: present the approved 3D eagle/globe identity without exposing
+   white-image edges on dark surfaces, and remove over-styled mockup effects. */
+
+:root{
+  --ow-navy:#0B2E5F;
+  --ow-deep:#061A33;
+  --ow-blue:#165EAD;
+  --ow-silver:#C7CDD3;
+  --ow-gold:#C9A24B;
+  --ow-graphite:#4D545C;
+  --ow-paper:#F7F9FC;
+  --ow-line:#E3E8EE;
+}
+
+/* Remove the previous faux-3D page effects. The actual logo carries the 3D identity. */
+body::before,
+.hero::after,
+.hero-brand::after,
+.hero-brand::before,
+.brand-logo::after{display:none!important;content:none!important}
+
+body{
+  background:#fff!important;
+  font-family:"Montserrat",Arial,sans-serif!important;
+  color:#172538!important;
+}
+
+/* Header: do not squeeze a full white-background logo into the dark navigation. */
+.site-header{
+  background:rgba(6,26,51,.98)!important;
+  border-bottom:1px solid rgba(199,205,211,.12)!important;
+  box-shadow:0 10px 30px rgba(0,0,0,.10)!important;
+}
+.nav-shell{min-height:80px!important}
+.brand-link{gap:.65rem!important;min-width:210px!important}
+.brand-logo{display:none!important}
+.brand-fallback{
+  display:flex!important;
+  flex-direction:column;
+  gap:.05rem;
+  color:#fff!important;
+  font-family:"Cinzel",Georgia,serif!important;
+  font-size:1.03rem!important;
+  line-height:1.05!important;
+  letter-spacing:.08em!important;
+  font-weight:700!important;
+}
+.brand-fallback::after{
+  content:"TECHNOLOGIES";
+  color:var(--ow-gold);
+  font-family:"Montserrat",Arial,sans-serif;
+  font-size:.48rem;
+  letter-spacing:.34em;
+  font-weight:600;
+}
+.site-nav{gap:1.5rem!important}
+.site-nav a{font-size:.88rem!important;font-weight:600!important;color:#CBD5DF!important}
+.site-nav a:hover,.site-nav a[aria-current="page"]{color:#fff!important}
+.site-nav .contact-link{
+  background:var(--ow-blue)!important;
+  border-radius:9px!important;
+  padding:.72rem 1.05rem!important;
+  box-shadow:none!important;
+}
+
+/* Hero: restrained, modern and balanced. */
+.hero{
+  background:linear-gradient(112deg,#061A33 0%,#082441 54%,#0B2E5F 100%)!important;
+}
+.hero::before{
+  width:540px!important;
+  height:540px!important;
+  right:-170px!important;
+  top:-180px!important;
+  background:radial-gradient(circle,rgba(22,94,173,.18),rgba(201,162,75,.04) 44%,transparent 70%)!important;
+}
+.hero-grid{
+  min-height:570px!important;
+  grid-template-columns:minmax(0,1fr) minmax(380px,.86fr)!important;
+  gap:clamp(3rem,6vw,6rem)!important;
+  padding:4.25rem 0!important;
+}
+.kicker{
+  color:#D3DCE5!important;
+  font-size:.72rem!important;
+  letter-spacing:.14em!important;
+  margin-bottom:.95rem!important;
+}
+.hero h1{
+  max-width:12.5ch!important;
+  margin:0!important;
+  font-family:"Montserrat",Arial,sans-serif!important;
+  font-size:clamp(3rem,5vw,4.65rem)!important;
+  line-height:1.02!important;
+  letter-spacing:-.045em!important;
+  font-weight:700!important;
+  text-transform:none!important;
+  text-shadow:none!important;
+}
+.hero h1 .gold{
+  color:#E0B85C!important;
+  text-shadow:none!important;
+}
+.hero-lead{
+  max-width:61ch!important;
+  margin:1.35rem 0 0!important;
+  color:#CED8E2!important;
+  font-size:1rem!important;
+  line-height:1.75!important;
+}
+.hero-positioning{
+  margin:1.05rem 0 0!important;
+  color:#fff!important;
+  font-family:"Montserrat",Arial,sans-serif!important;
+  font-size:.96rem!important;
+  line-height:1.6!important;
+  font-weight:650!important;
+}
+.hero-actions{margin-top:1.65rem!important}
+.btn{
+  border-radius:8px!important;
+  min-height:46px!important;
+  box-shadow:none!important;
+  text-transform:none!important;
+  letter-spacing:0!important;
+}
+.btn-primary{background:var(--ow-blue)!important;border-color:var(--ow-blue)!important}
+.btn-secondary{border-color:rgba(255,255,255,.25)!important}
+
+/* The supplied primary mark has a light background. Give it an intentional light stage. */
+.hero-brand{
+  min-height:440px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:1.15rem!important;
+  border-radius:24px!important;
+  background:linear-gradient(145deg,#FFFFFF 0%,#F4F7FA 58%,#E7EDF4 100%)!important;
+  border:1px solid rgba(199,205,211,.72)!important;
+  box-shadow:0 26px 70px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.9)!important;
+  transform:none!important;
+  perspective:none!important;
+  overflow:hidden!important;
+}
+.hero-emblem{
+  display:block!important;
+  width:min(100%,560px)!important;
+  max-height:410px!important;
+  object-fit:contain!important;
+  border-radius:16px!important;
+  filter:none!important;
+  transform:none!important;
+  mix-blend-mode:multiply!important;
+  box-shadow:none!important;
+}
+
+/* Capability strip and cards: normal business UI, not concept art. */
+.capability-strip{background:#fff!important;border-bottom:1px solid var(--ow-line)!important}
+.capability-grid{gap:2rem!important;padding:1.45rem 0!important}
+.capability-grid strong{font-size:.9rem!important}
+.capability-grid span{font-size:.79rem!important;color:#667688!important}
+
+.section{padding:4.8rem 0!important}
+.section.alt{background:#F7F9FC!important}
+.section.dark{background:#071A31!important}
+.section.gold-tint{background:#FBF8F1!important}
+.section-heading h2,
+.prose h2,
+.article h2,
+.callout h2{
+  font-family:"Montserrat",Arial,sans-serif!important;
+  letter-spacing:-.03em!important;
+  font-weight:700!important;
+}
+.section-heading h2{font-size:clamp(1.95rem,3.2vw,3rem)!important}
+.gold-rule{height:2px!important;width:52px!important;background:var(--ow-gold)!important}
+.card{
+  border:1px solid #E6EBF0!important;
+  border-radius:12px!important;
+  box-shadow:0 10px 28px rgba(17,35,57,.045)!important;
+}
+.card-link:hover{transform:translateY(-2px)!important;box-shadow:0 14px 34px rgba(17,35,57,.08)!important}
+.process{gap:1.35rem!important}
+.step{padding:1.15rem 0!important;border-top:2px solid #E4E9EE!important}
+.step-num{display:none!important}
+
+/* Interior page logos are also placed on a light surface so image edges disappear. */
+.page-hero{
+  background:linear-gradient(112deg,#061A33 0%,#0B2E5F 100%)!important;
+}
+.page-hero h1{
+  font-family:"Montserrat",Arial,sans-serif!important;
+  font-size:clamp(2.35rem,4vw,3.9rem)!important;
+  letter-spacing:-.04em!important;
+  font-weight:700!important;
+}
+.page-hero .mini-logo{
+  box-sizing:border-box!important;
+  padding:.85rem!important;
+  border-radius:18px!important;
+  background:linear-gradient(145deg,#fff,#EAF0F5)!important;
+  border:1px solid rgba(199,205,211,.7)!important;
+  filter:none!important;
+  mix-blend-mode:multiply!important;
+}
+
+/* Footer stays dark and textual; no white-box logo artifact. */
+.footer-brand img{display:none!important}
+.footer-brand{gap:0!important}
+.footer-brand strong{
+  display:block;
+  font-family:"Cinzel",Georgia,serif!important;
+  letter-spacing:.06em;
+  color:#fff!important;
+}
+.footer-brand p{color:#AEBAC5!important}
+
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr!important;text-align:left!important;padding:3rem 0 3.5rem!important}
+  .hero-brand{order:0!important;min-height:360px!important;width:min(100%,620px)!important;margin-inline:auto!important}
+  .hero h1,.hero-lead,.hero-positioning{margin-left:0!important;margin-right:0!important}
+  .hero-actions{justify-content:flex-start!important}
+  .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+
+@media(max-width:640px){
+  .nav-shell{min-height:72px!important}
+  .brand-link{min-width:auto!important}
+  .brand-fallback{font-size:.92rem!important}
+  .site-nav{top:72px!important}
+  .hero-grid{padding:2.4rem 0 3rem!important;gap:2.2rem!important}
+  .hero h1{font-size:clamp(2.55rem,12vw,3.45rem)!important;max-width:11ch!important}
+  .hero-brand{min-height:270px!important;padding:.8rem!important;border-radius:18px!important}
+  .hero-emblem{max-height:250px!important}
+  .capability-grid,.grid-3,.grid-4,.process{grid-template-columns:1fr!important}
+  .section{padding:3.8rem 0!important}
+}
