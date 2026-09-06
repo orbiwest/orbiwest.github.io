@@ -58,6 +58,8 @@
       nodes.forEach(img => { img.src = src; img.classList.add('brand-loaded'); });
       document.querySelectorAll('.brand-fallback').forEach(el => el.hidden = true);
     } catch (error) {
+      console.error(error);
+      nodes.forEach(img => img.classList.add('brand-failed'));
       document.querySelectorAll('.brand-fallback').forEach(el => el.hidden = false);
     }
   }
@@ -75,14 +77,21 @@
     document.querySelectorAll('script[src*="metallic-3d"],script[src*="base.js"],script[src*="site.js"]').forEach(s => s.remove());
   }
 
+  async function fallbackPage() {
+    await import('/assets/js/fallback.js?v=20260906');
+    return window.OrbiwestFallback?.page(route) || null;
+  }
+
   async function render() {
     try {
       resetStyles();
       cleanOldScripts();
       const pageName = route === '/' || route === '/index.html' ? 'index' : route.split('/').pop().replace(/\.html$/, '');
       const res = await fetch(`/assets/content/pages/${pageName}.json?v=20260906`, {cache:'no-store'});
-      if (!res.ok) throw new Error(`Content load failed: ${res.status}`);
-      const page = await res.json();
+      let page;
+      if (res.ok) page = await res.json();
+      else page = await fallbackPage();
+      if (!page) throw new Error(`Content load failed for ${route}`);
 
       document.title = page.title;
       ensureMeta('description', page.description);
