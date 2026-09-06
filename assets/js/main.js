@@ -3,79 +3,60 @@
 
   const EMAIL = 'engineering@orbiwest.com';
   const CURRENT_YEAR = new Date().getFullYear();
-  const ASSET_VERSION = '20260906-cover-theme-1';
+  const ASSET_VERSION = '20260906-bright-corporate-1';
   const route = location.pathname === '' ? '/' : location.pathname;
 
   function ensureMeta(name, content) {
     let el = document.querySelector(`meta[name="${name}"]`);
-    if (!el) {
-      el = document.createElement('meta');
-      el.name = name;
-      document.head.appendChild(el);
-    }
+    if (!el) { el = document.createElement('meta'); el.name = name; document.head.appendChild(el); }
     el.content = content;
   }
 
   function ensureCanonical() {
     let el = document.querySelector('link[rel="canonical"]');
-    if (!el) {
-      el = document.createElement('link');
-      el.rel = 'canonical';
-      document.head.appendChild(el);
-    }
+    if (!el) { el = document.createElement('link'); el.rel = 'canonical'; document.head.appendChild(el); }
     el.href = `https://orbiwest.com${route === '/index.html' ? '/' : route}`;
   }
 
   function resetStyles() {
     document.querySelectorAll('link[rel="stylesheet"]').forEach(link => link.remove());
-
-    const pre1 = document.createElement('link');
-    pre1.rel = 'preconnect';
-    pre1.href = 'https://fonts.googleapis.com';
-
-    const pre2 = document.createElement('link');
-    pre2.rel = 'preconnect';
-    pre2.href = 'https://fonts.gstatic.com';
-    pre2.crossOrigin = 'anonymous';
-
-    const font = document.createElement('link');
-    font.rel = 'stylesheet';
-    font.href = 'https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap';
-
-    const base = document.createElement('link');
-    base.rel = 'stylesheet';
-    base.href = `/assets/css/site.css?v=${ASSET_VERSION}`;
-
-    const theme = document.createElement('link');
-    theme.rel = 'stylesheet';
-    theme.href = `/assets/css/cover-theme.css?v=${ASSET_VERSION}`;
-
+    const pre1 = document.createElement('link'); pre1.rel = 'preconnect'; pre1.href = 'https://fonts.googleapis.com';
+    const pre2 = document.createElement('link'); pre2.rel = 'preconnect'; pre2.href = 'https://fonts.gstatic.com'; pre2.crossOrigin = 'anonymous';
+    const font = document.createElement('link'); font.rel = 'stylesheet'; font.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap';
+    const base = document.createElement('link'); base.rel = 'stylesheet'; base.href = `/assets/css/site.css?v=${ASSET_VERSION}`;
+    const theme = document.createElement('link'); theme.rel = 'stylesheet'; theme.href = `/assets/css/bright-corporate.css?v=${ASSET_VERSION}`;
     document.head.append(pre1, pre2, font, base, theme);
   }
 
-  function navCurrent(path, href) {
-    if (href === '/services.html') return path === '/services.html' || ['/managed-it-services.html','/cybersecurity.html','/cloud-solutions.html','/network-engineering.html','/server-administration.html','/it-consulting.html'].includes(path);
-    if (href === '/innovation.html') return path === '/innovation.html' || ['/ai-automation.html','/engineering-projects.html'].includes(path);
-    if (href === '/industries.html') return path === '/industries.html' || ['education','professional-services','healthcare','finance','manufacturing','logistics','retail','small-business'].some(x => path === `/${x}-it.html`);
-    if (href === '/insights.html') return path === '/insights.html' || ['/cybersecurity-playbook.html','/cloud-readiness-guide.html','/firewall-policy-hygiene.html','/managed-it-maturity.html','/network-resilience-guide.html','/case-studies.html','/secure-school-network.html','/cloud-readiness-case-study.html'].includes(path);
-    if (href === '/about.html') return path === '/about.html';
-    return false;
-  }
+  function isActive(prefixes) { return prefixes.some(p => route === p || route.endsWith(p)); }
 
   function headerHtml() {
-    const nav = [
-      ['Services','/services.html'],
-      ['Innovation','/innovation.html'],
-      ['Industries','/industries.html'],
-      ['Resources','/insights.html'],
-      ['About','/about.html']
-    ].map(([label, href]) => `<a href="${href}"${navCurrent(route, href) ? ' aria-current="page"' : ''}>${label}</a>`).join('');
-
-    return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container nav-shell"><a class="brand-link" href="/" aria-label="Orbiwest Technologies home"><img class="header-logo" data-brand-logo="primary" alt="Orbiwest Technologies"><span class="brand-wordmark"><strong>ORBIWEST</strong><small>TECHNOLOGIES</small></span></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button><nav class="site-nav" aria-label="Primary navigation" data-nav>${nav}<a class="contact-link" href="/contact.html"${route === '/contact.html' ? ' aria-current="page"' : ''}>Contact</a></nav></div></header>`;
+    const menus = [
+      ['Services', '/services.html', [
+        ['Managed IT', '/managed-it-services.html'], ['Cybersecurity', '/cybersecurity.html'], ['Cloud Solutions', '/cloud-solutions.html'], ['Network Infrastructure', '/network-engineering.html'], ['Server Administration', '/server-administration.html'], ['IT Consulting', '/it-consulting.html'], ['AI & Automation', '/ai-automation.html'], ['Engineering Projects', '/engineering-projects.html']
+      ]],
+      ['Industries', '/industries.html', [
+        ['Education', '/education-it.html'], ['Healthcare', '/healthcare-it.html'], ['Professional Services', '/professional-services-it.html'], ['Financial Services', '/finance-it.html'], ['Manufacturing', '/manufacturing-it.html'], ['Logistics', '/logistics-it.html'], ['Retail', '/retail-it.html']
+      ]],
+      ['Why Orbiwest', '/about.html', [
+        ['About Orbiwest', '/about.html'], ['How We Work', '/about.html#how-we-work'], ['Innovation', '/innovation.html']
+      ]],
+      ['Resources', '/insights.html', [
+        ['Resource Center', '/insights.html'], ['Cybersecurity Playbook', '/cybersecurity-playbook.html'], ['Cloud Readiness Guide', '/cloud-readiness-guide.html'], ['Network Resilience Guide', '/network-resilience-guide.html'], ['Illustrative Scenarios', '/case-studies.html']
+      ]],
+      ['Company', '/about.html', [
+        ['Company', '/about.html'], ['Contact', '/contact.html'], ['Privacy', '/privacy.html'], ['Terms', '/terms.html']
+      ]]
+    ];
+    const nav = menus.map(([label, href, children]) => {
+      const active = isActive([href, ...children.map(x => x[1].split('#')[0])]);
+      return `<div class="nav-group"><a class="nav-parent" href="${href}"${active ? ' aria-current="page"' : ''}>${label}<span aria-hidden="true">⌄</span></a><div class="nav-dropdown">${children.map(([l,h]) => `<a href="${h}">${l}</a>`).join('')}</div></div>`;
+    }).join('');
+    return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container nav-shell"><a class="brand-link" href="/" aria-label="Orbiwest Technologies home"><img class="header-logo" data-brand-logo="primary" alt="Orbiwest Technologies"><span class="brand-fallback"><strong>ORBIWEST</strong><small>TECHNOLOGIES</small></span></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button><nav class="site-nav" aria-label="Primary navigation" data-nav>${nav}<a class="consultation-link" href="/contact.html">Request a Consultation <span>→</span></a></nav></div></header>`;
   }
 
   function footerHtml() {
-    return `<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><img class="footer-logo" data-brand-logo="primary" alt=""><div><strong>Orbiwest Technologies LLC</strong><p>Technology Under Control. Innovation In Motion.</p></div></div><nav class="footer-nav" aria-label="Footer navigation"><a href="/services.html">Services</a><a href="/innovation.html">Innovation</a><a href="/industries.html">Industries</a><a href="/insights.html">Resources</a><a href="/about.html">About</a></nav><div class="footer-contact"><a href="mailto:${EMAIL}">${EMAIL}</a><span>Chicago, Illinois, USA</span></div></div><div class="container footer-bottom"><p>© ${CURRENT_YEAR} Orbiwest Technologies LLC. All rights reserved.</p><p><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>`;
+    return `<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><div class="footer-brand-logo"><img data-brand-logo="primary" alt="Orbiwest Technologies"></div><p>Managed IT, cybersecurity, cloud, network infrastructure, automation and engineering support.</p></div><div><strong>Services</strong><a href="/managed-it-services.html">Managed IT</a><a href="/cybersecurity.html">Cybersecurity</a><a href="/cloud-solutions.html">Cloud Solutions</a><a href="/network-engineering.html">Network Infrastructure</a></div><div><strong>Company</strong><a href="/about.html">About</a><a href="/industries.html">Industries</a><a href="/insights.html">Resources</a><a href="/contact.html">Contact</a></div><div class="footer-contact"><strong>Contact</strong><a href="mailto:${EMAIL}">${EMAIL}</a><span>Chicago, Illinois, USA</span><a class="footer-cta" href="/contact.html">Request a Consultation →</a></div></div><div class="container footer-bottom"><span>© ${CURRENT_YEAR} Orbiwest Technologies LLC. All rights reserved.</span><span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span></div></footer>`;
   }
 
   async function loadBrand() {
@@ -87,25 +68,34 @@
         return r.text();
       })));
       const src = `data:image/webp;base64,${parts.join('')}`;
-      nodes.forEach(img => {
-        img.src = src;
-        img.classList.add('brand-loaded');
-      });
+      nodes.forEach(img => { img.src = src; img.classList.add('brand-loaded'); });
+      document.documentElement.classList.add('brand-ready');
     } catch (error) {
       console.error(error);
-      nodes.forEach(img => img.style.display = 'none');
+      document.documentElement.classList.add('brand-fallback-only');
     }
   }
 
   function wireUi() {
     const toggle = document.querySelector('[data-nav-toggle]');
     const nav = document.querySelector('[data-nav]');
-    if (toggle && nav) {
-      toggle.addEventListener('click', () => {
-        const open = nav.classList.toggle('is-open');
-        toggle.setAttribute('aria-expanded', String(open));
-      });
-    }
+    if (toggle && nav) toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    document.querySelectorAll('.nav-parent').forEach(link => link.addEventListener('click', e => {
+      if (window.innerWidth <= 980) {
+        const group = link.closest('.nav-group');
+        if (group && group.querySelector('.nav-dropdown')) { e.preventDefault(); group.classList.toggle('open'); }
+      }
+    }));
+    const form = document.querySelector('#contact-form');
+    if (form) form.addEventListener('submit', e => {
+      e.preventDefault();
+      const d = new FormData(form);
+      const lines = [`Name: ${d.get('name') || ''}`, `Company: ${d.get('company') || ''}`, `Email: ${d.get('email') || ''}`, `Phone: ${d.get('phone') || ''}`, `Service: ${d.get('service') || ''}`, '', `${d.get('message') || ''}`];
+      location.href = `mailto:${EMAIL}?subject=${encodeURIComponent('Orbiwest consultation request')}&body=${encodeURIComponent(lines.join('\n'))}`;
+    });
   }
 
   function cleanOldScripts() {
@@ -121,26 +111,18 @@
     try {
       resetStyles();
       cleanOldScripts();
-
-      const pageName = route === '/' || route === '/index.html'
-        ? 'index'
-        : route.split('/').pop().replace(/\.html$/, '');
-
+      const pageName = route === '/' || route === '/index.html' ? 'index' : route.split('/').pop().replace(/\.html$/, '');
       const res = await fetch(`/assets/content/pages/${pageName}.json?v=${ASSET_VERSION}`, {cache:'no-store'});
       const page = res.ok ? await res.json() : await fallbackPage();
       if (!page) throw new Error(`Content load failed for ${route}`);
-
       document.title = page.title;
       ensureMeta('description', page.description);
       ensureMeta('robots', page.robots || 'index,follow,max-image-preview:large');
-      ensureMeta('theme-color', '#06172B');
+      ensureMeta('theme-color', '#ffffff');
       ensureCanonical();
-
       document.querySelectorAll('meta[property^="og:"]').forEach(el => el.remove());
-      document.querySelectorAll('link[rel="icon"]').forEach(el => el.remove());
-
-      const coverStrip = pageName === 'index' ? '' : '<div class="page-cover-strip" aria-hidden="true"></div>';
-      document.body.innerHTML = `${headerHtml()}${coverStrip}<main id="main">${page.main}</main>${footerHtml()}`;
+      document.body.dataset.page = pageName;
+      document.body.innerHTML = `${headerHtml()}<main id="main">${page.main}</main>${footerHtml()}`;
       wireUi();
       await loadBrand();
       document.body.classList.add('ow-ready');
