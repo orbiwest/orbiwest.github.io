@@ -3,6 +3,7 @@
 
   const EMAIL = 'engineering@orbiwest.com';
   const CURRENT_YEAR = new Date().getFullYear();
+  const ASSET_VERSION = '20260906-premium3d';
   const route = location.pathname === '' ? '/' : location.pathname;
 
   function ensureMeta(name, content) {
@@ -22,8 +23,9 @@
     const pre1 = document.createElement('link'); pre1.rel = 'preconnect'; pre1.href = 'https://fonts.googleapis.com';
     const pre2 = document.createElement('link'); pre2.rel = 'preconnect'; pre2.href = 'https://fonts.gstatic.com'; pre2.crossOrigin = 'anonymous';
     const font = document.createElement('link'); font.rel = 'stylesheet'; font.href = 'https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap';
-    const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/assets/css/site.css?v=brand-pack-1-20260906';
-    document.head.append(pre1, pre2, font, css);
+    const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = `/assets/css/site.css?v=${ASSET_VERSION}`;
+    const premium = document.createElement('link'); premium.rel = 'stylesheet'; premium.href = `/assets/css/premium-3d.css?v=${ASSET_VERSION}`;
+    document.head.append(pre1, pre2, font, css, premium);
   }
 
   function navCurrent(path, href) {
@@ -50,7 +52,7 @@
     const nodes = [...document.querySelectorAll(`[data-brand-logo="${kind}"]`)];
     if (!nodes.length) return;
     try {
-      const parts = await Promise.all([0,1,2,3].map(i => fetch(`/assets/brand/chunks/${kind}-${i}.txt?v=20260906`).then(r => {
+      const parts = await Promise.all([0,1,2,3].map(i => fetch(`/assets/brand/chunks/${kind}-${i}.txt?v=${ASSET_VERSION}`).then(r => {
         if (!r.ok) throw new Error(`Brand asset chunk ${i} failed`);
         return r.text();
       })));
@@ -78,7 +80,7 @@
   }
 
   async function fallbackPage() {
-    await import('/assets/js/fallback.js?v=20260906');
+    await import(`/assets/js/fallback.js?v=${ASSET_VERSION}`);
     return window.OrbiwestFallback?.page(route) || null;
   }
 
@@ -87,7 +89,7 @@
       resetStyles();
       cleanOldScripts();
       const pageName = route === '/' || route === '/index.html' ? 'index' : route.split('/').pop().replace(/\.html$/, '');
-      const res = await fetch(`/assets/content/pages/${pageName}.json?v=20260906`, {cache:'no-store'});
+      const res = await fetch(`/assets/content/pages/${pageName}.json?v=${ASSET_VERSION}`, {cache:'no-store'});
       let page;
       if (res.ok) page = await res.json();
       else page = await fallbackPage();
@@ -96,7 +98,7 @@
       document.title = page.title;
       ensureMeta('description', page.description);
       ensureMeta('robots', page.robots || 'index,follow,max-image-preview:large');
-      ensureMeta('theme-color', '#061A33');
+      ensureMeta('theme-color', '#041426');
       ensureCanonical();
       document.querySelectorAll('meta[property^="og:"]').forEach(el => el.remove());
       document.querySelectorAll('link[rel="icon"]').forEach(el => el.remove());
@@ -108,7 +110,7 @@
       document.documentElement.classList.add('ow-ready');
     } catch (error) {
       console.error(error);
-      document.body.innerHTML = `<main class="runtime-error"><h1>Orbiwest Technologies</h1><p>We could not load this page correctly.</p><p><a href="mailto:${EMAIL}">${EMAIL}</a></p></main>`;
+      document.body.innerHTML = `<main class="runtime-error"><div><h1>Orbiwest Technologies</h1><p>We could not load this page correctly.</p><p><a href="mailto:${EMAIL}">${EMAIL}</a></p></div></main>`;
       document.body.classList.add('ow-ready');
       document.documentElement.classList.add('ow-ready');
     }
