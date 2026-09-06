@@ -1,245 +1,118 @@
-/* Orbiwest Technologies site bootstrap — Eagle Orbit v2 */
 (() => {
   'use strict';
 
-  const ENGINEERING_EMAIL = 'engineering@orbiwest.com';
-  const BRAND_REV = 'eagle-orbit-v2-20260903';
-  const FALLBACK_MARK_PATH = '/assets/img/logo-mark.svg';
-  const FALLBACK_LOCKUP_PATH = '/assets/img/logo-lockup.svg';
-  const FALLBACK_MARK = `${FALLBACK_MARK_PATH}?v=${BRAND_REV}`;
-  const FALLBACK_LOCKUP = `${FALLBACK_LOCKUP_PATH}?v=${BRAND_REV}`;
+  const EMAIL = 'engineering@orbiwest.com';
+  const CURRENT_YEAR = new Date().getFullYear();
+  const route = location.pathname === '' ? '/' : location.pathname;
 
-  const EAGLE_FULL_CHUNKS = [
-    '/assets/brand/eagle-v2/full-0.txt',
-    '/assets/brand/eagle-v2/full-1.txt',
-    '/assets/brand/eagle-v2/full-2.txt',
-    '/assets/brand/eagle-v2/full-3.txt'
-  ];
-
-  const EAGLE_ICON_CHUNKS = [
-    '/assets/brand/eagle-v2/icon-0.txt',
-    '/assets/brand/eagle-v2/icon-1.txt'
-  ];
-
-  let eagleAssetsPromise;
-
-  async function buildDataUrl(paths) {
-    const parts = await Promise.all(paths.map(async (path) => {
-      const response = await fetch(`${path}?v=${BRAND_REV}`, { cache: 'force-cache' });
-      if (!response.ok) throw new Error(`Brand asset request failed: ${path}`);
-      return (await response.text()).replace(/\s+/g, '');
-    }));
-    return `data:image/webp;base64,${parts.join('')}`;
+  function ensureMeta(name, content) {
+    let el = document.querySelector(`meta[name="${name}"]`);
+    if (!el) { el = document.createElement('meta'); el.name = name; document.head.appendChild(el); }
+    el.content = content;
   }
 
-  function validateImage(src) {
-    return new Promise((resolve, reject) => {
-      const probe = new Image();
-      probe.onload = () => resolve(src);
-      probe.onerror = () => reject(new Error('Brand image decode failed'));
-      probe.src = src;
-    });
+  function ensureCanonical() {
+    let el = document.querySelector('link[rel="canonical"]');
+    if (!el) { el = document.createElement('link'); el.rel = 'canonical'; document.head.appendChild(el); }
+    el.href = `https://orbiwest.com${route === '/index.html' ? '/' : route}`;
   }
 
-  function loadEagleAssets() {
-    if (!eagleAssetsPromise) {
-      eagleAssetsPromise = (async () => {
-        const full = await validateImage(await buildDataUrl(EAGLE_FULL_CHUNKS));
-        let icon = null;
-        try {
-          icon = await validateImage(await buildDataUrl(EAGLE_ICON_CHUNKS));
-        } catch (_) {
-          /* The full lockup remains the source of truth if the icon chunks are unavailable. */
-        }
-        return { full, icon };
-      })();
-    }
-    return eagleAssetsPromise;
+  function resetStyles() {
+    document.querySelectorAll('link[rel="stylesheet"]').forEach(link => link.remove());
+    const pre1 = document.createElement('link'); pre1.rel = 'preconnect'; pre1.href = 'https://fonts.googleapis.com';
+    const pre2 = document.createElement('link'); pre2.rel = 'preconnect'; pre2.href = 'https://fonts.gstatic.com'; pre2.crossOrigin = 'anonymous';
+    const font = document.createElement('link'); font.rel = 'stylesheet'; font.href = 'https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap';
+    const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/assets/css/site.css?v=brand-pack-1-20260906';
+    document.head.append(pre1, pre2, font, css);
   }
 
-  function normalizeEmail() {
-    const legacy = ['orbiwest@gmail.com', 'info@orbiwest.com', 'support@orbiwest.com'];
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    const nodes = [];
-    while (walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach((node) => {
-      if (!node.nodeValue) return;
-      legacy.forEach((email) => { node.nodeValue = node.nodeValue.replaceAll(email, ENGINEERING_EMAIL); });
-    });
-    document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
-      let href = link.getAttribute('href') || '';
-      legacy.forEach((email) => { href = href.replaceAll(email, ENGINEERING_EMAIL); });
-      link.setAttribute('href', href);
-      if (legacy.some((email) => (link.textContent || '').includes(email))) link.textContent = ENGINEERING_EMAIL;
-    });
+  function navCurrent(path, href) {
+    if (href === '/services.html') return path === '/services.html' || ['/managed-it-services.html','/cybersecurity.html','/cloud-solutions.html','/network-engineering.html','/server-administration.html','/it-consulting.html'].includes(path);
+    if (href === '/innovation.html') return path === '/innovation.html' || ['/ai-automation.html','/engineering-projects.html'].includes(path);
+    if (href === '/industries.html') return path === '/industries.html' || ['education','professional-services','healthcare','finance','manufacturing','logistics','retail','small-business'].some(x => path === `/${x}-it.html`);
+    if (href === '/insights.html') return path === '/insights.html' || ['/cybersecurity-playbook.html','/cloud-readiness-guide.html','/firewall-policy-hygiene.html','/managed-it-maturity.html','/network-resilience-guide.html','/case-studies.html','/secure-school-network.html','/cloud-readiness-case-study.html'].includes(path);
+    if (href === '/about.html') return path === '/about.html';
+    return false;
   }
 
-  function normalizeStructuredData() {
-    document.querySelectorAll('script[type="application/ld+json"]').forEach((script) => {
-      try {
-        const data = JSON.parse(script.textContent);
-        const visit = (value) => {
-          if (!value || typeof value !== 'object') return;
-          if ('email' in value) value.email = ENGINEERING_EMAIL;
-          if (value.name === 'Orbiwest Technologies') value.name = 'Orbiwest Technologies LLC';
-          if (typeof value.logo === 'string') value.logo = `https://orbiwest.com${FALLBACK_MARK_PATH}`;
-          Object.values(value).forEach(visit);
-        };
-        visit(data);
-        script.textContent = JSON.stringify(data);
-      } catch (_) { /* Leave custom JSON-LD unchanged if it cannot be parsed. */ }
-    });
+  function headerHtml() {
+    const nav = [
+      ['Services','/services.html'],['Innovation','/innovation.html'],['Industries','/industries.html'],['Resources','/insights.html'],['About','/about.html']
+    ].map(([label,href]) => `<a href="${href}"${navCurrent(route,href) ? ' aria-current="page"' : ''}>${label}</a>`).join('');
+    return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container nav-shell"><a class="brand-link" href="/" aria-label="Orbiwest Technologies home"><img class="brand-logo" data-brand-logo="primary" alt="Orbiwest Technologies"><span class="brand-fallback" aria-hidden="true">ORBIWEST TECHNOLOGIES</span></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button><nav class="site-nav" aria-label="Primary navigation" data-nav>${nav}<a class="contact-link" href="/contact.html"${route === '/contact.html' ? ' aria-current="page"' : ''}>Contact</a></nav></div></header>`;
   }
 
-  function normalizeBrandFallback() {
-    document.querySelectorAll('.site-header .brand').forEach((brand) => {
-      brand.classList.add('brand-official', 'brand-horizontal');
-      const img = brand.querySelector('img');
-      if (img) {
-        img.src = FALLBACK_LOCKUP;
-        img.alt = 'Orbiwest Technologies';
-        img.removeAttribute('srcset');
-        img.style.imageRendering = 'auto';
-      }
-      const text = brand.querySelector('.brand-text');
-      if (text) text.setAttribute('aria-hidden', 'true');
-    });
-
-    document.querySelectorAll('.footer-brand img, .professional-brand-stage img').forEach((img) => {
-      img.src = FALLBACK_MARK;
-      img.removeAttribute('srcset');
-      img.style.imageRendering = 'auto';
-      if (!img.getAttribute('alt')) img.setAttribute('alt', '');
-    });
-
-    document.querySelectorAll('img.hq-clean-lockup, img.hq-logo-lockup, img[src*="logo-lockup.svg"]').forEach((img) => {
-      img.src = FALLBACK_LOCKUP;
-      img.alt = 'Orbiwest Technologies metallic corporate logo';
-      img.classList.add('hq-logo-lockup');
-      img.removeAttribute('srcset');
-    });
-
-    document.querySelectorAll('.brand-text strong').forEach((node) => {
-      node.textContent = 'ORBIWEST';
-      node.setAttribute('aria-label', 'Orbiwest');
-    });
-    document.querySelectorAll('.brand-text em').forEach((node) => { node.textContent = 'TECHNOLOGIES'; });
-    document.querySelectorAll('.footer-brand strong').forEach((node) => {
-      if (!node.closest('.brand-text')) node.textContent = 'Orbiwest Technologies LLC';
-    });
+  function footerHtml() {
+    return `<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><img data-brand-logo="emblem" alt=""><div><strong>Orbiwest Technologies LLC</strong><p>Technology Under Control. Innovation In Motion.</p></div></div><nav class="footer-nav" aria-label="Footer navigation"><a href="/services.html">Services</a><a href="/innovation.html">Innovation</a><a href="/industries.html">Industries</a><a href="/insights.html">Resources</a><a href="/about.html">About</a></nav><div class="footer-contact"><a href="mailto:${EMAIL}">${EMAIL}</a><span>Chicago, Illinois, USA</span></div></div><div class="container footer-bottom"><p>© ${CURRENT_YEAR} Orbiwest Technologies LLC. All rights reserved.</p><p><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>`;
   }
 
-  async function applyEagleOrbitV2() {
+  async function loadBrand(kind) {
+    const nodes = [...document.querySelectorAll(`[data-brand-logo="${kind}"]`)];
+    if (!nodes.length) return;
     try {
-      const { full, icon } = await loadEagleAssets();
-
-      document.querySelectorAll('.site-header .brand').forEach((brand) => {
-        brand.classList.add('brand-official', 'brand-horizontal', 'eagle-v2-nav');
-        const img = brand.querySelector('img');
-        if (!img) return;
-        img.src = full;
-        img.alt = 'Orbiwest Technologies';
-        img.classList.add('eagle-v2-full-lockup', 'eagle-v2-nav-lockup');
-        img.removeAttribute('srcset');
-      });
-
-      document.querySelectorAll('img.hq-clean-lockup, img.hq-logo-lockup').forEach((img) => {
-        img.src = full;
-        img.alt = 'Orbiwest Technologies Eagle Orbit metallic logo';
-        img.classList.add('eagle-v2-full-lockup');
-        img.classList.remove('eagle-v2-icon-crop');
-        img.removeAttribute('srcset');
-      });
-
-      document.querySelectorAll('.professional-brand-stage img, .footer-brand img').forEach((img) => {
-        img.src = icon || full;
-        img.classList.toggle('eagle-v2-icon-crop', !icon);
-        img.classList.add('eagle-v2-icon');
-        img.removeAttribute('srcset');
-        if (img.closest('.professional-brand-stage')) {
-          img.alt = 'Orbiwest Technologies Eagle Orbit icon';
-        }
-      });
-
-      if (icon) {
-        let favicon = document.querySelector('link[rel~="icon"]');
-        if (!favicon) {
-          favicon = document.createElement('link');
-          favicon.rel = 'icon';
-          document.head.appendChild(favicon);
-        }
-        favicon.type = 'image/webp';
-        favicon.href = icon;
-      }
-
-      document.documentElement.classList.add('eagle-v2-ready');
+      const parts = await Promise.all([0,1,2,3].map(i => fetch(`/assets/brand/chunks/${kind}-${i}.txt?v=20260906`).then(r => {
+        if (!r.ok) throw new Error(`Brand asset chunk ${i} failed`);
+        return r.text();
+      })));
+      const src = `data:image/webp;base64,${parts.join('')}`;
+      nodes.forEach(img => { img.src = src; img.classList.add('brand-loaded'); });
+      document.querySelectorAll('.brand-fallback').forEach(el => el.hidden = true);
     } catch (error) {
-      console.warn('Orbiwest Eagle Orbit v2 asset load failed; using local fallback.', error);
+      console.error(error);
+      nodes.forEach(img => img.classList.add('brand-failed'));
+      document.querySelectorAll('.brand-fallback').forEach(el => el.hidden = false);
     }
   }
 
-  function normalizeNavigation() {
-    document.querySelectorAll('.site-nav a, .footer-nav a').forEach((link) => {
-      const href = link.getAttribute('href') || '';
-      if ((link.textContent || '').trim() === 'Insights' && link.closest('.site-nav')) link.textContent = 'Resources';
-      if (href.endsWith('/case-studies.html') && link.closest('.site-nav')) link.remove();
+  function wireUi() {
+    const toggle = document.querySelector('[data-nav-toggle]');
+    const nav = document.querySelector('[data-nav]');
+    if (toggle && nav) toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
     });
   }
 
-  function ensureEngineeringContact() {
-    document.querySelectorAll('.footer-contact').forEach((box) => {
-      const mailLinks = [...box.querySelectorAll('a[href^="mailto:"]')];
-      mailLinks.slice(1).forEach((link) => link.remove());
-      const first = mailLinks[0];
-      if (first) {
-        first.href = `mailto:${ENGINEERING_EMAIL}`;
-        first.textContent = ENGINEERING_EMAIL;
-      } else {
-        const link = document.createElement('a');
-        link.href = `mailto:${ENGINEERING_EMAIL}`;
-        link.textContent = ENGINEERING_EMAIL;
-        box.prepend(link);
-      }
-    });
+  function cleanOldScripts() {
+    document.querySelectorAll('script[src*="metallic-3d"],script[src*="base.js"],script[src*="site.js"]').forEach(s => s.remove());
   }
 
-  function removeTemplateLanguage() {
-    const unwanted = new Set(['Enterprise-grade visual identity','Framework-free static deployment','Free hosting compatibility','Email-only contact path','Designed for future expansion']);
-    document.querySelectorAll('p, li').forEach((node) => {
-      if (unwanted.has((node.textContent || '').trim())) node.remove();
-    });
+  async function fallbackPage() {
+    await import('/assets/js/fallback.js?v=20260906');
+    return window.OrbiwestFallback?.page(route) || null;
   }
 
-  function labelIllustrativeScenarios() {
-    const path = location.pathname.toLowerCase();
-    const scenarioPages = ['/secure-school-network.html','/cloud-readiness-case-study.html','/trade-operations-case-study.html'];
-    if (!scenarioPages.some((suffix) => path.endsWith(suffix))) return;
-    document.title = document.title.replace(/Case Study/gi, 'Illustrative Scenario');
-    document.querySelectorAll('.eyebrow').forEach((node) => {
-      if (/case study/i.test(node.textContent || '')) node.textContent = 'Illustrative Scenario';
-    });
-    const main = document.getElementById('main-content');
-    if (!main || main.querySelector('[data-scenario-notice]')) return;
-    const notice = document.createElement('aside');
-    notice.className = 'scenario-notice container';
-    notice.dataset.scenarioNotice = 'true';
-    notice.innerHTML = '<strong>Illustrative scenario.</strong> This page is an educational example of a technical approach. It is not presented as a named client engagement, testimonial, or verified customer outcome.';
-    const breadcrumb = main.querySelector('.breadcrumb');
-    if (breadcrumb && breadcrumb.nextSibling) breadcrumb.parentNode.insertBefore(notice, breadcrumb.nextSibling);
-    else main.prepend(notice);
+  async function render() {
+    try {
+      resetStyles();
+      cleanOldScripts();
+      const pageName = route === '/' || route === '/index.html' ? 'index' : route.split('/').pop().replace(/\.html$/, '');
+      const res = await fetch(`/assets/content/pages/${pageName}.json?v=20260906`, {cache:'no-store'});
+      let page;
+      if (res.ok) page = await res.json();
+      else page = await fallbackPage();
+      if (!page) throw new Error(`Content load failed for ${route}`);
+
+      document.title = page.title;
+      ensureMeta('description', page.description);
+      ensureMeta('robots', page.robots || 'index,follow,max-image-preview:large');
+      ensureMeta('theme-color', '#061A33');
+      ensureCanonical();
+      document.querySelectorAll('meta[property^="og:"]').forEach(el => el.remove());
+      document.querySelectorAll('link[rel="icon"]').forEach(el => el.remove());
+
+      document.body.innerHTML = `${headerHtml()}<main id="main">${page.main}</main>${footerHtml()}`;
+      wireUi();
+      await Promise.all([loadBrand('primary'), loadBrand('emblem')]);
+      document.body.classList.add('ow-ready');
+      document.documentElement.classList.add('ow-ready');
+    } catch (error) {
+      console.error(error);
+      document.body.innerHTML = `<main class="runtime-error"><h1>Orbiwest Technologies</h1><p>We could not load this page correctly.</p><p><a href="mailto:${EMAIL}">${EMAIL}</a></p></main>`;
+      document.body.classList.add('ow-ready');
+      document.documentElement.classList.add('ow-ready');
+    }
   }
 
-  normalizeEmail();
-  normalizeStructuredData();
-  normalizeBrandFallback();
-  normalizeNavigation();
-  ensureEngineeringContact();
-  removeTemplateLanguage();
-  labelIllustrativeScenarios();
-  applyEagleOrbitV2();
-
-  const base = document.createElement('script');
-  base.src = `/assets/js/base.js?v=${BRAND_REV}`;
-  base.async = false;
-  document.head.appendChild(base);
+  render();
 })();
