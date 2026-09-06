@@ -3,7 +3,7 @@
 
   const EMAIL = 'engineering@orbiwest.com';
   const CURRENT_YEAR = new Date().getFullYear();
-  const ASSET_VERSION = '20260906-premium3d';
+  const ASSET_VERSION = '20260906-logo-fix-1';
   const route = location.pathname === '' ? '/' : location.pathname;
 
   function ensureMeta(name, content) {
@@ -24,8 +24,8 @@
     const pre2 = document.createElement('link'); pre2.rel = 'preconnect'; pre2.href = 'https://fonts.gstatic.com'; pre2.crossOrigin = 'anonymous';
     const font = document.createElement('link'); font.rel = 'stylesheet'; font.href = 'https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap';
     const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = `/assets/css/site.css?v=${ASSET_VERSION}`;
-    const premium = document.createElement('link'); premium.rel = 'stylesheet'; premium.href = `/assets/css/premium-3d.css?v=${ASSET_VERSION}`;
-    document.head.append(pre1, pre2, font, css, premium);
+    const fix = document.createElement('link'); fix.rel = 'stylesheet'; fix.href = `/assets/css/logo-presentation-fix.css?v=${ASSET_VERSION}`;
+    document.head.append(pre1, pre2, font, css, fix);
   }
 
   function navCurrent(path, href) {
@@ -41,11 +41,11 @@
     const nav = [
       ['Services','/services.html'],['Innovation','/innovation.html'],['Industries','/industries.html'],['Resources','/insights.html'],['About','/about.html']
     ].map(([label,href]) => `<a href="${href}"${navCurrent(route,href) ? ' aria-current="page"' : ''}>${label}</a>`).join('');
-    return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container nav-shell"><a class="brand-link" href="/" aria-label="Orbiwest Technologies home"><img class="brand-logo" data-brand-logo="primary" alt="Orbiwest Technologies"><span class="brand-fallback" aria-hidden="true">ORBIWEST TECHNOLOGIES</span></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button><nav class="site-nav" aria-label="Primary navigation" data-nav>${nav}<a class="contact-link" href="/contact.html"${route === '/contact.html' ? ' aria-current="page"' : ''}>Contact</a></nav></div></header>`;
+    return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container nav-shell"><a class="brand-link" href="/" aria-label="Orbiwest Technologies home"><span class="brand-fallback">ORBIWEST</span></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button><nav class="site-nav" aria-label="Primary navigation" data-nav>${nav}<a class="contact-link" href="/contact.html"${route === '/contact.html' ? ' aria-current="page"' : ''}>Contact</a></nav></div></header>`;
   }
 
   function footerHtml() {
-    return `<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><img data-brand-logo="emblem" alt=""><div><strong>Orbiwest Technologies LLC</strong><p>Technology Under Control. Innovation In Motion.</p></div></div><nav class="footer-nav" aria-label="Footer navigation"><a href="/services.html">Services</a><a href="/innovation.html">Innovation</a><a href="/industries.html">Industries</a><a href="/insights.html">Resources</a><a href="/about.html">About</a></nav><div class="footer-contact"><a href="mailto:${EMAIL}">${EMAIL}</a><span>Chicago, Illinois, USA</span></div></div><div class="container footer-bottom"><p>© ${CURRENT_YEAR} Orbiwest Technologies LLC. All rights reserved.</p><p><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>`;
+    return `<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><div><strong>Orbiwest Technologies LLC</strong><p>Technology Under Control. Innovation In Motion.</p></div></div><nav class="footer-nav" aria-label="Footer navigation"><a href="/services.html">Services</a><a href="/innovation.html">Innovation</a><a href="/industries.html">Industries</a><a href="/insights.html">Resources</a><a href="/about.html">About</a></nav><div class="footer-contact"><a href="mailto:${EMAIL}">${EMAIL}</a><span>Chicago, Illinois, USA</span></div></div><div class="container footer-bottom"><p>© ${CURRENT_YEAR} Orbiwest Technologies LLC. All rights reserved.</p><p><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>`;
   }
 
   async function loadBrand(kind) {
@@ -58,11 +58,9 @@
       })));
       const src = `data:image/webp;base64,${parts.join('')}`;
       nodes.forEach(img => { img.src = src; img.classList.add('brand-loaded'); });
-      document.querySelectorAll('.brand-fallback').forEach(el => el.hidden = true);
     } catch (error) {
       console.error(error);
       nodes.forEach(img => img.classList.add('brand-failed'));
-      document.querySelectorAll('.brand-fallback').forEach(el => el.hidden = false);
     }
   }
 
@@ -98,7 +96,7 @@
       document.title = page.title;
       ensureMeta('description', page.description);
       ensureMeta('robots', page.robots || 'index,follow,max-image-preview:large');
-      ensureMeta('theme-color', '#041426');
+      ensureMeta('theme-color', '#061A33');
       ensureCanonical();
       document.querySelectorAll('meta[property^="og:"]').forEach(el => el.remove());
       document.querySelectorAll('link[rel="icon"]').forEach(el => el.remove());
