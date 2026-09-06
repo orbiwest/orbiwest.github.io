@@ -3,29 +3,54 @@
 
   const EMAIL = 'engineering@orbiwest.com';
   const CURRENT_YEAR = new Date().getFullYear();
-  const ASSET_VERSION = '20260906-logo-fix-1';
+  const ASSET_VERSION = '20260906-flat-professional-1';
   const route = location.pathname === '' ? '/' : location.pathname;
 
   function ensureMeta(name, content) {
     let el = document.querySelector(`meta[name="${name}"]`);
-    if (!el) { el = document.createElement('meta'); el.name = name; document.head.appendChild(el); }
+    if (!el) {
+      el = document.createElement('meta');
+      el.name = name;
+      document.head.appendChild(el);
+    }
     el.content = content;
   }
 
   function ensureCanonical() {
     let el = document.querySelector('link[rel="canonical"]');
-    if (!el) { el = document.createElement('link'); el.rel = 'canonical'; document.head.appendChild(el); }
+    if (!el) {
+      el = document.createElement('link');
+      el.rel = 'canonical';
+      document.head.appendChild(el);
+    }
     el.href = `https://orbiwest.com${route === '/index.html' ? '/' : route}`;
   }
 
   function resetStyles() {
     document.querySelectorAll('link[rel="stylesheet"]').forEach(link => link.remove());
-    const pre1 = document.createElement('link'); pre1.rel = 'preconnect'; pre1.href = 'https://fonts.googleapis.com';
-    const pre2 = document.createElement('link'); pre2.rel = 'preconnect'; pre2.href = 'https://fonts.gstatic.com'; pre2.crossOrigin = 'anonymous';
-    const font = document.createElement('link'); font.rel = 'stylesheet'; font.href = 'https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap';
-    const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = `/assets/css/site.css?v=${ASSET_VERSION}`;
-    const fix = document.createElement('link'); fix.rel = 'stylesheet'; fix.href = `/assets/css/logo-presentation-fix.css?v=${ASSET_VERSION}`;
-    document.head.append(pre1, pre2, font, css, fix);
+
+    const pre1 = document.createElement('link');
+    pre1.rel = 'preconnect';
+    pre1.href = 'https://fonts.googleapis.com';
+
+    const pre2 = document.createElement('link');
+    pre2.rel = 'preconnect';
+    pre2.href = 'https://fonts.gstatic.com';
+    pre2.crossOrigin = 'anonymous';
+
+    const font = document.createElement('link');
+    font.rel = 'stylesheet';
+    font.href = 'https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap';
+
+    const base = document.createElement('link');
+    base.rel = 'stylesheet';
+    base.href = `/assets/css/site.css?v=${ASSET_VERSION}`;
+
+    const flat = document.createElement('link');
+    flat.rel = 'stylesheet';
+    flat.href = `/assets/css/flat-professional.css?v=${ASSET_VERSION}`;
+
+    document.head.append(pre1, pre2, font, base, flat);
   }
 
   function navCurrent(path, href) {
@@ -39,8 +64,13 @@
 
   function headerHtml() {
     const nav = [
-      ['Services','/services.html'],['Innovation','/innovation.html'],['Industries','/industries.html'],['Resources','/insights.html'],['About','/about.html']
-    ].map(([label,href]) => `<a href="${href}"${navCurrent(route,href) ? ' aria-current="page"' : ''}>${label}</a>`).join('');
+      ['Services','/services.html'],
+      ['Innovation','/innovation.html'],
+      ['Industries','/industries.html'],
+      ['Resources','/insights.html'],
+      ['About','/about.html']
+    ].map(([label, href]) => `<a href="${href}"${navCurrent(route, href) ? ' aria-current="page"' : ''}>${label}</a>`).join('');
+
     return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container nav-shell"><a class="brand-link" href="/" aria-label="Orbiwest Technologies home"><span class="brand-fallback">ORBIWEST</span></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button><nav class="site-nav" aria-label="Primary navigation" data-nav>${nav}<a class="contact-link" href="/contact.html"${route === '/contact.html' ? ' aria-current="page"' : ''}>Contact</a></nav></div></header>`;
   }
 
@@ -48,29 +78,15 @@
     return `<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><div><strong>Orbiwest Technologies LLC</strong><p>Technology Under Control. Innovation In Motion.</p></div></div><nav class="footer-nav" aria-label="Footer navigation"><a href="/services.html">Services</a><a href="/innovation.html">Innovation</a><a href="/industries.html">Industries</a><a href="/insights.html">Resources</a><a href="/about.html">About</a></nav><div class="footer-contact"><a href="mailto:${EMAIL}">${EMAIL}</a><span>Chicago, Illinois, USA</span></div></div><div class="container footer-bottom"><p>© ${CURRENT_YEAR} Orbiwest Technologies LLC. All rights reserved.</p><p><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>`;
   }
 
-  async function loadBrand(kind) {
-    const nodes = [...document.querySelectorAll(`[data-brand-logo="${kind}"]`)];
-    if (!nodes.length) return;
-    try {
-      const parts = await Promise.all([0,1,2,3].map(i => fetch(`/assets/brand/chunks/${kind}-${i}.txt?v=${ASSET_VERSION}`).then(r => {
-        if (!r.ok) throw new Error(`Brand asset chunk ${i} failed`);
-        return r.text();
-      })));
-      const src = `data:image/webp;base64,${parts.join('')}`;
-      nodes.forEach(img => { img.src = src; img.classList.add('brand-loaded'); });
-    } catch (error) {
-      console.error(error);
-      nodes.forEach(img => img.classList.add('brand-failed'));
-    }
-  }
-
   function wireUi() {
     const toggle = document.querySelector('[data-nav-toggle]');
     const nav = document.querySelector('[data-nav]');
-    if (toggle && nav) toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', String(open));
-    });
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    }
   }
 
   function cleanOldScripts() {
@@ -86,24 +102,26 @@
     try {
       resetStyles();
       cleanOldScripts();
-      const pageName = route === '/' || route === '/index.html' ? 'index' : route.split('/').pop().replace(/\.html$/, '');
+
+      const pageName = route === '/' || route === '/index.html'
+        ? 'index'
+        : route.split('/').pop().replace(/\.html$/, '');
+
       const res = await fetch(`/assets/content/pages/${pageName}.json?v=${ASSET_VERSION}`, {cache:'no-store'});
-      let page;
-      if (res.ok) page = await res.json();
-      else page = await fallbackPage();
+      const page = res.ok ? await res.json() : await fallbackPage();
       if (!page) throw new Error(`Content load failed for ${route}`);
 
       document.title = page.title;
       ensureMeta('description', page.description);
       ensureMeta('robots', page.robots || 'index,follow,max-image-preview:large');
-      ensureMeta('theme-color', '#061A33');
+      ensureMeta('theme-color', '#081A2F');
       ensureCanonical();
+
       document.querySelectorAll('meta[property^="og:"]').forEach(el => el.remove());
       document.querySelectorAll('link[rel="icon"]').forEach(el => el.remove());
 
       document.body.innerHTML = `${headerHtml()}<main id="main">${page.main}</main>${footerHtml()}`;
       wireUi();
-      await Promise.all([loadBrand('primary'), loadBrand('emblem')]);
       document.body.classList.add('ow-ready');
       document.documentElement.classList.add('ow-ready');
     } catch (error) {
