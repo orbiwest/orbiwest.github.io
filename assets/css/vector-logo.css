@@ -1,12 +1,13 @@
-/* Orbiwest Technologies — clean scalable vector branding */
-.brand-vector{display:block;overflow:visible;max-width:100%;height:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
-.brand-link{min-width:330px}
-.header-logo{width:300px!important;height:auto!important;max-height:72px!important;object-fit:initial!important;mix-blend-mode:normal!important;filter:none!important}
-.cover-logo{width:min(100%,520px)!important;height:auto!important;max-height:none!important;object-fit:initial!important;mix-blend-mode:normal!important;filter:none!important}
-.page-hero .mini-logo{width:210px!important;height:auto!important;max-height:none!important;object-fit:initial!important;mix-blend-mode:normal!important;filter:none!important;justify-self:end}
-.footer-logo{width:230px!important;height:auto!important;object-fit:initial!important;mix-blend-mode:normal!important;filter:none!important;flex:0 0 auto}
-.footer-brand{align-items:center}
-.footer-brand>div{min-width:0}
-@media(max-width:1100px){.brand-link{min-width:270px}.header-logo{width:255px!important}}
-@media(max-width:980px){.brand-link{min-width:0}.header-logo{width:235px!important}.cover-logo{width:360px!important}.page-hero .mini-logo{display:none!important}.footer-logo{width:205px!important}}
-@media(max-width:640px){.header-logo{width:205px!important;max-height:56px!important}.cover-logo{width:290px!important}.footer-logo{width:190px!important}.footer-brand{align-items:flex-start;flex-direction:column}}
+/* Orbiwest Technologies — approved reference logo integration */
+.brand-link{display:flex;align-items:center;min-width:350px}
+.header-logo{display:block;width:330px;height:auto;object-fit:contain;background:#fff}
+.cover-brand{display:none!important}
+.page-hero .mini-logo,.hero-brand,.brand-stage{display:none!important}
+.footer-logo{display:block;width:270px;height:auto;object-fit:contain;background:#fff;border-radius:6px}
+.site-footer{background:#f7f9fc!important;color:#07162f!important;border-top:3px solid #c99a2b!important}
+.footer-brand strong{color:#07162f!important}
+.footer-brand p,.footer-nav a,.footer-contact a,.footer-contact span,.footer-bottom{color:#5d6d80!important}
+.footer-bottom{border-top:1px solid #dfe6ee!important}
+@media(max-width:1100px){.brand-link{min-width:290px}.header-logo{width:285px}}
+@media(max-width:980px){.brand-link{min-width:0}.header-logo{width:250px}.footer-logo{width:235px}}
+@media(max-width:640px){.header-logo{width:210px}.footer-logo{width:210px}}
