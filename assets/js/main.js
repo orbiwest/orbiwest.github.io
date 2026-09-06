@@ -3,7 +3,7 @@
 
   const EMAIL = 'engineering@orbiwest.com';
   const CURRENT_YEAR = new Date().getFullYear();
-  const ASSET_VERSION = '20260906-flat-professional-1';
+  const ASSET_VERSION = '20260906-cover-theme-1';
   const route = location.pathname === '' ? '/' : location.pathname;
 
   function ensureMeta(name, content) {
@@ -46,11 +46,11 @@
     base.rel = 'stylesheet';
     base.href = `/assets/css/site.css?v=${ASSET_VERSION}`;
 
-    const flat = document.createElement('link');
-    flat.rel = 'stylesheet';
-    flat.href = `/assets/css/flat-professional.css?v=${ASSET_VERSION}`;
+    const theme = document.createElement('link');
+    theme.rel = 'stylesheet';
+    theme.href = `/assets/css/cover-theme.css?v=${ASSET_VERSION}`;
 
-    document.head.append(pre1, pre2, font, base, flat);
+    document.head.append(pre1, pre2, font, base, theme);
   }
 
   function navCurrent(path, href) {
@@ -71,11 +71,30 @@
       ['About','/about.html']
     ].map(([label, href]) => `<a href="${href}"${navCurrent(route, href) ? ' aria-current="page"' : ''}>${label}</a>`).join('');
 
-    return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container nav-shell"><a class="brand-link" href="/" aria-label="Orbiwest Technologies home"><span class="brand-fallback">ORBIWEST</span></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button><nav class="site-nav" aria-label="Primary navigation" data-nav>${nav}<a class="contact-link" href="/contact.html"${route === '/contact.html' ? ' aria-current="page"' : ''}>Contact</a></nav></div></header>`;
+    return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container nav-shell"><a class="brand-link" href="/" aria-label="Orbiwest Technologies home"><img class="header-logo" data-brand-logo="primary" alt="Orbiwest Technologies"><span class="brand-wordmark"><strong>ORBIWEST</strong><small>TECHNOLOGIES</small></span></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button><nav class="site-nav" aria-label="Primary navigation" data-nav>${nav}<a class="contact-link" href="/contact.html"${route === '/contact.html' ? ' aria-current="page"' : ''}>Contact</a></nav></div></header>`;
   }
 
   function footerHtml() {
-    return `<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><div><strong>Orbiwest Technologies LLC</strong><p>Technology Under Control. Innovation In Motion.</p></div></div><nav class="footer-nav" aria-label="Footer navigation"><a href="/services.html">Services</a><a href="/innovation.html">Innovation</a><a href="/industries.html">Industries</a><a href="/insights.html">Resources</a><a href="/about.html">About</a></nav><div class="footer-contact"><a href="mailto:${EMAIL}">${EMAIL}</a><span>Chicago, Illinois, USA</span></div></div><div class="container footer-bottom"><p>© ${CURRENT_YEAR} Orbiwest Technologies LLC. All rights reserved.</p><p><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>`;
+    return `<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><img class="footer-logo" data-brand-logo="primary" alt=""><div><strong>Orbiwest Technologies LLC</strong><p>Technology Under Control. Innovation In Motion.</p></div></div><nav class="footer-nav" aria-label="Footer navigation"><a href="/services.html">Services</a><a href="/innovation.html">Innovation</a><a href="/industries.html">Industries</a><a href="/insights.html">Resources</a><a href="/about.html">About</a></nav><div class="footer-contact"><a href="mailto:${EMAIL}">${EMAIL}</a><span>Chicago, Illinois, USA</span></div></div><div class="container footer-bottom"><p>© ${CURRENT_YEAR} Orbiwest Technologies LLC. All rights reserved.</p><p><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>`;
+  }
+
+  async function loadBrand() {
+    const nodes = [...document.querySelectorAll('[data-brand-logo="primary"]')];
+    if (!nodes.length) return;
+    try {
+      const parts = await Promise.all([0,1,2,3].map(i => fetch(`/assets/brand/chunks/primary-${i}.txt?v=${ASSET_VERSION}`).then(r => {
+        if (!r.ok) throw new Error(`Brand asset chunk ${i} failed`);
+        return r.text();
+      })));
+      const src = `data:image/webp;base64,${parts.join('')}`;
+      nodes.forEach(img => {
+        img.src = src;
+        img.classList.add('brand-loaded');
+      });
+    } catch (error) {
+      console.error(error);
+      nodes.forEach(img => img.style.display = 'none');
+    }
   }
 
   function wireUi() {
@@ -114,14 +133,16 @@
       document.title = page.title;
       ensureMeta('description', page.description);
       ensureMeta('robots', page.robots || 'index,follow,max-image-preview:large');
-      ensureMeta('theme-color', '#081A2F');
+      ensureMeta('theme-color', '#06172B');
       ensureCanonical();
 
       document.querySelectorAll('meta[property^="og:"]').forEach(el => el.remove());
       document.querySelectorAll('link[rel="icon"]').forEach(el => el.remove());
 
-      document.body.innerHTML = `${headerHtml()}<main id="main">${page.main}</main>${footerHtml()}`;
+      const coverStrip = pageName === 'index' ? '' : '<div class="page-cover-strip" aria-hidden="true"></div>';
+      document.body.innerHTML = `${headerHtml()}${coverStrip}<main id="main">${page.main}</main>${footerHtml()}`;
       wireUi();
+      await loadBrand();
       document.body.classList.add('ow-ready');
       document.documentElement.classList.add('ow-ready');
     } catch (error) {
