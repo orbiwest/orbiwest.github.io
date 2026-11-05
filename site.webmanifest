@@ -7,12 +7,12 @@
   "theme_color": "#061A33",
   "icons": [
     {
-      "src": "/assets/orbiwest-20261105/img/icon-192.png",
+      "src": "/assets/orbiwest-premium-20261105/img/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/assets/orbiwest-20261105/img/icon-512.png",
+      "src": "/assets/orbiwest-premium-20261105/img/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

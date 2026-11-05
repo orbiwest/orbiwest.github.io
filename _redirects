@@ -18,12 +18,9 @@
 /it-consulting-projects.html /services/projects-onsite/ 301
 /education-it.html /industries/education/ 301
 /small-business-it.html /industries/small-business/ 301
-/professional-services-it.html /industries/professional-multisite/ 301
-/multisite-it.html /industries/professional-multisite/ 301
-/nonprofit-faith-it.html /industries/nonprofit-faith/ 301
-/managed-it-readiness.html /resources/managed-it-readiness/ 301
-/network-documentation-checklist.html /resources/network-documentation/ 301
-/endpoint-security-baseline.html /resources/security-baseline/ 301
+/professional-services-it.html /industries/multisite/ 301
+/multisite-it.html /industries/multisite/ 301
+/nonprofit-faith-it.html /industries/nonprofit/ 301
 /privacy.html /privacy/ 301
 /terms.html /terms/ 301
 /accessibility.html /accessibility/ 301
@@ -33,8 +30,8 @@
 /finance-it.html /industries/ 301
 /healthcare-it.html /industries/ 301
 /retail-it.html /industries/small-business/ 301
-/manufacturing-it.html /industries/professional-multisite/ 301
-/logistics-it.html /industries/professional-multisite/ 301
+/manufacturing-it.html /industries/multisite/ 301
+/logistics-it.html /industries/multisite/ 301
 /global-sourcing.html /about/ 301
 /import-export.html /about/ 301
 /cloud-readiness-guide.html /resources/ 301
