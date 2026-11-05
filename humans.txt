@@ -1,5 +1,0 @@
-Orbiwest Technologies LLC
-Founder: Noor Mohammed Khan
-Location: Chicago, Illinois, USA
-Website: https://orbiwest.com
-Built as a lightweight static site with semantic HTML, CSS and vanilla JavaScript.
