@@ -1,37 +1,45 @@
-# Orbiwest Technologies — FINAL LOCKED Production Website
+# Orbiwest Technologies — FINAL Production Website
 
-This is the final replacement package.
+This is the single production package to deploy.
 
-## Final visual decisions
+## Final brand decisions
 - Official metallic Orbiwest logo with transparent web treatment.
-- Deep navy + restrained champagne gold + white/light-gray interface.
-- Realistic IT-professional hero crop with the artificial jacket logo removed from view.
-- Soft navy-to-photo blending in the hero.
-- Consistent line icons for the eight core services.
-- Cleaner customer-facing terminology: `Cameras, Access Control & AI`.
-- No fake statistics, testimonials, phone number, certifications, client counts or partner badges.
+- Deep navy, champagne gold, brushed silver and clean neutral surfaces.
+- Infrastructure-only hero image: no awkward cropped person/head and no artificial logo on clothing.
+- Customer-facing terminology uses `Cameras, Access Control & AI` rather than the ambiguous `Physical Security`.
+- Consistent line icons and restrained metallic styling.
 
-## Core service positioning
-- Managed IT & Help Desk
-- Networks & Wireless
-- Firewalls & VPN
-- Cybersecurity
-- Microsoft 365 & Cloud
-- Servers, Backup & BCDR
-- Cameras, NVR & Access Control
-- Endpoint & RMM
+## Content decisions
+The site now explains:
+- what each service is
+- common reasons a customer needs it
+- what the service can include
+- intended outcomes
+- engagement options
+- scope/limitations where relevant
 
-The full service catalog also includes co-managed IT, identity/email security,
-vulnerability/compliance readiness, vCIO consulting, VoIP/communications,
-procurement/vendor management, automation/AI integration, camera/NVR/VMS,
-access control, credentials, intercom, gate/visitor workflows and smart-security integrations.
+## Services
+Managed IT, co-managed IT, endpoint/RMM, networks/Wi-Fi, firewalls/VPN,
+Microsoft 365/cloud, Windows/Linux servers, backup/BCDR, cybersecurity,
+identity/email security, vulnerability/compliance readiness, VoIP,
+vCIO/consulting, procurement/vendor management, automation/AI,
+projects/on-site support, cameras/NVR/VMS, access control, RFID cards/key fobs,
+intercom and smart-security integrations.
 
-## Contact
+## Trust policy
+The website does NOT invent:
+- customer counts
+- years in business
+- uptime figures
+- 24/7 claims
+- response-time promises
+- testimonials
+- certifications
+- partner status
+- client logos
+- a business phone number
+
+Public contact:
 - info@orbiwest.com
 - support@orbiwest.com
 - Chicago, Illinois, USA
-
-No phone number is published until a real business number is confirmed.
-
-## Deployment
-Replace the repository contents in one commit. Do not merge this package with older website builds.

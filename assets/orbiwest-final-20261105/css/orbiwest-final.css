@@ -45,8 +45,8 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 .actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:10px 18px;border:1px solid transparent;border-radius:8px;font-weight:800}
 .btn-gold{background:linear-gradient(#E5C56F,#C99C3A);color:#08192D}.btn-ghost{border-color:rgba(255,255,255,.7);color:white}.btn-navy{background:#0B2E5F;color:white}
-.hero-photo{position:relative;overflow:hidden;background:#08213F}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:58% center}
-.hero-photo::before{content:"";position:absolute;z-index:2;inset:0;background:linear-gradient(90deg,rgba(6,26,51,.72) 0%,rgba(6,26,51,.20) 15%,transparent 36%,transparent 76%,rgba(6,26,51,.33) 100%);pointer-events:none}
+.hero-photo{position:relative;overflow:hidden;background:#08213F}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:58% center;filter:saturate(.92) contrast(1.02)}
+.hero-photo::before{content:"";position:absolute;z-index:2;inset:0;background:linear-gradient(90deg,rgba(6,26,51,.24) 0%,transparent 24%,transparent 78%,rgba(6,26,51,.16) 100%);pointer-events:none}
 .hero-benefits{padding:28px 22px;display:grid;align-content:center;gap:18px;background:linear-gradient(145deg,#092642,#071D35)}
 .hb{display:grid;grid-template-columns:34px minmax(0,1fr);gap:11px;align-items:center}.hb svg{width:29px;height:29px;stroke:var(--gold-soft);fill:none;stroke-width:1.8}.hb strong{display:block;font-size:.86rem;line-height:1.25}.hb span{display:block;color:#C9D5E0;font-size:.74rem;margin-top:2px}
 
@@ -206,3 +206,33 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 .catalog-group{transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
 .catalog-group:hover{transform:translateY(-2px);border-color:#C8D2DD;box-shadow:0 12px 28px rgba(6,26,51,.07)}
 .footer{border-top:3px solid #C9A24B}
+
+/* final content-system additions */
+.kicker{color:#C9A24B;font-size:.72rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px}
+.content-intro{max-width:900px;color:#5D6979;font-size:1rem;line-height:1.7;margin-bottom:24px}
+.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.outcome{border:1px solid var(--line);border-radius:11px;background:#fff;padding:19px}
+.outcome h3{margin:0 0 6px;color:#061A33;font-size:.95rem}
+.outcome p{margin:0;color:#667387;font-size:.8rem;line-height:1.45}
+.engage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.engage{background:#F7F9FB;border-top:3px solid #C9A24B;padding:18px;border-radius:0 0 10px 10px}
+.engage h3{margin:0 0 7px;color:#061A33;font-size:.95rem}
+.engage p{margin:0;color:#667387;font-size:.8rem}
+.problem-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 18px;padding:0;list-style:none}
+.problem-list li{position:relative;padding:12px 12px 12px 28px;background:#F8FAFC;border:1px solid #E1E7ED;border-radius:9px;color:#415065;font-size:.82rem}
+.problem-list li::before{content:"";position:absolute;left:12px;top:17px;width:7px;height:7px;border-radius:50%;background:#C9A24B}
+.cta-band{background:linear-gradient(118deg,#061A33,#0B2E5F);border-radius:14px;padding:26px 28px;color:#fff;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.cta-band h2{margin:0 0 6px;font-size:1.35rem}
+.cta-band p{margin:0;color:#C9D5E0;font-size:.84rem}
+.value-columns{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.value-column{padding:18px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.value-column strong{display:block;color:#061A33;font-size:.9rem;margin-bottom:5px}
+.value-column span{color:#667387;font-size:.78rem;line-height:1.45}
+@media(max-width:900px){
+ .outcome-grid,.engage-grid{grid-template-columns:1fr 1fr}
+ .value-columns{grid-template-columns:1fr 1fr}
+ .cta-band{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ .outcome-grid,.engage-grid,.value-columns,.problem-list{grid-template-columns:1fr}
+}
