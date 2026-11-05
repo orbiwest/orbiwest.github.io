@@ -1,32 +1,29 @@
-# Orbiwest Technologies — Final Rich Professional Website 2026
+# Orbiwest Technologies — Official MSP + Camera/AI Website
 
-This package is intentionally designed to match the richer Orbiwest reference direction while keeping every production claim honest.
+This is the replacement package built around the confirmed **Orbiwest Technologies Official Metallic Logo**.
 
-## What was intentionally removed from the visual concept
-- invented phone number
-- fake Client Portal
-- fake years / sites / users / uptime statistics
-- fake testimonial
-- vendor logos that could imply partnership
+## Major changes
+- Uses the confirmed official metallic logo directly in the header.
+- Adds a full Physical Security & Smart Systems practice: cameras/CCTV, NVR/VMS, Door Access/Access Control, RFID cards/key fobs, intercoms, visitor/gate workflows, smart-entry integrations and AI video analytics.
+- Adds Access Control & Intercom Integration.
+- Adds a comprehensive MSP service catalog.
+- Adds Co-Managed IT, identity/email security, vulnerability/compliance readiness,
+  vCIO/consulting, VoIP/communications, procurement/vendor management,
+  and automation/AI integration.
+- Keeps claims conservative: no invented customer counts, uptime, response-time guarantees,
+  testimonials, certifications or vendor-partner badges.
 
-## What replaced them
-- real Orbiwest email addresses
-- Request Support
-- hands-on technical experience
-- practical proof-of-experience categories
-- platforms listed as experience only
-- genuine resources and FAQ content
-
-## GitHub deployment
+## GitHub replacement
 1. Extract this ZIP.
 2. Open https://github.dev/orbiwest/orbiwest.github.io
-3. Confirm branch `main`.
-4. Delete all old repository contents but DO NOT commit yet.
+3. Confirm `main`.
+4. Delete the existing repository contents. Do not commit the deletion separately.
 5. Drag EVERYTHING INSIDE this extracted folder into the empty repository root.
-6. Open Source Control.
-7. Commit message: `Deploy final rich Orbiwest website`
-8. Click Commit & Push.
-9. Wait for GitHub Pages deployment to finish.
-10. Open https://orbiwest.com/?final=20261105 and then hard refresh the normal URL.
+6. Source Control → commit:
+   `Deploy official Orbiwest MSP camera AI website`
+7. Commit & Push.
+8. Confirm GitHub Pages deployment succeeds.
+9. Open https://orbiwest.com/?official=20261105
+10. Then hard-refresh https://orbiwest.com/ with Ctrl + Shift + R.
 
 Do not upload the outer folder itself.
