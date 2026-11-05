@@ -1,31 +1,35 @@
-# Orbiwest Technologies — FINAL Clean Website 2026
+# Orbiwest Technologies — Natural Professional Website 2026
 
-This package is a completely fresh GitHub Pages build.
+This is a fresh GitHub Pages package built around the final eagle/globe emblem.
 
-## Why this build is different
-- clean directory-based URLs (`/services/`, `/about/`, etc.)
-- unique asset namespace: `/assets/orbiwest-final-2026/`
-- no reuse of v1/v2/v3/Ultimate CSS or JavaScript filenames
-- no fake metrics, testimonials, partner badges or phone numbers
-- no giant/repeated eagle graphics
-- one realistic infrastructure hero image
-- honest technical-experience wording
-- responsive desktop/tablet/mobile design
-- legacy `.html` redirect stubs included
+## Brand implementation
+The eagle/globe is a standalone transparent emblem with a safety margin.
+The ORBIWEST TECHNOLOGIES wordmark is rendered as real HTML/CSS text in the header,
+so it stays crisp and cannot be clipped or boxed.
 
-## Browser-only deployment
+## Site contents
+- 31 clean public routes
+- 8 service pages
+- 4 industry pages
+- 5 resource guides/checklists
+- How We Work
+- Experience
+- FAQ
+- Contact and Support
+- Privacy / Terms / Accessibility / Security
+- legacy .html redirects
+- SEO metadata, structured data, sitemap and robots.txt
+
+## Browser-only GitHub deployment
 1. Extract this ZIP.
-2. Open `https://github.dev/orbiwest/orbiwest.github.io`.
-3. Confirm branch `main`.
-4. Delete all old repository contents. Do not commit yet.
-5. Drag EVERYTHING INSIDE this extracted folder into the empty repo root.
+2. Open https://github.dev/orbiwest/orbiwest.github.io
+3. Confirm branch: main
+4. Delete all old repository contents. Do NOT commit yet.
+5. Drag EVERYTHING INSIDE this extracted folder into the empty repository root.
 6. Open Source Control.
-7. Commit message: `Deploy final clean Orbiwest website`
-8. Click **Commit & Push**.
-9. Open GitHub → Actions and wait for Pages deployment to finish.
-10. Open `https://orbiwest.com/?fresh=20261105` once.
-11. Then open `https://orbiwest.com/` and hard refresh with `Ctrl + Shift + R`.
+7. Commit message: `Deploy natural professional Orbiwest website`
+8. Click Commit & Push.
+9. Open GitHub Actions and wait for Pages deployment.
+10. Open https://orbiwest.com/?v=20261105 once, then hard refresh the normal homepage.
 
-## Important
 Do not upload the outer folder itself.
-`index.html`, `CNAME`, `assets/`, `robots.txt`, etc. must be directly in the repository root.
