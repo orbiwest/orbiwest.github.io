@@ -262,3 +262,32 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 .service-faq p{margin:0;padding:0 0 13px;color:#667387;font-size:.82rem}
 @media(max-width:1000px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.cap-grid,.detail-list,.related-grid{grid-template-columns:1fr}.service-category .category-head{align-items:flex-start;flex-direction:column}}
+
+/* Complete MSP / AI / Smart Infrastructure expansion */
+.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.practice-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;box-shadow:0 8px 24px rgba(6,26,51,.035)}
+.practice-card h3{margin:0 0 8px;color:#061A33;font-size:1rem}
+.practice-card p{margin:0 0 12px;color:#657286;font-size:.8rem;line-height:1.55}
+.practice-card ul{margin:0;padding-left:17px;color:#4f5d70;font-size:.76rem;line-height:1.55}
+.practice-card a{font-weight:750}
+.service-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 18px;margin:18px 0 0}
+.service-list a,.service-list span{display:block;padding:10px 12px;border:1px solid #E0E6EC;border-radius:8px;background:#F9FBFC;color:#24364D;font-size:.78rem}
+.service-list a:hover{border-color:#C9A24B}
+.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.detail-box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px}
+.detail-box h3{margin:0 0 7px;color:#061A33;font-size:.94rem}
+.detail-box p{margin:0;color:#657286;font-size:.8rem;line-height:1.55}
+.detail-box ul{margin:7px 0 0;padding-left:17px;color:#536175;font-size:.78rem;line-height:1.55}
+.service-band{background:linear-gradient(118deg,#061A33,#0B2E5F);border-radius:14px;padding:26px;color:#fff}
+.service-band h2{margin:0 0 8px}
+.service-band p{color:#CBD6E1;max-width:900px;margin:0}
+.mini-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.mini-links a{border:1px solid rgba(255,255,255,.24);color:#fff;border-radius:999px;padding:7px 10px;font-size:.72rem}
+.mini-links a:hover{border-color:#C9A24B;color:#F4D98A}
+.sensor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sensor{border:1px solid var(--line);border-radius:10px;background:#fff;padding:17px}
+.sensor h3{margin:0 0 5px;color:#061A33;font-size:.9rem}
+.sensor p{margin:0;color:#657286;font-size:.76rem;line-height:1.5}
+.human-note{border-left:4px solid #C9A24B;padding:14px 16px;background:#F8FAFC;color:#435168;font-size:.8rem;line-height:1.55}
+@media(max-width:900px){.practice-grid,.sensor-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.practice-grid,.sensor-grid,.service-list,.detail-grid{grid-template-columns:1fr}}

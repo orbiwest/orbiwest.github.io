@@ -1,31 +1,25 @@
-# Orbiwest Technologies — FULL MSP Final Website
+# Orbiwest Technologies — Complete MSP + AI + Smart Infrastructure Website
 
-This package preserves the approved Orbiwest visual identity:
-- official metallic logo
-- navy / champagne-gold palette
-- blended infrastructure hero
-- existing responsive layout and navigation
+This build preserves the approved Orbiwest theme, metallic logo, navy/gold palette and blended infrastructure hero.
 
-The change is primarily **content depth and service breadth**.
+The content architecture now positions Orbiwest as a full-service technology partner across:
+1. Managed IT & Support
+2. Cloud & Modern Workplace
+3. Networks & Infrastructure
+4. Cybersecurity & Risk
+5. Backup / Disaster Recovery / BCDR
+6. AI, Automation & Data
+7. Business Applications & Communications
+8. Cameras, Access Control, Sensors & Smart Facilities
+9. Strategy, Projects & Procurement
 
-## Business positioning
-Orbiwest is presented as a full-service MSP / technology partner:
-Managed IT, co-managed IT, cloud migration, Microsoft 365/Azure/Entra/Intune,
-networking, firewalls, servers, virtualization, backup/BCDR, endpoint/RMM,
-cybersecurity, identity/email security, vulnerability/compliance readiness,
-VoIP, consulting/vCIO, procurement/vendor management, office/site projects,
-automation/AI and cameras/access-control technology.
+The copy intentionally avoids fake statistics, fake testimonials, invented certifications, unsupported partner status and blanket 24/7 claims.
 
-Cameras and access control remain a specialized service category, not the primary company identity.
+Public contact:
+- info@orbiwest.com
+- support@orbiwest.com
+- Chicago, Illinois, USA
 
-## Accuracy rules
-The site does not claim:
-- 24/7 human support
-- invented response times
-- uptime guarantees
-- fake client counts
-- fake testimonials
-- fake certifications
-- fake vendor partnerships
-
-Any service that depends on tools, licensing, platform support, qualified trades or a specific agreement is described as such.
+Service area language:
+- Chicago / Chicagoland: local remote and on-site support by scope.
+- United States: remote managed services, cloud, cybersecurity, AI/automation, assessments and projects; on-site outside Chicago depends on location and scope.

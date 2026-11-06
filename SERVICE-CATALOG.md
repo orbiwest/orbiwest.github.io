@@ -1,102 +1,139 @@
-# Orbiwest Technologies — Full MSP Service Catalog
+# Orbiwest Technologies — Complete Service Catalog
 
-## Managed IT & Service Operations
-- Managed IT / fully managed support by agreement
-- Help desk and end-user support
+This catalog is intentionally broad, but the website does not claim that every client needs every service.
+Services are scoped as managed, co-managed, project-based, advisory, or integration work.
+
+## 1. Managed IT & Support
+- Fully managed IT
 - Co-managed IT
-- Remote monitoring and management (RMM)
-- Endpoint management
+- Remote help desk
+- On-site support
+- RMM / endpoint monitoring
 - Patch and software management
 - User onboarding / offboarding
-- Asset inventory and lifecycle
-- IT documentation
+- Device staging and deployment
+- IT asset / warranty / lifecycle tracking
+- Documentation and standards
 - Printer / peripheral support
-- Vendor escalation and coordination
-- Procurement assistance
-- Infrastructure monitoring by scope
+- Vendor escalation
 
-## Cloud & Microsoft
-- Cloud migration and modernization
-- Microsoft 365 migrations
-- Microsoft 365 administration
-- Exchange Online / mail-flow support
-- Teams / SharePoint / OneDrive support
-- Azure administration by scope
-- Entra ID identity administration
-- MFA / Conditional Access by scope
-- Intune device management
-- Hybrid identity planning
-- Tenant cleanup and consolidation
-- Licensing / adoption review
-- Cloud backup / recovery planning
+## 2. Cloud & Modern Workplace
+- Cloud readiness and migration planning
+- Microsoft 365 migrations and administration
+- Azure / Entra ID / Intune
+- Hybrid cloud
+- Virtual desktop / secure remote work
+- SharePoint
+- Teams / OneDrive
+- Power Platform
+- Cloud backup
+- Cloud cost and governance review
+- Identity / MFA / Conditional Access by scope
 
-## Network & Infrastructure
-- Network design and troubleshooting
-- Switching / VLANs / DHCP
-- Business Wi-Fi
+## 3. Network & Infrastructure
+- LAN / WAN
+- Switching / VLANs / DHCP / routing
+- Enterprise Wi-Fi
 - Firewalls / NAT / segmentation
-- Site-to-site VPN / remote access
-- WAN / ISP / carrier coordination
-- Windows Server
-- Linux systems
-- Virtualization / compute / storage by scope
-- Backup / BCDR
-- Disaster-recovery planning
-- New office / move / site technology
-- Server / endpoint refresh projects
-- VoIP / unified communications
-- Multi-site infrastructure
+- VPN / secure remote access
+- SD-WAN / WAN failover
+- ISP / carrier coordination
+- Server administration
+- Windows / Linux
+- Virtualization / storage
+- Infrastructure monitoring
+- Office moves and site buildouts
+- Structured cabling / fiber planning and qualified-provider coordination
+- AV / meeting-room connectivity
 
-## Cybersecurity & Risk
-- Endpoint security / EDR coordination
-- MDR / SOC integration by scope
+## 4. Cybersecurity & Risk
+- Endpoint security / EDR
+- MDR / XDR / SOC integration by scope
+- SIEM and log-source integration
 - Identity / MFA / privileged-access hygiene
-- Email security / anti-phishing controls
-- DNS / web filtering by scope
-- Security hardening
-- Vulnerability scanning coordination
-- Remediation tracking
-- Security logging / SIEM integration by scope
-- Security awareness coordination
-- Backup / recovery readiness
+- Email security
+- DNS / web filtering
+- Vulnerability scanning / remediation tracking
+- Security awareness / phishing readiness
+- Incident-response readiness
+- Firewall / network hardening
 - Compliance-readiness support
-- Security questionnaire / evidence support
-- Cyber-insurance technical readiness support
-- AI governance / acceptable-use guidance by scope
+- Cyber-insurance technical readiness
+- Penetration-test coordination by scope
 
-## Strategy, Consulting & Projects
-- vCIO / technology roadmap
-- Lifecycle and budget planning
-- Technology assessments
-- IT project management
-- Vendor evaluation
-- Procurement / quote review
-- Office moves and expansions
-- Migrations and cutovers
-- Digital modernization planning
-- Automation and RMM scripting
+## 5. Backup, Disaster Recovery & Resilience
+- Server / endpoint backup
+- Microsoft 365 / SaaS backup
+- Retention / immutability planning
+- BCDR
+- Restore testing
+- Recovery runbooks
+- RTO / RPO planning
+- Business-continuity dependency mapping
+
+## 6. AI, Automation & Data
+- AI strategy and readiness
+- Microsoft Copilot readiness / deployment / adoption
+- Private AI assistants / RAG
+- AI agents
+- Workflow automation
+- Power Automate
 - API / webhook integrations
-- Governed AI pilots and workflow automation
+- Document extraction / classification / routing
+- AI-assisted service and operations workflows
+- Data integration
+- Power BI / dashboards
+- AI governance / shadow-AI controls
+- Human-in-the-loop design
+- Managed AI improvement by scope
 
-## Cameras, Access Control & Smart Security
+## 7. Business Applications & Communications
+- VoIP
+- Teams Phone
+- UCaaS
+- Contact-center / CCaaS planning
+- Call routing / auto attendants
+- CRM / ERP integration
+- Application ownership / vendor coordination
+- SharePoint / Power Apps / Power BI
+- Lightweight custom tools / integrations by scope
+
+## 8. Cameras, Access Control & Smart Facilities
 - IP / PoE cameras
 - NVR / VMS
-- Recording and playback
-- Storage / retention planning
 - Remote / mobile viewing
-- Camera VLAN / PoE network design
-- Camera health / firmware / hardening
-- Person / vehicle analytics where supported
-- Smart search / metadata
-- LPR workflows where supported and appropriate
-- Door access controllers / readers
-- RFID cards / key fobs / supported mobile credentials
-- Access levels / schedules / groups
+- Video analytics / smart search
+- LPR workflows by scope
+- Door access / controllers / readers
+- RFID cards / key fobs
+- Mobile / PIN credentials where supported
 - Intercom / video entry
-- Camera + door event integration
-- Multi-site administration
-- Alarm / event / webhook integration by scope
-- Existing-system modernization
-- Documentation and administrative handoff
+- Visitor / gate / parking workflows
+- Camera + door event association
+- Server-room temperature / humidity
+- Water-leak sensors
+- Door / window contact sensors
+- Motion / glass-break / panic integrations by platform
+- Air-quality sensors (CO2, PM2.5, TVOC, humidity) where supported
+- Noise / ambient-light / occupancy sensing
+- Cold-storage temperature probes
+- Vape detection where appropriate
+- Alert / Teams / email / ticket / dashboard integrations
+- Network audio / connected AV by scope
 
-Capabilities are scoped to the environment, licensing, platform support, risk, location and agreement. Regulated electrical, life-safety, fire-alarm, permitting or specialized door-hardware work may require appropriately qualified/licensed trades.
+## 9. Strategy, Projects & Procurement
+- vCIO / technology roadmap
+- Assessments
+- Lifecycle / budget planning
+- Procurement / licensing
+- Vendor management
+- Project management
+- Firewall / network / cloud migrations
+- Office moves
+- Technology due diligence for M&A
+- Post-acquisition integration planning
+
+## Scope notes
+- 24/7 SOC/MDR or other always-on services must be explicitly included in an agreement and may be delivered through supported platforms/partners.
+- Code-regulated electrical, fire/life-safety, alarm, door-hardware, permitting, or specialized low-voltage work may require licensed/qualified providers.
+- Vendor names indicate experience only unless partnership/certification is explicitly stated.
