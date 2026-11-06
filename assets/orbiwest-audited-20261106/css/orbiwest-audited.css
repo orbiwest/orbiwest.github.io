@@ -107,8 +107,8 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 .camera-feature h3{margin:0 0 6px;font-size:.95rem;color:#061A33}
 .camera-feature p{margin:0;color:#667387;font-size:.79rem}
 .scope-note{background:#f3f5f7;border-left:3px solid #C9A24B;padding:12px 14px;color:#5d6878;font-size:.78rem;margin-top:18px}
-.footer-official-logo{display:inline-flex;background:#f2efec;border-radius:8px;padding:5px 9px;max-width:290px}
-.footer-official-logo img{width:100%;height:auto;display:block}
+
+
 
 
 /* final component refinements */
@@ -116,8 +116,8 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 .hb strong{display:block;font-size:.84rem;line-height:1.22}
 .hb span:not(.hb-icon){display:block;color:#C9D5E0;font-size:.72rem;margin-top:3px;line-height:1.35}
 .service .sicon{height:34px;margin-bottom:7px;color:#0B2E5F;font-size:1.45rem;line-height:1}
-.footer-official-logo{display:inline-flex;background:transparent;padding:0;max-width:300px}
-.footer-official-logo img{width:100%;height:auto;display:block;filter:none}
+
+
 .proof-item strong{line-height:1.28}.proof-item span{line-height:1.4}
 .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 
@@ -170,7 +170,7 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
   .section-headline{align-items:flex-start;flex-direction:column}
   .footbottom{flex-direction:column}
   .practice-list{grid-template-columns:1fr}
-  .footer-official-logo{max-width:260px!important}
+  
 }
 
 @media(max-width:1160px) and (min-width:641px){
@@ -291,3 +291,86 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 .human-note{border-left:4px solid #C9A24B;padding:14px 16px;background:#F8FAFC;color:#435168;font-size:.8rem;line-height:1.55}
 @media(max-width:900px){.practice-grid,.sensor-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.practice-grid,.sensor-grid,.service-list,.detail-grid{grid-template-columns:1fr}}
+
+/* Enterprise MSP/MSSP capability expansion */
+.stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.stack-card{background:#fff;border:1px solid var(--line);border-radius:11px;padding:18px}
+.stack-card h3{margin:0 0 7px;color:#061A33;font-size:.95rem}
+.stack-card p{margin:0 0 9px;color:#657286;font-size:.78rem;line-height:1.5}
+.stack-card ul{margin:0;padding-left:17px;color:#526075;font-size:.74rem;line-height:1.55}
+.vendor-cloud{display:flex;flex-wrap:wrap;gap:8px}
+.vendor-chip{display:inline-flex;align-items:center;min-height:32px;padding:6px 10px;border:1px solid #DCE3EA;border-radius:999px;background:#FAFBFC;color:#24364D;font-size:.72rem;font-weight:700}
+.domain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.domain{padding:16px;border-radius:10px;border:1px solid var(--line);background:linear-gradient(180deg,#fff,#F8FAFC)}
+.domain strong{display:block;color:#061A33;font-size:.86rem;margin-bottom:5px}
+.domain span{color:#647185;font-size:.73rem;line-height:1.45}
+.eco-group{padding:18px 0;border-top:1px solid #E2E7EC}
+.eco-group:first-child{border-top:0}
+.eco-group h2{font-size:1.12rem;margin:0 0 8px}
+.eco-group p{margin:0 0 12px;color:#667387;font-size:.79rem;line-height:1.55}
+.coverage-note{background:#071A33;color:#D6E1EB;border-radius:12px;padding:20px 22px;line-height:1.55;font-size:.79rem}
+.coverage-note strong{color:#F2D27A}
+.ops-grid .tech-grid.team-tech{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.ops-grid .team-tech .tech{font-size:.66rem;padding:8px 6px}
+@media(max-width:1000px){.stack-grid{grid-template-columns:1fr 1fr}.domain-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.stack-grid,.domain-grid{grid-template-columns:1fr}.ops-grid .tech-grid.team-tech{grid-template-columns:1fr 1fr}}
+
+/* =========================================================
+   FINAL SITE AUDIT — navigation consistency + logo contrast
+   ========================================================= */
+.nav{position:relative}
+
+/* Header: official metallic logo on white has strong contrast. */
+.brand-logo img{
+  filter:contrast(1.06) saturate(1.03);
+}
+
+/* Footer: keep the official artwork unchanged but place it on a warm-light
+   brand plaque. Navy-on-navy was approximately 1.2:1 and looked muddy. */
+.footer-official-logo{
+  display:inline-flex;
+  align-items:center;
+  max-width:304px;
+  padding:7px 11px;
+  border-radius:10px;
+  background:linear-gradient(135deg,#FFFFFF 0%,#F8F5EE 72%,#F1E8D3 100%);
+  border:1px solid rgba(201,162,75,.40);
+  box-shadow:0 9px 26px rgba(0,0,0,.14);
+}
+.footer-official-logo img{
+  width:100%;
+  height:auto;
+  display:block;
+  filter:contrast(1.07) saturate(1.03);
+}
+
+/* Nine top-level links + full logo become cramped on common laptops.
+   Switch to the hamburger before any link can wrap/disappear. */
+@media(max-width:1280px){
+  .nav{height:80px}
+  .brand-logo{width:292px;min-width:292px;height:64px}
+  .toggle{display:block}
+  .navlinks{
+    position:absolute;
+    left:0;
+    right:0;
+    top:74px;
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:12px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    box-shadow:var(--shadow);
+    z-index:90;
+  }
+  .navlinks.open{display:flex}
+  .navlinks a{padding:10px 12px}
+  .navlinks .support{text-align:center;margin-top:4px}
+}
+@media(max-width:640px){
+  .brand-logo{width:220px;min-width:220px;height:54px}
+  .footer-official-logo{max-width:268px}
+}

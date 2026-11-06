@@ -1,25 +1,31 @@
-# Orbiwest Technologies — Complete MSP + AI + Smart Infrastructure Website
+# Orbiwest Technologies — Enterprise MSP / MSSP Final Website
 
-This build preserves the approved Orbiwest theme, metallic logo, navy/gold palette and blended infrastructure hero.
+This build preserves the approved Orbiwest metallic logo, navy/gold theme and blended infrastructure design.
 
-The content architecture now positions Orbiwest as a full-service technology partner across:
-1. Managed IT & Support
-2. Cloud & Modern Workplace
-3. Networks & Infrastructure
-4. Cybersecurity & Risk
-5. Backup / Disaster Recovery / BCDR
-6. AI, Automation & Data
-7. Business Applications & Communications
-8. Cameras, Access Control, Sensors & Smart Facilities
-9. Strategy, Projects & Procurement
+Major change:
+The website now represents Orbiwest as a TEAM, not as one person's personal technology list.
 
-The copy intentionally avoids fake statistics, fake testimonials, invented certifications, unsupported partner status and blanket 24/7 claims.
+Public capability coverage includes:
+- Managed IT / co-managed IT / help desk / RMM / PSA / ITSM
+- Enterprise routing, switching, wireless, SD-WAN, NAC and observability
+- Multi-vendor firewalls, SASE, ZTNA and secure access
+- Microsoft 365 / Azure / Entra / Intune / Defender / Sentinel / Purview
+- AWS / Google Cloud / hybrid cloud
+- Windows / Linux servers, virtualization, storage and data center
+- VMware / Hyper-V / Proxmox and storage platforms
+- Backup / BCDR / SaaS backup / disaster recovery
+- Endpoint security, MDR/XDR, SIEM/SOAR, NDR, vulnerability and SOC integration
+- IAM / PAM / MFA / SSO
+- Email security / DLP / data security
+- WAF / API / application security
+- Databases / DevOps / containers / cloud-native
+- VoIP / UCaaS / contact center
+- AI / Copilot / private RAG / agents / automation / data / BI
+- Cameras / NVR/VMS / access control / intercom / visitor / LPR
+- Environmental sensors / IoT / UPS-PDU monitoring / smart facilities
+- vCIO / projects / procurement / M&A technology diligence
 
-Public contact:
-- info@orbiwest.com
-- support@orbiwest.com
-- Chicago, Illinois, USA
-
-Service area language:
-- Chicago / Chicagoland: local remote and on-site support by scope.
-- United States: remote managed services, cloud, cybersecurity, AI/automation, assessments and projects; on-site outside Chicago depends on location and scope.
+Certification policy:
+Do not claim CCNA, CCNP, CCIE or any vendor certification unless Orbiwest has verified
+the current credential and holder. The website instead advertises the underlying
+enterprise networking capabilities.

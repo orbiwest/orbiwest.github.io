@@ -137,3 +137,89 @@ Services are scoped as managed, co-managed, project-based, advisory, or integrat
 - 24/7 SOC/MDR or other always-on services must be explicitly included in an agreement and may be delivered through supported platforms/partners.
 - Code-regulated electrical, fire/life-safety, alarm, door-hardware, permitting, or specialized low-voltage work may require licensed/qualified providers.
 - Vendor names indicate experience only unless partnership/certification is explicitly stated.
+
+
+## Enterprise / Specialist Capabilities Added
+
+### Enterprise Networking
+- Routing and switching
+- IPv4 / IPv6
+- BGP / OSPF / EIGRP where applicable
+- VLAN / trunking / STP / LACP
+- HSRP / VRRP
+- QoS / multicast
+- SD-WAN
+- Wireless
+- NAC / 802.1X / RADIUS / TACACS+
+- Network assurance / observability
+- VXLAN / EVPN by scope
+- Data-center networking
+- Network automation and APIs
+
+### Secure Access / SASE / Zero Trust
+- ZTNA
+- SASE / SSE
+- Secure web gateway
+- CASB
+- DNS security
+- Remote access / VPN
+- Device posture
+- Zero-trust policy
+
+### Identity / PAM
+- Entra ID / AD
+- Okta / Duo / JumpCloud
+- MFA / passkeys / FIDO2
+- SSO / federation
+- Conditional Access
+- PAM / privileged accounts
+- CyberArk / BeyondTrust / Delinea by scope
+- Service-account review
+
+### Cloud / Application Security
+- CNAPP / CSPM / CWPP
+- Defender for Cloud / Wiz / Prisma Cloud / Orca / FortiCNAPP by scope
+- WAF / API security
+- Cloud IAM
+- Cloud logging / SIEM
+- Container / Kubernetes security by scope
+
+### Server / Storage / Data Center
+- Dell / HPE / Lenovo / Cisco UCS
+- Windows Server / Linux
+- VMware / Hyper-V / Proxmox / Nutanix by scope
+- SAN / NAS
+- NetApp / Pure / Dell / HPE / Lenovo / Synology / QNAP
+- iSCSI / Fibre Channel / SMB / NFS
+- Clustering / HA
+- Capacity / refresh planning
+
+### Data / DevOps
+- SQL Server / PostgreSQL / MySQL / MariaDB
+- Managed cloud databases
+- GitHub / GitLab / Azure DevOps
+- CI/CD
+- Terraform / Ansible
+- PowerShell / Bash / Python
+- Docker / Kubernetes
+- Infrastructure as Code
+
+### Monitoring / NOC / Observability
+- PRTG / Auvik / LogicMonitor / SolarWinds / Zabbix
+- Datadog / New Relic / Splunk / ThousandEyes
+- SNMP / Syslog / NetFlow
+- Application and infrastructure monitoring
+- Alert-to-ticket workflows
+
+### Multi-Platform Endpoint Management
+- Intune / Autopilot
+- Apple Business Manager
+- Jamf / Kandji / Mosyle by scope
+- Android Enterprise
+- Google Admin / ChromeOS
+- Windows / macOS / iOS / Android / ChromeOS
+
+### Technology-policy statement
+The public catalog describes service capability, not individual employee certifications.
+Verified certifications such as CCNA, CCNP, CCIE, vendor partner status, or other credentials
+should be published only after Orbiwest confirms the credential holder and current validity.
