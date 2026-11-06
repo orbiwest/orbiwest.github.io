@@ -1,45 +1,31 @@
-# Orbiwest Technologies — FINAL Production Website
+# Orbiwest Technologies — FULL MSP Final Website
 
-This is the single production package to deploy.
+This package preserves the approved Orbiwest visual identity:
+- official metallic logo
+- navy / champagne-gold palette
+- blended infrastructure hero
+- existing responsive layout and navigation
 
-## Final brand decisions
-- Official metallic Orbiwest logo with transparent web treatment.
-- Deep navy, champagne gold, brushed silver and clean neutral surfaces.
-- Infrastructure-only hero image: no awkward cropped person/head and no artificial logo on clothing.
-- Customer-facing terminology uses `Cameras, Access Control & AI` rather than the ambiguous `Physical Security`.
-- Consistent line icons and restrained metallic styling.
+The change is primarily **content depth and service breadth**.
 
-## Content decisions
-The site now explains:
-- what each service is
-- common reasons a customer needs it
-- what the service can include
-- intended outcomes
-- engagement options
-- scope/limitations where relevant
+## Business positioning
+Orbiwest is presented as a full-service MSP / technology partner:
+Managed IT, co-managed IT, cloud migration, Microsoft 365/Azure/Entra/Intune,
+networking, firewalls, servers, virtualization, backup/BCDR, endpoint/RMM,
+cybersecurity, identity/email security, vulnerability/compliance readiness,
+VoIP, consulting/vCIO, procurement/vendor management, office/site projects,
+automation/AI and cameras/access-control technology.
 
-## Services
-Managed IT, co-managed IT, endpoint/RMM, networks/Wi-Fi, firewalls/VPN,
-Microsoft 365/cloud, Windows/Linux servers, backup/BCDR, cybersecurity,
-identity/email security, vulnerability/compliance readiness, VoIP,
-vCIO/consulting, procurement/vendor management, automation/AI,
-projects/on-site support, cameras/NVR/VMS, access control, RFID cards/key fobs,
-intercom and smart-security integrations.
+Cameras and access control remain a specialized service category, not the primary company identity.
 
-## Trust policy
-The website does NOT invent:
-- customer counts
-- years in business
-- uptime figures
-- 24/7 claims
-- response-time promises
-- testimonials
-- certifications
-- partner status
-- client logos
-- a business phone number
+## Accuracy rules
+The site does not claim:
+- 24/7 human support
+- invented response times
+- uptime guarantees
+- fake client counts
+- fake testimonials
+- fake certifications
+- fake vendor partnerships
 
-Public contact:
-- info@orbiwest.com
-- support@orbiwest.com
-- Chicago, Illinois, USA
+Any service that depends on tools, licensing, platform support, qualified trades or a specific agreement is described as such.

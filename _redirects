@@ -54,3 +54,11 @@
 /door-access-control.html /services/access-control-intercom/ 301
 /cctv.html /services/video-security-ai/ 301
 /camera-nvr.html /services/video-security-ai/ 301
+/cloud-migration.html /services/cloud-migration-modernization/ 301
+/azure.html /services/azure-entra-intune/ 301
+/intune.html /services/azure-entra-intune/ 301
+/disaster-recovery.html /services/backup-disaster-recovery/ 301
+/backup.html /services/backup-disaster-recovery/ 301
+/infrastructure-monitoring.html /services/infrastructure-monitoring/ 301
+/virtualization.html /services/virtualization-data-center/ 301
+/office-move-it.html /services/new-office-moves/ 301

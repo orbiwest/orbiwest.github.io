@@ -1,61 +1,41 @@
-# Orbiwest Website Content Map
+# Orbiwest Website Content Map — Full MSP
 
-## Homepage
-- Utility/contact bar
-- Premium logo/navigation
-- Hero with real infrastructure/engineer visual
-- Four operational value statements
-- Eight core services
-- Industries We Support
-- Why Orbiwest
-- Four-stage process
-- Technology Experience
-- Real proof-of-experience categories (no fake statistics)
-- Resources
-- FAQ
-- Contact / support CTA
-- Rich footer
+## Primary positioning
+Orbiwest is a full-service technology provider. Cameras/access control are a specialized practice, not the company's primary identity.
 
-## Services
+## Core practice areas
 1. Managed IT & Help Desk
-2. Networks & Wireless
-3. Firewalls & VPN
-4. Cybersecurity
-5. Microsoft 365 & Cloud
-6. Servers, Backup & Infrastructure
-7. Endpoint & Device Management
-8. Projects & On-Site Support
+2. Co-Managed IT
+3. Endpoint / RMM / Patch Management
+4. Infrastructure Monitoring
+5. Cloud Migration & Modernization
+6. Microsoft 365 & Cloud
+7. Azure / Entra ID / Intune
+8. Networks & Wireless
+9. Firewalls / VPN / Secure Connectivity
+10. Servers / Virtualization / Infrastructure
+11. Backup / Disaster Recovery / BCDR
+12. Cybersecurity
+13. Identity / Email / User Security
+14. Vulnerability / Compliance Readiness
+15. VoIP / Unified Communications
+16. IT Strategy / vCIO / Consulting
+17. Procurement / Vendor Management
+18. Projects / On-Site Support
+19. New Office / Move / Site Technology
+20. Automation / AI Integration
+21. Cameras / NVR / VMS
+22. Access Control / Credentials / Intercom
+23. Smart-Security Integration
 
-## Industries
-- Schools & Education
-- Small & Growing Businesses
-- Professional & Multi-Site Organizations
-- Nonprofit & Faith-Based Organizations
+## Buyer journey
+- What does Orbiwest do?
+- Which business problem are we solving?
+- Is this managed, co-managed, project or advisory work?
+- What is included?
+- What outcome should we expect?
+- What depends on platform / scope / vendor?
+- What happens next?
 
-## Solutions
-- Network Modernization
-- Security Baseline
-- Cloud Productivity
-- Business Continuity
-
-## Resources
-- Managed IT Readiness
-- Network Documentation
-- Security Baseline
-- Firewall Change Planning
-- Microsoft 365 Security
-- Backup Readiness
-
-## Trust approach
-The production site intentionally does not invent:
-- years in business
-- client/site counts
-- user counts
-- uptime percentages
-- response-time guarantees
-- testimonials
-- client logos
-- certifications
-- vendor partner status
-
-These should be added only when real, current and verifiable.
+## Trust policy
+No invented customer counts, years in business, SLAs, uptime, 24/7 staffing, certifications, testimonials, vendor partner badges or client logos.

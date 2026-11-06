@@ -1,112 +1,102 @@
-# Orbiwest Technologies — Comprehensive Service Catalog
+# Orbiwest Technologies — Full MSP Service Catalog
 
-## Managed IT Operations
-- Managed IT & help desk
+## Managed IT & Service Operations
+- Managed IT / fully managed support by agreement
+- Help desk and end-user support
 - Co-managed IT
 - Remote monitoring and management (RMM)
-- Endpoint / device management
+- Endpoint management
 - Patch and software management
-- User onboarding and offboarding
-- Asset inventory
+- User onboarding / offboarding
+- Asset inventory and lifecycle
 - IT documentation
-- Printer and peripheral support
-- Remote support
-- On-site support
-- Vendor management
+- Printer / peripheral support
+- Vendor escalation and coordination
 - Procurement assistance
+- Infrastructure monitoring by scope
 
-## Infrastructure & Cloud
-- Network engineering
+## Cloud & Microsoft
+- Cloud migration and modernization
+- Microsoft 365 migrations
+- Microsoft 365 administration
+- Exchange Online / mail-flow support
+- Teams / SharePoint / OneDrive support
+- Azure administration by scope
+- Entra ID identity administration
+- MFA / Conditional Access by scope
+- Intune device management
+- Hybrid identity planning
+- Tenant cleanup and consolidation
+- Licensing / adoption review
+- Cloud backup / recovery planning
+
+## Network & Infrastructure
+- Network design and troubleshooting
 - Switching / VLANs / DHCP
-- Wi-Fi design and troubleshooting
-- Firewalls and VPN
-- Secure remote access
-- Microsoft 365
-- Azure / Entra support by scope
-- Windows and Linux administration
-- Servers and virtualization
-- Backup / BCDR / restore planning
-- Cloud migrations and tenant work
+- Business Wi-Fi
+- Firewalls / NAT / segmentation
+- Site-to-site VPN / remote access
+- WAN / ISP / carrier coordination
+- Windows Server
+- Linux systems
+- Virtualization / compute / storage by scope
+- Backup / BCDR
+- Disaster-recovery planning
+- New office / move / site technology
+- Server / endpoint refresh projects
 - VoIP / unified communications
-- Infrastructure refreshes and migrations
+- Multi-site infrastructure
 
-## Cybersecurity
-- Endpoint security / EDR
+## Cybersecurity & Risk
+- Endpoint security / EDR coordination
 - MDR / SOC integration by scope
-- Identity and MFA
-- Email security / anti-phishing
-- DNS / web filtering
-- Vulnerability management
-- Patch/remediation tracking
-- Security logging / SIEM integration
-- Access review
+- Identity / MFA / privileged-access hygiene
+- Email security / anti-phishing controls
+- DNS / web filtering by scope
+- Security hardening
+- Vulnerability scanning coordination
+- Remediation tracking
+- Security logging / SIEM integration by scope
 - Security awareness coordination
-- Security baseline assessments
+- Backup / recovery readiness
 - Compliance-readiness support
+- Security questionnaire / evidence support
+- Cyber-insurance technical readiness support
+- AI governance / acceptable-use guidance by scope
 
-## Cameras, NVR & Access Control
-- IP / PoE cameras
-- NVR / VMS configuration
-- Recording schedules
-- Storage and retention planning
-- Remote and mobile viewing
-- Camera VLAN / PoE network design
-- Camera health and firmware
-- Existing-system troubleshooting
-- System modernization
-- AI person / vehicle analytics
-- Line crossing / intrusion zones
-- Occupancy / counting
-- Smart search / metadata
-- LPR integration where supported and appropriate
-- Alerts / webhook / API integrations
-- Access control
-- Door credential administration
-- Intercom integration
-- Camera + access-event integration
-- Multi-site administration
-
-## Strategy & Projects
-- IT assessments
-- Technology roadmaps / vCIO
+## Strategy, Consulting & Projects
+- vCIO / technology roadmap
 - Lifecycle and budget planning
+- Technology assessments
+- IT project management
 - Vendor evaluation
-- ISP / carrier coordination
-- Project management
+- Procurement / quote review
+- Office moves and expansions
 - Migrations and cutovers
-- Automation and AI integration
-- Structured-cabling planning / qualified-vendor coordination
+- Digital modernization planning
+- Automation and RMM scripting
+- API / webhook integrations
+- Governed AI pilots and workflow automation
 
-Capabilities are scoped to the actual environment, licensing, vendor support, risk and agreement.
-
-## Expanded Cameras, Access Control & Smart Security
-- CCTV / IP cameras
-- PoE camera networks
-- NVR / DVR / VMS
-- Camera recording and playback
+## Cameras, Access Control & Smart Security
+- IP / PoE cameras
+- NVR / VMS
+- Recording and playback
 - Storage / retention planning
 - Remote / mobile viewing
-- Door access / access control
-- Controllers and readers
-- RFID cards and key fobs
-- PIN and supported mobile credentials
-- Access levels / schedules / groups
-- Smart locks / electric strikes / maglocks integration planning
-- Request-to-exit devices by scope
-- Video intercom / door stations
-- Visitor entry workflows
-- Gate / parking access integrations
-- AI person / vehicle detection
-- Line crossing / intrusion analytics
-- Occupancy / people counting
+- Camera VLAN / PoE network design
+- Camera health / firmware / hardening
+- Person / vehicle analytics where supported
 - Smart search / metadata
 - LPR workflows where supported and appropriate
-- Alarm / relay / event integrations by scope
-- Webhook / API automation where supported
-- Multi-site viewing / administration
-- Camera/access VLAN design
-- Firmware / hardening / health checks
+- Door access controllers / readers
+- RFID cards / key fobs / supported mobile credentials
+- Access levels / schedules / groups
+- Intercom / video entry
+- Camera + door event integration
+- Multi-site administration
+- Alarm / event / webhook integration by scope
 - Existing-system modernization
-- Physical-security documentation and administrative handoff
+- Documentation and administrative handoff
 
-Code-regulated electrical, life-safety, fire-alarm, permitting, or specialized door-hardware work may require qualified/licensed trades. Orbiwest can coordinate the technology and integration side by scope.
+Capabilities are scoped to the environment, licensing, platform support, risk, location and agreement. Regulated electrical, life-safety, fire-alarm, permitting or specialized door-hardware work may require appropriately qualified/licensed trades.
