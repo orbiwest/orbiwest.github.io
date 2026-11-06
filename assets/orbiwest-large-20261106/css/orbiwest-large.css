@@ -76,9 +76,9 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 .lower-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:26px}.lower-card{min-height:150px;border-right:1px solid var(--line);padding-right:20px}.lower-card:last-child{border-right:0}
 .lower-card h3{font-size:1.05rem;color:#0B2E5F;margin:0 0 5px}.lower-card p{font-size:.79rem;color:#667387;margin:0 0 12px}
 .resource-pills{display:flex;gap:8px;flex-wrap:wrap}.pill{background:#E8EEF5;border-radius:8px;padding:10px 12px;font-size:.73rem;font-weight:750;color:#193454}
-.footer{background:linear-gradient(90deg,#08213F,#031326);color:white;padding:26px 0 14px}
+
 .footer-grid{display:grid;grid-template-columns:1.25fr .85fr .9fr 1.1fr;gap:28px}.footer-brand{display:flex;align-items:center;gap:10px}.footer-brand img{width:58px;height:58px;object-fit:contain}.footer-brand strong{font-family:Georgia,"Times New Roman",serif;font-size:1.1rem}.footer-brand small{display:block;color:#E1BE66;letter-spacing:.16em;font-size:.6rem}
-.ftitle{color:#E1BE66;font-size:.72rem;font-weight:850;margin-bottom:8px}.flinks{display:grid;gap:5px;font-size:.75rem;color:#D6E0EA}.footer p{font-size:.72rem;color:#AFC0D0}.footbottom{margin-top:16px;padding-top:11px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;color:#AFC0D0;font-size:.68rem}
+
 
 /* inner pages */
 .pagehero{padding:54px 0;background:linear-gradient(135deg,#F8FAFC,#EEF3F7);border-bottom:1px solid var(--line)}.crumb{font-size:.72rem;color:#7B8897;margin-bottom:15px}.crumb a{color:#165EAD}.pagehero h1{margin:0;color:#061A33;font-size:clamp(2.2rem,4vw,3.8rem);letter-spacing:-.035em}.pagehero p{max-width:780px;color:#667387;margin:14px 0 0}
@@ -168,7 +168,7 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
   .proof-grid,.footer-grid,.card-grid,.catalog-grid,.camera-grid,.contact-grid{grid-template-columns:1fr}
   .proof-item{border-right:0;border-bottom:1px solid #D8E0E8}
   .section-headline{align-items:flex-start;flex-direction:column}
-  .footbottom{flex-direction:column}
+  
   .practice-list{grid-template-columns:1fr}
   
 }
@@ -205,7 +205,7 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 .practice-banner .eyebrow{color:#E1BE66}
 .catalog-group{transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
 .catalog-group:hover{transform:translateY(-2px);border-color:#C8D2DD;box-shadow:0 12px 28px rgba(6,26,51,.07)}
-.footer{border-top:3px solid #C9A24B}
+
 
 /* final content-system additions */
 .kicker{color:#C9A24B;font-size:.72rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px}
@@ -368,37 +368,9 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 /* Footer logo: same official colors, no white/cream box.
    A very soft halo gives the navy letters enough separation from the footer
    while still visually blending into the background. */
-.footer-official-logo{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  max-width:315px;
-  padding:3px 4px;
-  background:transparent;
-  border:0;
-  box-shadow:none;
-  isolation:isolate;
-}
-.footer-official-logo::before{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  inset:-18px -24px;
-  background:
-    radial-gradient(ellipse at 50% 50%,
-      rgba(255,255,255,.18) 0%,
-      rgba(244,226,180,.10) 32%,
-      rgba(201,162,75,.045) 48%,
-      rgba(8,33,63,0) 74%);
-  filter:blur(7px);
-  pointer-events:none;
-}
-.footer-official-logo img{
-  width:100%;
-  height:auto;
-  display:block;
-  filter:contrast(1.08) saturate(1.03) drop-shadow(0 1px 1px rgba(255,255,255,.08));
-}
+
+
+
 
 /* Broad, balanced featured work — replaces the two oversized service banners. */
 .critical-wrap{
@@ -473,6 +445,173 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 @media(max-width:640px){
   .critical-wrap{padding:22px 18px}
   .critical-grid,.customer-outcomes{grid-template-columns:1fr}
-  .footer-official-logo{max-width:280px}
-  .footer-official-logo::before{inset:-14px -16px}
+  
+  
+}
+
+/* =========================================================
+   LARGE MSP / MSSP FINAL
+   ========================================================= */
+
+/* Light footer. The official navy and gold logo stays unchanged and now
+   has natural contrast against the footer itself, not a box. */
+.footer{
+  background:linear-gradient(135deg,#F8FAFC 0%,#F1F4F7 60%,#ECEFF3 100%);
+  color:#061A33;
+  padding:30px 0 14px;
+  border-top:3px solid #C9A24B;
+}
+.footer-official-logo{
+  display:block;
+  max-width:320px;
+  padding:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+.footer-official-logo::before{display:none}
+.footer-official-logo img{
+  width:100%;
+  height:auto;
+  display:block;
+  filter:contrast(1.05) saturate(1.03);
+}
+.ftitle{
+  color:#0B2E5F;
+  font-size:.73rem;
+  font-weight:900;
+  margin-bottom:8px;
+}
+.flinks{
+  display:grid;
+  gap:6px;
+  font-size:.75rem;
+  color:#3F526A;
+}
+.flinks a{color:#263B55}
+.flinks a:hover{color:#8B681B}
+.footer p{
+  font-size:.74rem;
+  line-height:1.55;
+  color:#53657A;
+}
+.footbottom{
+  margin-top:18px;
+  padding-top:12px;
+  border-top:1px solid #D5DDE5;
+  display:flex;
+  justify-content:space-between;
+  color:#5B6C7F;
+  font-size:.68rem;
+}
+.footbottom a{color:#32465E}
+
+/* MSP and MSSP split */
+.managed-split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.managed-lane{
+  border-radius:14px;
+  padding:24px;
+  min-height:100%;
+}
+.managed-lane.msp{
+  background:linear-gradient(135deg,#F7F9FB,#EDF2F6);
+  border:1px solid #D8E0E7;
+}
+.managed-lane.mssp{
+  background:linear-gradient(135deg,#071A33,#0B2E5F);
+  color:#fff;
+}
+.managed-lane .eyebrow{margin-bottom:8px}
+.managed-lane h2{margin:0 0 8px;font-size:1.35rem}
+.managed-lane.mssp h2{color:#fff}
+.managed-lane p{font-size:.8rem;line-height:1.6;margin:0 0 14px}
+.managed-lane.msp p{color:#5A687B}
+.managed-lane.mssp p{color:#C8D5E1}
+.managed-lane ul{margin:0;padding-left:17px;font-size:.75rem;line-height:1.6}
+.managed-lane.msp ul{color:#44546A}
+.managed-lane.mssp ul{color:#D7E1EB}
+.managed-lane .btn{margin-top:16px}
+
+/* Large service directory */
+.service-domain{
+  padding:22px 0;
+  border-top:1px solid #E0E6EC;
+}
+.service-domain:first-child{border-top:0}
+.service-domain-head{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:26px;
+  margin-bottom:14px;
+}
+.service-domain h2{margin:0;font-size:1.18rem;color:#061A33}
+.service-domain p{margin:0;color:#657286;font-size:.78rem;line-height:1.55}
+.service-link-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+}
+.service-link-grid a{
+  display:block;
+  min-height:48px;
+  border:1px solid #DCE3E9;
+  background:#FAFBFC;
+  color:#263A52;
+  border-radius:9px;
+  padding:10px 12px;
+  font-size:.74rem;
+  line-height:1.35;
+}
+.service-link-grid a:hover{
+  border-color:#C9A24B;
+  background:#fff;
+  transform:translateY(-1px);
+}
+
+/* Informational page sections */
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.info-card{
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:#fff;
+  padding:18px;
+}
+.info-card h3{margin:0 0 6px;color:#061A33;font-size:.92rem}
+.info-card p{margin:0;color:#657286;font-size:.77rem;line-height:1.55}
+.info-card ul{margin:8px 0 0;padding-left:17px;color:#536175;font-size:.75rem;line-height:1.55}
+
+.long-copy{
+  max-width:920px;
+}
+.long-copy h2{margin-top:28px}
+.long-copy p{font-size:.86rem;line-height:1.72;color:#4F5F73}
+.long-copy li{font-size:.8rem;line-height:1.6;color:#4F5F73}
+
+.scope-callout{
+  margin-top:20px;
+  background:#F7F9FB;
+  border-left:4px solid #C9A24B;
+  padding:14px 16px;
+  color:#44546A;
+  font-size:.78rem;
+  line-height:1.6;
+}
+
+@media(max-width:1000px){
+  .managed-split{grid-template-columns:1fr}
+  .service-domain-head{grid-template-columns:1fr}
+  .service-link-grid,.info-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .service-link-grid,.info-grid{grid-template-columns:1fr}
+  .footbottom{flex-direction:column;gap:8px}
+  .footer-official-logo{max-width:285px}
 }
