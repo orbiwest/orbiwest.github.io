@@ -327,22 +327,8 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 
 /* Footer: keep the official artwork unchanged but place it on a warm-light
    brand plaque. Navy-on-navy was approximately 1.2:1 and looked muddy. */
-.footer-official-logo{
-  display:inline-flex;
-  align-items:center;
-  max-width:304px;
-  padding:7px 11px;
-  border-radius:10px;
-  background:linear-gradient(135deg,#FFFFFF 0%,#F8F5EE 72%,#F1E8D3 100%);
-  border:1px solid rgba(201,162,75,.40);
-  box-shadow:0 9px 26px rgba(0,0,0,.14);
-}
-.footer-official-logo img{
-  width:100%;
-  height:auto;
-  display:block;
-  filter:contrast(1.07) saturate(1.03);
-}
+
+
 
 /* Nine top-level links + full logo become cramped on common laptops.
    Switch to the hamburger before any link can wrap/disappear. */
@@ -372,5 +358,121 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 }
 @media(max-width:640px){
   .brand-logo{width:220px;min-width:220px;height:54px}
-  .footer-official-logo{max-width:268px}
+  
+}
+
+/* =========================================================
+   CUSTOMER-READY FINAL — brand blending and sales hierarchy
+   ========================================================= */
+
+/* Footer logo: same official colors, no white/cream box.
+   A very soft halo gives the navy letters enough separation from the footer
+   while still visually blending into the background. */
+.footer-official-logo{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  max-width:315px;
+  padding:3px 4px;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  isolation:isolate;
+}
+.footer-official-logo::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-18px -24px;
+  background:
+    radial-gradient(ellipse at 50% 50%,
+      rgba(255,255,255,.18) 0%,
+      rgba(244,226,180,.10) 32%,
+      rgba(201,162,75,.045) 48%,
+      rgba(8,33,63,0) 74%);
+  filter:blur(7px);
+  pointer-events:none;
+}
+.footer-official-logo img{
+  width:100%;
+  height:auto;
+  display:block;
+  filter:contrast(1.08) saturate(1.03) drop-shadow(0 1px 1px rgba(255,255,255,.08));
+}
+
+/* Broad, balanced featured work — replaces the two oversized service banners. */
+.critical-wrap{
+  background:linear-gradient(135deg,#071A33 0%,#0B2E5F 60%,#123F6D 100%);
+  border-radius:16px;
+  padding:30px;
+  box-shadow:0 18px 46px rgba(6,26,51,.12);
+}
+.critical-head{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:28px;
+  align-items:end;
+  margin-bottom:22px;
+}
+.critical-head .eyebrow{color:#E5C25F}
+.critical-head h2{color:#fff;margin:7px 0 0;font-size:1.65rem;line-height:1.2}
+.critical-head p{color:#C9D6E3;margin:0;font-size:.84rem;line-height:1.65}
+.critical-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.critical-card{
+  display:block;
+  padding:18px;
+  border-radius:11px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.055);
+  color:#fff;
+  transition:transform .16s ease,border-color .16s ease,background .16s ease;
+}
+.critical-card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(229,194,95,.65);
+  background:rgba(255,255,255,.085);
+}
+.critical-card h3{margin:0 0 6px;color:#fff;font-size:.94rem}
+.critical-card p{margin:0;color:#C9D6E3;font-size:.75rem;line-height:1.5}
+.critical-card .go{display:inline-block;margin-top:11px;color:#E5C25F;font-size:.73rem;font-weight:800}
+
+/* Customer-outcome strip */
+.customer-outcomes{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.customer-outcome{
+  border-left:3px solid #C9A24B;
+  padding:12px 14px;
+  background:#fff;
+}
+.customer-outcome strong{display:block;color:#061A33;font-size:.86rem;margin-bottom:4px}
+.customer-outcome span{display:block;color:#667387;font-size:.74rem;line-height:1.45}
+
+/* Slightly more editorial / less template-like service pages */
+.human-service-note{
+  font-size:.8rem;
+  line-height:1.65;
+  color:#435168;
+  background:#F7F9FB;
+  border-left:3px solid #C9A24B;
+  padding:12px 15px;
+  margin:16px 0;
+}
+
+@media(max-width:1000px){
+  .critical-head{grid-template-columns:1fr}
+  .critical-grid{grid-template-columns:1fr 1fr}
+  .customer-outcomes{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .critical-wrap{padding:22px 18px}
+  .critical-grid,.customer-outcomes{grid-template-columns:1fr}
+  .footer-official-logo{max-width:280px}
+  .footer-official-logo::before{inset:-14px -16px}
 }
