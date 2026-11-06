@@ -680,7 +680,7 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 @media(max-width:640px){
   .control-grid,.ownership-list{grid-template-columns:1fr}
 }
-\n/* Restored final: preserve approved sizing and layout; only targeted refinements. */
+\n
 .service-control-note{margin:22px 0 0;padding:15px 16px;border-left:3px solid #C9A24B;background:#F8FAFC;color:#4A5B70;font-size:.79rem;line-height:1.6;border-radius:0 8px 8px 0}
 .service-control-note strong{display:block;color:#0B2E5F;font-size:.82rem;margin-bottom:4px}
 .capability-compact{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
@@ -699,3 +699,5 @@ img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,i
 .resource-card-restored p{margin:0 0 8px;font-size:.76rem;color:#667387;line-height:1.5}
 @media(max-width:1000px){.capability-compact{grid-template-columns:1fr 1fr}.solution-grid-restored,.resource-grid-restored{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.capability-compact,.solution-grid-restored,.resource-grid-restored{grid-template-columns:1fr}}
+
+.reader-path{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.reader-path a{display:block;border-top:2px solid #C9A24B;padding:15px 4px 4px;color:#172A44}.reader-path strong{display:block;font-size:.86rem;margin-bottom:4px}.reader-path span{display:block;color:#697789;font-size:.72rem;line-height:1.45}.plain-note{border-left:3px solid #C9A24B;background:#F8FAFC;padding:13px 15px;color:#4F6073;font-size:.8rem;line-height:1.6}.guide-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.guide-step{border:1px solid #DFE5EA;border-radius:9px;padding:15px;background:#fff}.guide-step h3{margin:0 0 6px;font-size:.9rem;color:#0B2E5F}.guide-step p,.guide-step li{font-size:.76rem;line-height:1.55;color:#596A7D}.related-line{display:flex;flex-wrap:wrap;gap:8px}.related-line a{border:1px solid #DDE4EA;border-radius:999px;padding:7px 10px;font-size:.72rem;color:#294059;background:#fff}.glossary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px}.glossary-item{border-top:1px solid #E0E6EC;padding:12px 0}.glossary-item dt{font-weight:800;color:#0B2E5F;font-size:.8rem}.glossary-item dd{margin:3px 0 0;color:#607083;font-size:.74rem;line-height:1.5}@media(max-width:900px){.reader-path{grid-template-columns:1fr 1fr}}@media(max-width:640px){.reader-path,.guide-steps,.glossary-grid{grid-template-columns:1fr}}
