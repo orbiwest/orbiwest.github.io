@@ -1,0 +1,15 @@
+{
+  "public_pages": 53,
+  "redirect_pages": 64,
+  "broken_internal_references": 0,
+  "heading_jumps": 0,
+  "vague_unlabeled_links": 0,
+  "duplicate_titles": 0,
+  "duplicate_descriptions": 0,
+  "stale_asset_namespaces": 0,
+  "inline_styles": 0,
+  "inline_event_handlers": 0,
+  "metadata_length_advisories": [],
+  "asset_namespace": "orbiwest-production-v2-20261110",
+  "csp_sha256": "5kwrbeVysKivAgG0oby2FD4+1p0AG3a5LUjcMeUZ+24="
+}
