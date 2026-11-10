@@ -729,3 +729,20 @@ main > *:last-child{
     pointer-events:none!important;
   }
 }
+
+/* Final verified hero-render fallback */
+.hero-photo{
+  min-height:350px;
+  background-color:#08213F;
+  background-image:url("/assets/orbiwest-polished-20261110/img/orbiwest-infrastructure-hero-blended.webp");
+  background-size:cover;
+  background-position:58% center;
+  background-repeat:no-repeat;
+}
+@media(max-width:700px){
+  .hero-photo{
+    min-height:0;
+    background-image:url("/assets/orbiwest-polished-20261110/img/orbiwest-infrastructure-hero-mobile.webp");
+    background-position:58% center;
+  }
+}
