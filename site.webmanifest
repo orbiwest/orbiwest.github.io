@@ -7,17 +7,17 @@
   "theme_color": "#061A33",
   "icons": [
     {
-      "src": "/assets/orbiwest-production-v2-20261110/img/icon-192.png",
+      "src": "/assets/orbiwest-polished-20261110/img/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/assets/orbiwest-production-v2-20261110/img/icon-512.png",
+      "src": "/assets/orbiwest-polished-20261110/img/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "id": "/",
   "scope": "/",
-  "description": "Orbiwest Technologies — managed IT, cloud migration, cybersecurity, networks, infrastructure, backup, projects and smart-security technology."
+  "description": "Orbiwest Technologies \u2014 managed IT, cloud migration, cybersecurity, networks, infrastructure, backup, projects and smart-security technology."
 }

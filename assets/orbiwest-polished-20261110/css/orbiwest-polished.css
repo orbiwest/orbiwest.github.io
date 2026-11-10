@@ -552,3 +552,180 @@ a,button{touch-action:manipulation}
   .section-headline>p{flex:1 1 auto;min-width:0}
   .section-headline>.morelink{flex:0 0 auto;white-space:nowrap}
 }
+
+
+/* ==========================================================
+   VISUAL POLISH PASS — footer/header/mobile composition
+   ========================================================== */
+
+/* Footer-specific wordmark: designed for dark navy, unlike the light-header logo. */
+.footer-wordmark{
+  display:inline-flex;
+  flex-direction:column;
+  gap:1px;
+  margin-bottom:12px;
+  line-height:1;
+}
+.footer-wordmark-main{
+  display:flex;
+  align-items:baseline;
+  gap:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.62rem;
+  font-weight:700;
+  letter-spacing:.012em;
+}
+.footer-wordmark-orbi{color:#F3F6F9}
+.footer-wordmark-west{color:#E1BE66}
+.footer-wordmark-sub{
+  color:#CBD6E0;
+  font-size:.56rem;
+  font-weight:800;
+  letter-spacing:.40em;
+  padding-left:2px;
+  margin-top:5px;
+}
+
+.footer-grid>div:first-child p{
+  max-width:52ch;
+  line-height:1.62;
+}
+.footer .flinks a{
+  text-underline-offset:3px;
+}
+.footer .flinks a:hover{
+  text-decoration:underline;
+}
+
+/* Avoid visually empty tails before the footer. */
+main > .section:last-child{
+  padding-bottom:34px;
+}
+main > *:last-child{
+  margin-bottom:0;
+}
+
+/* Smoother sticky-header appearance. */
+.header{
+  transition:box-shadow .18s ease, transform .18s ease;
+}
+
+/* Tablet: slightly tighter brand/header without changing desktop identity. */
+@media (max-width:900px){
+  .nav{height:72px}
+  .brand-logo{width:240px;min-width:240px;height:56px}
+}
+
+/* Mobile composition. */
+@media (max-width:700px){
+  .header{
+    position:sticky;
+    top:0;
+    background:rgba(255,255,255,.985);
+  }
+  .nav{
+    height:58px;
+    gap:8px;
+  }
+  .brand-logo{
+    width:166px;
+    min-width:166px;
+    height:40px;
+  }
+  .toggle{
+    width:42px;
+    height:42px;
+    min-width:42px;
+    border-radius:10px;
+  }
+
+  main > .section:last-child{
+    padding-bottom:22px;
+  }
+
+  .footer{
+    padding:22px 0 calc(14px + env(safe-area-inset-bottom));
+  }
+  .footer-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px 18px;
+  }
+  .footer-grid>div:first-child{
+    grid-column:1/-1;
+    padding-bottom:2px;
+  }
+  .footer-grid>div:nth-child(4){
+    grid-column:1/-1;
+  }
+
+  .footer-wordmark{
+    margin-bottom:9px;
+  }
+  .footer-wordmark-main{
+    font-size:1.35rem;
+  }
+  .footer-wordmark-sub{
+    font-size:.50rem;
+    letter-spacing:.34em;
+    margin-top:4px;
+  }
+  .footer-grid>div:first-child p{
+    max-width:38ch;
+    margin-top:0;
+    font-size:.82rem;
+    line-height:1.55;
+  }
+
+  .ftitle{
+    margin-bottom:5px;
+    font-size:.72rem;
+  }
+  .flinks a,.flinks span{
+    min-height:34px;
+    font-size:.78rem;
+  }
+  .footbottom{
+    margin-top:12px;
+    padding-top:10px;
+    gap:5px;
+    font-size:.70rem;
+    line-height:1.45;
+  }
+}
+
+/* Narrow phones: keep the header proportional instead of letting the logo dominate. */
+@media (max-width:380px){
+  .nav{height:56px}
+  .brand-logo{
+    width:150px;
+    min-width:150px;
+    height:36px;
+  }
+  .toggle{
+    width:40px;
+    height:40px;
+    min-width:40px;
+  }
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+  .footer-grid>div:first-child,
+  .footer-grid>div:nth-child(4){
+    grid-column:auto;
+  }
+}
+
+/* Remove legacy footer-logo rules from visual effect if stale markup ever remains. */
+.footer-official-logo{display:none!important}
+
+@media(max-width:700px){
+  body.footer-in-view .header{
+    transform:translateY(-100%);
+    box-shadow:none;
+  }
+  body.footer-in-view .mobile-quickbar{
+    transform:translateY(115%)!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+}

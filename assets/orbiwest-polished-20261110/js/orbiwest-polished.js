@@ -25,3 +25,20 @@ document.documentElement.classList.add('js');
   updateQuickbar();
   window.addEventListener('scroll',updateQuickbar,{passive:true});
 })();
+
+(() => {
+  const footer = document.querySelector('.footer');
+  const header = document.querySelector('.header');
+  if (!footer || !header || !('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    if (window.innerWidth > 700) {
+      document.body.classList.remove('footer-in-view');
+      return;
+    }
+    const e = entries[0];
+    document.body.classList.toggle('footer-in-view', e.isIntersecting && e.intersectionRatio > 0.18);
+  }, { threshold: [0, .18, .35] });
+
+  observer.observe(footer);
+})();
