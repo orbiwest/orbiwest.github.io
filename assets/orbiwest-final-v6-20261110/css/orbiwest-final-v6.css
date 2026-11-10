@@ -734,7 +734,7 @@ main > *:last-child{
 .hero-photo{
   min-height:350px;
   background-color:#08213F;
-  background-image:url("/assets/orbiwest-final-v3-20261110/img/orbiwest-infrastructure-hero-blended.webp");
+  background-image:url("/assets/orbiwest-final-v6-20261110/img/orbiwest-infrastructure-hero-blended.webp");
   background-size:cover;
   background-position:58% center;
   background-repeat:no-repeat;
@@ -742,7 +742,7 @@ main > *:last-child{
 @media(max-width:700px){
   .hero-photo{
     min-height:0;
-    background-image:url("/assets/orbiwest-final-v3-20261110/img/orbiwest-infrastructure-hero-mobile.webp");
+    background-image:url("/assets/orbiwest-final-v6-20261110/img/orbiwest-infrastructure-hero-mobile.webp");
     background-position:58% center;
   }
 }
@@ -902,4 +902,109 @@ main > *:last-child{
     width:100%!important;
     justify-content:center!important;
   }
+}
+
+/* FINAL V4 content and appearance refinements */
+.balanced-capabilities .section-headline{
+  align-items:center!important;
+}
+.balanced-capabilities .section-headline h2{
+  font-size:1.38rem!important;
+  line-height:1.32!important;
+}
+.balanced-capabilities .section-headline>p{
+  line-height:1.62!important;
+}
+.lower-utility-section{
+  padding-top:30px!important;
+  padding-bottom:30px!important;
+}
+.lower-utility-section .lower-grid{
+  align-items:stretch!important;
+}
+.lower-utility-section .lower-card{
+  min-height:138px!important;
+  display:flex!important;
+  flex-direction:column!important;
+}
+.lower-utility-section .lower-card>p{
+  margin-bottom:14px!important;
+}
+.lower-utility-section .resource-pills,
+.lower-utility-section .lower-card>.btn{
+  margin-top:auto!important;
+}
+.lower-utility-section .lower-actions{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:8px!important;
+}
+.lower-utility-section .lower-actions .pill{
+  min-height:42px!important;
+}
+@media(max-width:900px){
+  .lower-utility-section{padding-top:26px!important;padding-bottom:26px!important}
+  .lower-utility-section .lower-card{min-height:0!important}
+}
+@media(max-width:620px){
+  .balanced-capabilities .section-headline h2{font-size:1.32rem!important}
+}
+
+/* FINAL V5: render-verified polish */
+.hb-icon svg{
+  stroke:#E0B64F!important;
+  color:#E0B64F!important;
+}
+.sicon svg{
+  stroke:#0B2E5F!important;
+  color:#0B2E5F!important;
+}
+.service:hover .sicon svg{
+  stroke:#B88C2E!important;
+}
+
+/* Keep hero benefit text clean and prevent icon/text collisions. */
+.hero-benefits .hb{
+  min-width:0!important;
+}
+.hero-benefits .hb>div{
+  min-width:0!important;
+}
+.hero-benefits .hb strong,
+.hero-benefits .hb>div>span{
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+}
+
+/* Minor spacing refinement requested for the lower utility band. */
+.lower-utility-section .lower-card h3{
+  margin-bottom:8px!important;
+}
+.lower-utility-section .lower-card p{
+  line-height:1.55!important;
+}
+.lower-utility-section .lower-card:last-child .btn{
+  align-self:flex-start!important;
+}
+
+/* Readability without changing the approved layout. */
+.balanced-capabilities .balanced-card{
+  min-height:158px!important;
+}
+.balanced-capabilities .balanced-card span{
+  line-height:1.58!important;
+}
+
+/* FINAL V6: subtle layout balance */
+@media(min-width:1025px){
+  .service-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:12px!important;
+  }
+  .service{
+    min-height:150px!important;
+    padding:18px 14px!important;
+  }
+  .service h3{font-size:.9rem!important}
+  .service p{font-size:.78rem!important;line-height:1.48!important}
 }
