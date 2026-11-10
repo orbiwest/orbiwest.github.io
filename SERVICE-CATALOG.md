@@ -1,32 +1,102 @@
-# Orbiwest Technologies Service Catalog
+# Orbiwest Technologies — Full MSP Service Catalog
 
-Orbiwest provides MSP, MSSP, cloud, infrastructure, engineering, AI and connected technology services.
+## Managed IT & Service Operations
+- Managed IT / fully managed support by agreement
+- Help desk and end-user support
+- Co-managed IT
+- Remote monitoring and management (RMM)
+- Endpoint management
+- Patch and software management
+- User onboarding / offboarding
+- Asset inventory and lifecycle
+- IT documentation
+- Printer / peripheral support
+- Vendor escalation and coordination
+- Procurement assistance
+- Infrastructure monitoring by scope
 
-## MSP
-Managed IT, help desk, co managed IT, endpoint and RMM operations, patching, MDM/UEM, Microsoft 365, asset lifecycle, print and shared device support, network operations, servers, cloud, backup, NOC, licensing, procurement and vCIO.
+## Cloud & Microsoft
+- Cloud migration and modernization
+- Microsoft 365 migrations
+- Microsoft 365 administration
+- Exchange Online / mail-flow support
+- Teams / SharePoint / OneDrive support
+- Azure administration by scope
+- Entra ID identity administration
+- MFA / Conditional Access by scope
+- Intune device management
+- Hybrid identity planning
+- Tenant cleanup and consolidation
+- Licensing / adoption review
+- Cloud backup / recovery planning
 
-## MSSP
-Managed firewalls, endpoint security, EDR/XDR, SOC/MDR integrations, SIEM/SOAR, SASE/ZTNA, identity/IAM/PAM, email security, DLP, cloud security, WAF/API security, vulnerability management, security assessments, GRC readiness, awareness, incident readiness, ransomware recovery, vCISO and OT/IoT security.
+## Network & Infrastructure
+- Network design and troubleshooting
+- Switching / VLANs / DHCP
+- Business Wi-Fi
+- Firewalls / NAT / segmentation
+- Site-to-site VPN / remote access
+- WAN / ISP / carrier coordination
+- Windows Server
+- Linux systems
+- Virtualization / compute / storage by scope
+- Backup / BCDR
+- Disaster-recovery planning
+- New office / move / site technology
+- Server / endpoint refresh projects
+- VoIP / unified communications
+- Multi-site infrastructure
 
-## Cloud
-Microsoft 365, Azure, Entra ID, Intune, Azure Virtual Desktop, AWS, Google Cloud, hybrid cloud, tenant migrations, cloud cost review, SaaS backup, SharePoint and Power Platform.
+## Cybersecurity & Risk
+- Endpoint security / EDR coordination
+- MDR / SOC integration by scope
+- Identity / MFA / privileged-access hygiene
+- Email security / anti-phishing controls
+- DNS / web filtering by scope
+- Security hardening
+- Vulnerability scanning coordination
+- Remediation tracking
+- Security logging / SIEM integration by scope
+- Security awareness coordination
+- Backup / recovery readiness
+- Compliance-readiness support
+- Security questionnaire / evidence support
+- Cyber-insurance technical readiness support
+- AI governance / acceptable-use guidance by scope
 
-## Networking
-Routing, switching, Wi Fi, SD WAN, BGP, OSPF, IPv4/IPv6, VLANs, QoS, VPN, NAC, 802.1X, DNS, DHCP, IPAM, carrier services, wireless surveys, load balancing and branch rollouts.
+## Strategy, Consulting & Projects
+- vCIO / technology roadmap
+- Lifecycle and budget planning
+- Technology assessments
+- IT project management
+- Vendor evaluation
+- Procurement / quote review
+- Office moves and expansions
+- Migrations and cutovers
+- Digital modernization planning
+- Automation and RMM scripting
+- API / webhook integrations
+- Governed AI pilots and workflow automation
 
-## Infrastructure
-Windows Server, Linux, VMware, Hyper V, Proxmox, storage, SAN/NAS, virtualization, data center migration, backup, BCDR, UPS/PDU monitoring, structured cabling coordination and site buildouts.
+## Cameras, Access Control & Smart Security
+- IP / PoE cameras
+- NVR / VMS
+- Recording and playback
+- Storage / retention planning
+- Remote / mobile viewing
+- Camera VLAN / PoE network design
+- Camera health / firmware / hardening
+- Person / vehicle analytics where supported
+- Smart search / metadata
+- LPR workflows where supported and appropriate
+- Door access controllers / readers
+- RFID cards / key fobs / supported mobile credentials
+- Access levels / schedules / groups
+- Intercom / video entry
+- Camera + door event integration
+- Multi-site administration
+- Alarm / event / webhook integration by scope
+- Existing-system modernization
+- Documentation and administrative handoff
 
-## AI, Data and Automation
-Copilot, private AI assistants, RAG, AI agents, workflow automation, Power Automate, APIs, webhooks, databases, Power BI, analytics, DevOps, containers and AI governance.
-
-## Communications and Business Systems
-VoIP, Teams Phone, UCaaS, contact center, CRM/ERP integrations, conference rooms, AV and collaboration technology.
-
-## Smart Infrastructure
-IP cameras, NVR/VMS, access control, RFID and key fobs, intercom, visitor systems, gates, LPR, environmental sensors, server room monitoring, leak detection, air quality, occupancy and smart facility integrations.
-
-## Strategy and Projects
-Assessments, vCIO, vCISO, roadmaps, M&A technology diligence, procurement, licensing, vendor management, migrations, office moves and project engineering.
-
-Specialist and regulated work is assigned to appropriately qualified people and providers when required.
+Capabilities are scoped to the environment, licensing, platform support, risk, location and agreement. Regulated electrical, life-safety, fire-alarm, permitting or specialized door-hardware work may require appropriately qualified/licensed trades.

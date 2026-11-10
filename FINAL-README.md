@@ -1,31 +1,31 @@
-# Orbiwest Technologies — Enterprise MSP / MSSP Final Website
+# Orbiwest Technologies — FULL MSP Final Website
 
-This build preserves the approved Orbiwest metallic logo, navy/gold theme and blended infrastructure design.
+This package preserves the approved Orbiwest visual identity:
+- official metallic logo
+- navy / champagne-gold palette
+- blended infrastructure hero
+- existing responsive layout and navigation
 
-Major change:
-The website now represents Orbiwest as a TEAM, not as one person's personal technology list.
+The change is primarily **content depth and service breadth**.
 
-Public capability coverage includes:
-- Managed IT / co-managed IT / help desk / RMM / PSA / ITSM
-- Enterprise routing, switching, wireless, SD-WAN, NAC and observability
-- Multi-vendor firewalls, SASE, ZTNA and secure access
-- Microsoft 365 / Azure / Entra / Intune / Defender / Sentinel / Purview
-- AWS / Google Cloud / hybrid cloud
-- Windows / Linux servers, virtualization, storage and data center
-- VMware / Hyper-V / Proxmox and storage platforms
-- Backup / BCDR / SaaS backup / disaster recovery
-- Endpoint security, MDR/XDR, SIEM/SOAR, NDR, vulnerability and SOC integration
-- IAM / PAM / MFA / SSO
-- Email security / DLP / data security
-- WAF / API / application security
-- Databases / DevOps / containers / cloud-native
-- VoIP / UCaaS / contact center
-- AI / Copilot / private RAG / agents / automation / data / BI
-- Cameras / NVR/VMS / access control / intercom / visitor / LPR
-- Environmental sensors / IoT / UPS-PDU monitoring / smart facilities
-- vCIO / projects / procurement / M&A technology diligence
+## Business positioning
+Orbiwest is presented as a full-service MSP / technology partner:
+Managed IT, co-managed IT, cloud migration, Microsoft 365/Azure/Entra/Intune,
+networking, firewalls, servers, virtualization, backup/BCDR, endpoint/RMM,
+cybersecurity, identity/email security, vulnerability/compliance readiness,
+VoIP, consulting/vCIO, procurement/vendor management, office/site projects,
+automation/AI and cameras/access-control technology.
 
-Certification policy:
-Do not claim CCNA, CCNP, CCIE or any vendor certification unless Orbiwest has verified
-the current credential and holder. The website instead advertises the underlying
-enterprise networking capabilities.
+Cameras and access control remain a specialized service category, not the primary company identity.
+
+## Accuracy rules
+The site does not claim:
+- 24/7 human support
+- invented response times
+- uptime guarantees
+- fake client counts
+- fake testimonials
+- fake certifications
+- fake vendor partnerships
+
+Any service that depends on tools, licensing, platform support, qualified trades or a specific agreement is described as such.
